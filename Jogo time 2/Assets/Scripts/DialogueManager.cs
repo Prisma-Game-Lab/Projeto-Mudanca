@@ -41,7 +41,7 @@ public class DialogueManager : MonoBehaviour
          
     }
       void EndDialogue(){
-       Debug.log("cabou o texto"); //futuramente pode-se colocar animações de fechar a caixa de dialogo     
+      Debug.Log("cabou o texto"); //futuramente pode-se colocar animações de fechar a caixa de dialogo     
     }
     
 }
