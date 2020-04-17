@@ -34,7 +34,7 @@ public class CombateManager : MonoBehaviour
     private CombateAtributos atributosPlayer, atributosAdversario;
 
     //A: nomes na UI do jogador e do adversario
-    public Text nomePlayer, nomeAdversario;
+    public Text nomePlayer, nomeAdversario, vidaPlayerTexto, vidaAdversarioTexto;
 
     //A: nomes das ações do jogador
     public Text[] nomeAcoes;
@@ -54,9 +54,10 @@ public class CombateManager : MonoBehaviour
         {
             nomeAcoes[i].text = atributosPlayer.acoes[i].nome;
         }
-
         VidaPlayer.maxValue = atributosPlayer.atributos.vida;
         VidaAdversario.maxValue = atributosAdversario.atributos.vida;
+        vidaPlayerTexto.text= ""+VidaPlayer;
+        vidaAdversarioTexto.text= ""+VidaAdversario;
         //A: Decide de quem sera o primeiro turno
         if (atributosAdversario.getAtributos().iniciativa > atributosPlayer.getAtributos().iniciativa)
         {
@@ -74,8 +75,11 @@ public class CombateManager : MonoBehaviour
 
     void Update()
     {
+        vidaPlayerTexto.text= ""+ (int)(atributosPlayer.getVidaAtual());
+        vidaAdversarioTexto.text= ""+(int)(atributosAdversario.getVidaAtual());
         VidaPlayer.value = Mathf.Lerp(VidaPlayer.value,atributosPlayer.getVidaAtual(),VelocidadeVida * Time.deltaTime);
         VidaAdversario.value = Mathf.Lerp(VidaAdversario.value,atributosAdversario.getVidaAtual(),VelocidadeVida * Time.deltaTime);
+        
     }
 
     public void Acao1()
@@ -176,5 +180,5 @@ public class CombateManager : MonoBehaviour
             
         }
     }
-
+    
 }

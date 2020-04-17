@@ -37,7 +37,7 @@ public class MovimentoPlayer : MonoBehaviour
          
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
         if (movement.x!=0 || movement.y!=0){
-            if (movement.x <= 0)
+            if (movement.x < 0)
 		    {
 			    transform.rotation = new Quaternion(0, 180, 0, 0);
             }
