@@ -9,15 +9,19 @@ public class DialogueTrigger : MonoBehaviour
     public Canvas dialogueCanvas;
     private bool canActivate;
 
-    /*
+    
     public Dialogue Dialogue;
     public void TriggerDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(Dialogue);
+        
     }
-    */
 
-
+    public void teste ()
+    {
+        Debug.Log("caradasdsa");
+    }
+   
 
     public void Update()
     {
