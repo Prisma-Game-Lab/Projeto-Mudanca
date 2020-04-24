@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/Credits.unity
     guid: 3c1feaa4ff21c4733b8d44935ddda0e7
   - enabled: 1
-    path: Assets/Scenes/POC.unity
+    path: Assets/Scenes/POC/Festa.unity
     guid: f3f2fc8451011ca4dbef81268ce8dc47
   - enabled: 1
     path: Assets/Scenes/Teste Combate.unity
