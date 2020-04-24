@@ -6,31 +6,27 @@ using UnityEngine.UI;
 public class DialogueTrigger : MonoBehaviour
 {
 
-    public Canvas dialogueCanvas;
+    public GameObject dialogueCanvas;
     private bool canActivate;
 
     
     public Dialogue Dialogue;
-    public void TriggerDialogue()
-    {
-        FindObjectOfType<DialogueManager>().StartDialogue(Dialogue);
-        
-    }
-
-    public void teste ()
-    {
-        Debug.Log("caradasdsa");
-    }
+    
    
-
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.F) && canActivate)
         {
             dialogueCanvas.gameObject.SetActive(true);
+            TriggerDialogue();
         }
     }
 
+    public void TriggerDialogue()
+    {
+        FindObjectOfType<DialogueManager>().StartDialogue(Dialogue);
+
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {

@@ -8,6 +8,8 @@ public class DialogueManager : MonoBehaviour
     public Text NameText;
     public Text DialogueText;
     private Queue<string> _sentences;
+    public GameObject dialogue;
+    public SceneControl sceneControl;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +43,8 @@ public class DialogueManager : MonoBehaviour
          
     }
       void EndDialogue(){
-      Debug.Log("cabou o texto"); //futuramente pode-se colocar animações de fechar a caixa de dialogo     
+        dialogue.SetActive(false);
+        sceneControl.LoadtNextScene("Teste Combate");
     }
     
 }
