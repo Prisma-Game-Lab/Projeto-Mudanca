@@ -9,17 +9,20 @@ public class DialogueTrigger : MonoBehaviour
     public GameObject dialogueCanvas;
     private bool canActivate;
 
-    
+
     public Dialogue Dialogue;
-    
-   
+
+
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && canActivate)
-        {
-            dialogueCanvas.gameObject.SetActive(true);
-            TriggerDialogue();
-        }
+        if (Input.GetKeyDown(KeyCode.Z) && canActivate)
+            if (FindObjectOfType<DialogueManager>().DialogueOn == false)
+            {
+                {
+                    dialogueCanvas.gameObject.SetActive(true);
+                    TriggerDialogue();
+                }
+            }
     }
 
     public void TriggerDialogue()

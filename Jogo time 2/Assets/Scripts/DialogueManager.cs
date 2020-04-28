@@ -7,6 +7,7 @@ public class DialogueManager : MonoBehaviour
 {
     public Text NameText;
     public Text DialogueText;
+    public bool DialogueOn =false;
     private Queue<string> _sentences;
     public GameObject dialogue;
     public SceneControl sceneControl;
@@ -14,6 +15,14 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         _sentences= new Queue<string>();
+    }
+
+    void Update(){
+        if(DialogueOn==true){   
+            if(Input.GetKeyDown("z")){
+                DisplayNextSentence();
+            }
+        }
     }
     public void StartDialogue (Dialogue dialogue){
 
@@ -30,7 +39,9 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
+
         string sentence= _sentences.Dequeue(); 
+        StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
         IEnumerator TypeSentence(string sentence){ //animação das letras aparecendo
@@ -38,12 +49,14 @@ public class DialogueManager : MonoBehaviour
             foreach(char letter in sentence.ToCharArray()){
                 DialogueText.text+= letter;
                 yield return null;
+                DialogueOn=true;
 
             }
          
     }
       void EndDialogue(){
         dialogue.SetActive(false);
+        DialogueOn=false;
         sceneControl.LoadtNextScene("Teste Combate");
     }
     
