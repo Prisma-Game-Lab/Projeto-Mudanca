@@ -25,6 +25,7 @@ public class ModificadorAtributos : MonoBehaviour
         VidaAtual= AtributoAtual.getVidaAtual();
         if (VidaAtual<=Vida){
             ModificaAtributo(NovoAtributo);
+            NovoAtributo.vida=VidaAtual;
         }
     }
 
