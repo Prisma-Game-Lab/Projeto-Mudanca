@@ -11,6 +11,8 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> _sentences;
     public GameObject dialogue;
     public SceneControl sceneControl;
+
+    public bool Boss;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,8 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue (Dialogue dialogue){
 
         NameText.text= dialogue.Name;
+        Boss= dialogue.Boss;
+        
         _sentences.Clear();
         foreach(string sentence in dialogue.Sentences){
             _sentences.Enqueue(sentence); //organiza em ordem os textos para escreve-los
@@ -57,7 +61,8 @@ public class DialogueManager : MonoBehaviour
       void EndDialogue(){
         dialogue.SetActive(false);
         DialogueOn=false;
-        sceneControl.LoadtNextScene("Teste Combate");
+        if (Boss==true)
+            sceneControl.LoadtNextScene("Teste Combate"); 
     }
     
 }

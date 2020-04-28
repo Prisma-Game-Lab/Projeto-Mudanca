@@ -21,6 +21,7 @@ public class DialogueTrigger : MonoBehaviour
                 {
                     dialogueCanvas.gameObject.SetActive(true);
                     TriggerDialogue();
+                    
                 }
             }
     }

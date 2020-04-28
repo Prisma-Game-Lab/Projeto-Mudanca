@@ -8,5 +8,5 @@ public class Dialogue
     [TextArea(3,10)] //só pra aumentar o tamanho da caixa pros gds escreverem mais
 
     public string[] Sentences;
-     
+    public bool Boss=false; 
 }
