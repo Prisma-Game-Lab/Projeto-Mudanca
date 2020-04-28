@@ -3029,5 +3029,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f12cf10d9007874c8c408b5278e08de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NovoAtributo: {fileID: 11400000, guid: 906bfeeaa019f8b418dbfe84fe58c27b, type: 2}
-  Vida: 70
+  NovosAtributos:
+  - Atributo: {fileID: 11400000, guid: 906bfeeaa019f8b418dbfe84fe58c27b, type: 2}
+    Vida: 70
+  - Atributo: {fileID: 11400000, guid: e3cc27ec54b3fab428325019728516ee, type: 2}
+    Vida: 50
