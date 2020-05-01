@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -202,15 +202,15 @@ public class CombateManager : MonoBehaviour
     
        
          if (atributosAlvo.getAtributos().tipo== CombateUnidade.tipoUnidade.Agressivo){
-            Adversario.transform.GetChild(0).GetComponent<SpriteRenderer>().color=  CorDiplomatico.color;
+            Adversario.transform.GetChild(0).GetComponent<SpriteRenderer>().color=  CorOfensivo.color;
 
         }
         else if (atributosAlvo.getAtributos().tipo== CombateUnidade.tipoUnidade.Diplomatico){
-            Adversario.transform.GetChild(0).GetComponent<SpriteRenderer>().color= CorManipulador.color; 
+            Adversario.transform.GetChild(0).GetComponent<SpriteRenderer>().color= CorDiplomatico.color;
 
                  
         }
-        else  Adversario.transform.GetChild(0).GetComponent<SpriteRenderer>().color= CorOfensivo.color; 
+        else  Adversario.transform.GetChild(0).GetComponent<SpriteRenderer>().color= CorManipulador.color;
 
          
           
