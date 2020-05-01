@@ -1,0 +1,415 @@
+fileFormatVersion: 2
+guid: a60439315b153b44da0f2957a599dada
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: objeto da frente
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1855
+      y: 1957
+      width: 162
+      height: 408
+    spriteID: 5927b4012066a1641bf5f35ff227a287
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1855, y: 1957}
+  - name: vaso
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1614
+      y: 1957
+      width: 233
+      height: 353
+    spriteID: 4a808ff56f7748f418e9b475ac01f066
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1598, y: 1377}
+  - name: puff
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 864
+      y: 1957
+      width: 411
+      height: 285
+    spriteID: 8cde0a41ee3941d4c9bbb57ba79b73f3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -526, y: 1564}
+  - name: janela
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1283
+      y: 1957
+      width: 323
+      height: 333
+    spriteID: 26e350195433e574d8212060aea56584
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -38, y: 1319}
+  - name: mancha
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1283
+      y: 2298
+      width: 294
+      height: 64
+    spriteID: dfd2d165b0c1caf41ba0ee372cabd28c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 606, y: 1786}
+  - name: comida etc
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1957
+      width: 852
+      height: 474
+    spriteID: 525e2e5d547c8934487f5465bebdb07b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -146, y: 1670}
+  - name: mesa
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2439
+      width: 433
+      height: 166
+    spriteID: 113e00f6593ab784cb58428f9d6fbfd8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -629, y: 1895}
+  - name: linhas guia
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 661
+      width: 1920
+      height: 642
+    spriteID: 0ff6686190af5f8419c87ec31338619b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 223}
+  - name: chao
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1311
+      width: 1920
+      height: 638
+    spriteID: 4196da3f4cb31604e80d204280a118b6
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1311}
+  - name: parede
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 1920
+      height: 649
+    spriteID: 241ef5137caa221488bf83b139119f50
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: -427}
+  platformSettings: []
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 1024
+  importedTextureHeight: 2048
+  documentSize: {x: 1920, y: 1080}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 2048
+  textureActualHeight: 4096
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 1
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: objetos
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 21
+    mosaicPosition: {x: 0, y: 0}
+  - name: objeto da frente
+    spriteName: objeto da frente
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 5927b4012066a1641bf5f35ff227a287
+    layerID: 31
+    mosaicPosition: {x: 1855, y: 1957}
+  - name: vaso
+    spriteName: vaso
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 4a808ff56f7748f418e9b475ac01f066
+    layerID: 29
+    mosaicPosition: {x: 1614, y: 1957}
+  - name: puff
+    spriteName: puff
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 8cde0a41ee3941d4c9bbb57ba79b73f3
+    layerID: 28
+    mosaicPosition: {x: 864, y: 1957}
+  - name: janela
+    spriteName: janela
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 26e350195433e574d8212060aea56584
+    layerID: 30
+    mosaicPosition: {x: 1283, y: 1957}
+  - name: mancha
+    spriteName: mancha
+    isGroup: 0
+    parentIndex: 0
+    spriteID: dfd2d165b0c1caf41ba0ee372cabd28c
+    layerID: 26
+    mosaicPosition: {x: 1283, y: 2298}
+  - name: comida etc
+    spriteName: comida etc
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 525e2e5d547c8934487f5465bebdb07b
+    layerID: 23
+    mosaicPosition: {x: 4, y: 1957}
+  - name: mesa
+    spriteName: mesa
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 113e00f6593ab784cb58428f9d6fbfd8
+    layerID: 18
+    mosaicPosition: {x: 4, y: 2439}
+  - name: linhas guia
+    spriteName: linhas guia
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0ff6686190af5f8419c87ec31338619b
+    layerID: 10
+    mosaicPosition: {x: 4, y: 661}
+  - name: chao
+    spriteName: chao
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 4196da3f4cb31604e80d204280a118b6
+    layerID: 12
+    mosaicPosition: {x: 4, y: 1311}
+  - name: parede
+    spriteName: parede
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 241ef5137caa221488bf83b139119f50
+    layerID: 14
+    mosaicPosition: {x: 4, y: 4}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: teste cenario 2 Texture
+  prefabAssetName: teste cenario 2 Prefab
+  spriteLibAssetName: teste cenario 2 Sprite Lib
+  secondarySpriteTextures: []
