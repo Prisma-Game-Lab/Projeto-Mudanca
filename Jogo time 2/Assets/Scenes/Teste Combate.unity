@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3322,6 +3322,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NovosAtributos:
   - Atributo: {fileID: 11400000, guid: 906bfeeaa019f8b418dbfe84fe58c27b, type: 2}
-    Vida: 70
+    Vida: 200
   - Atributo: {fileID: 11400000, guid: e3cc27ec54b3fab428325019728516ee, type: 2}
-    Vida: 50
+    Vida: 100

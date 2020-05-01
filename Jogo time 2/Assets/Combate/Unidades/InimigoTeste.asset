@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: InimigoTeste
   m_EditorClassIdentifier: 
   nome: InimigoTeste
-  vida: 100
-  dano: 20
+  vida: 300
+  dano: 8
   defesa: 5
   iniciativa: 4
   tipo: 2

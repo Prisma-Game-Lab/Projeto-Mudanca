@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Ataque Inimigo Teste 1
   m_EditorClassIdentifier: 
   nome: Esmurrar
-  dano: 150
+  dano: 100
   tipo: 0

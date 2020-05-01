@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Ataque Inimigo Teste 2
   m_EditorClassIdentifier: 
   nome: Berrar
-  dano: 50
+  dano: 60
   tipo: 0
