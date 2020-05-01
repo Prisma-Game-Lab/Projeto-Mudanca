@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2652,6 +2652,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6602085717993891283, guid: c8a6c06742ebb422c9fcc636a5105999,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e4cdb78f589cdc4ca6b02837bdc246d, type: 3}
     - target: {fileID: 6602085717993891287, guid: c8a6c06742ebb422c9fcc636a5105999,
         type: 3}
       propertyPath: m_SortingLayerID
