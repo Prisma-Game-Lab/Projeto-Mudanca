@@ -570,9 +570,12 @@ MonoBehaviour:
   Dialogue:
     Name: Prot
     Sentences:
-    - Estou me sentindo mal...
-    - Acho que vou para a festa
-    - "Ningu\xE9m vai perceber se eu sumir rapidinho"
+    - "Que sensa\xE7\xE3o estranha"
+    - "Desde que o col\xE9gio avisou daquela maldita festa, tenho me sentido angustiada"
+    - "Uma sensa\xE7\xE3o de que n\xE3o perten\xE7o a esse ambiente"
+    - Pra ser sincera nem sei se isso tudo faz sentido
+    - "Acho que \xE9 s\xF3 besteira da minha cabe\xE7a"
+    - "Melhor dar uma voltinha s\xF3 pra esquecer tudo isso"
     Boss: 0
 --- !u!61 &195647600
 BoxCollider2D:
