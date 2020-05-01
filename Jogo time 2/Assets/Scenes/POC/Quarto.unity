@@ -568,7 +568,7 @@ MonoBehaviour:
   Automatic: 1
   Cutscene: 1
   Dialogue:
-    Name: Prot
+    Name: ' '
     Sentences:
     - "Que sensa\xE7\xE3o estranha"
     - "Desde que o col\xE9gio avisou daquela maldita festa, tenho me sentido angustiada"
