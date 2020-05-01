@@ -14,6 +14,9 @@ public class CombateManager : MonoBehaviour
     //A:referencias dos objetos de jogador e adversario na cena
     public GameObject Player, Adversario;
 
+    public Material CorDiplomatico,CorManipulador,CorOfensivo;
+    private Color CorAtual;
+
     //A: referencia de objeto na UI para impedir jogador de apertar botoes na vez do adversario
     public GameObject vezDoOutro;
 
@@ -33,6 +36,8 @@ public class CombateManager : MonoBehaviour
     //A: armazena atributos para referencias futuras
     private CombateAtributos atributosPlayer, atributosAdversario;
 
+ 
+
     //A: nomes na UI do jogador e do adversario
     public Text nomePlayer, nomeAdversario, vidaPlayerTexto, vidaAdversarioTexto;
 
@@ -40,8 +45,11 @@ public class CombateManager : MonoBehaviour
     public Text[] nomeAcoes;
 
 
+
+
     void Start()
     {
+        
         atributosPlayer = Player.GetComponent<CombateAtributos>();
         atributosAdversario = Adversario.GetComponent<CombateAtributos>();
 
@@ -79,6 +87,7 @@ public class CombateManager : MonoBehaviour
         vidaAdversarioTexto.text= ""+(int)(atributosAdversario.getVidaAtual());
         VidaPlayer.value = Mathf.Lerp(VidaPlayer.value,atributosPlayer.getVidaAtual(),VelocidadeVida * Time.deltaTime);
         VidaAdversario.value = Mathf.Lerp(VidaAdversario.value,atributosAdversario.getVidaAtual(),VelocidadeVida * Time.deltaTime);
+        CorAtual= Adversario.transform.GetChild(0).GetComponent<SpriteRenderer>().color;
         
     }
 
@@ -99,6 +108,13 @@ public class CombateManager : MonoBehaviour
     public void Acao3()
     {
         aplicaDano(atributosPlayer,atributosPlayer.acoes[2],atributosAdversario);
+        vezDoOutro.SetActive(true);
+        StartCoroutine (passaTurno());
+    }
+
+      public void Acao4()
+    {
+        mudaCor(atributosAdversario);
         vezDoOutro.SetActive(true);
         StartCoroutine (passaTurno());
     }
@@ -151,6 +167,24 @@ public class CombateManager : MonoBehaviour
         else{
             TelaVitoria.SetActive(true);
         }
+    }
+
+    private void mudaCor(CombateAtributos atributosAlvo){
+    
+       
+         if (atributosAlvo.getAtributos().tipo== CombateUnidade.tipoUnidade.Agressivo){
+            Adversario.transform.GetChild(0).GetComponent<SpriteRenderer>().color=  CorDiplomatico.color;
+
+        }
+        else if (atributosAlvo.getAtributos().tipo== CombateUnidade.tipoUnidade.Diplomatico){
+            Adversario.transform.GetChild(0).GetComponent<SpriteRenderer>().color= CorManipulador.color; 
+
+                 
+        }
+        else  Adversario.transform.GetChild(0).GetComponent<SpriteRenderer>().color= CorOfensivo.color; 
+
+         
+          
     }
 
     IEnumerator passaTurno()
