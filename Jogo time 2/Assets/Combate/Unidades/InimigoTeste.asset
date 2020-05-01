@@ -17,4 +17,4 @@ MonoBehaviour:
   dano: 20
   defesa: 5
   iniciativa: 4
-  tipo: 0
+  tipo: 2
