@@ -8,6 +8,8 @@ public class DialogueTrigger : MonoBehaviour
 
     public GameObject dialogueCanvas;
     private bool canActivate;
+    public bool Automatic;
+    public bool Cutscene;
 
 
     public Dialogue Dialogue;
@@ -31,12 +33,20 @@ public class DialogueTrigger : MonoBehaviour
         FindObjectOfType<DialogueManager>().StartDialogue(Dialogue);
 
     }
+     
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             canActivate = true;
+            if (Automatic==true){
+                dialogueCanvas.gameObject.SetActive(true);
+                TriggerDialogue();
+                if(Cutscene==true){
+                    Destroy(gameObject);
+                }
+            }
         }
     }
 
