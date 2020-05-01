@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class MovimentoCamera : MonoBehaviour
 {
+    [Header("Referências do Unity. Cuidado ao mexer")]
+    [Tooltip("alvo que a camera segue (Prefere-se que seja o jogador)")]
     public GameObject Alvo;
-    public Vector3 offset;
+    [Tooltip("Velocidade de movimento da camera. Quanto mais próxima à do alvo, mais centralizado ele fica. Deve ser positiva")]
     public float moveSpeed;
 
+    [Tooltip("Posição relativa entre camera e alvo. Mantenha um Z negativo")]
+    public Vector3 offset;
     private Transform transfPlayer;
 
     // Start is called before the first frame update

@@ -5,7 +5,9 @@ using UnityEngine;
 public class CombateAtributos : MonoBehaviour
 {
     //A: Recebe atributos de um elemento CombateUnidade
+    [Tooltip("Referência de um objeto CombateUnidade contendo os atributos desejados para o início do combate")]
     public CombateUnidade atributos;
+    [Tooltip("Referências de objetos CombateAcao que descrevem as acoes possiveis no combate")]
     public CombateAcao[] acoes;
     private int vidaAtual;
     void Start()

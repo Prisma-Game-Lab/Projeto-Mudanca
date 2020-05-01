@@ -11,22 +11,44 @@ public class CombateManager : MonoBehaviour
         adversario
     }
 
+    [Header("Referências do Unity. Cuidado ao mexer")]
+    [Tooltip("GameObjects do jogador e do adversário")]
     //A:referencias dos objetos de jogador e adversario na cena
     public GameObject Player, Adversario;
+    //A: referencia de objeto na UI para impedir jogador de apertar botoes na vez do adversario
+    [Tooltip("Objeto que impede jogador de jogar na vez do adversário")]
+    public GameObject vezDoOutro;
 
+    [Tooltip("Cores que representam posturas")]
     public Material CorDiplomatico,CorManipulador,CorOfensivo;
     private Color CorAtual;
 
-    //A: referencia de objeto na UI para impedir jogador de apertar botoes na vez do adversario
-    public GameObject vezDoOutro;
+    
 
     //A: referencia as barras de vida e velocidade que descem
+    [Tooltip("Objetos (Sliders) das barras de vida")]
     public Slider VidaPlayer, VidaAdversario;
-    public float VelocidadeVida;
 
+    [Tooltip("Paineis de vitória e derrota")]
     //A: Telas Placeholder de vitoria e derrota
     public GameObject TelaVitoria, TelaDerrota;
 
+    [Tooltip("Referências dos textos na UI")]
+    //A: nomes na UI do jogador e do adversario
+    public Text nomePlayer, nomeAdversario, vidaPlayerTexto, vidaAdversarioTexto;
+
+    [Tooltip("Textos dos nomes de cada ação que o jogador pode usar")]
+    //A: nomes das ações do jogador
+    public Text[] nomeAcoes;
+    [Tooltip("Texto indicando efetividade da ação escolhida")]
+    //A: Texto que da feedback se ataque foi efetivo ou não
+    public Text efetividade;
+
+    [Header("Ajustes de tempo")]
+    
+    [Tooltip("Velocidade com que a vida desce")]
+    public float VelocidadeVida;
+    [Tooltip("Tempo de transição entre a vez de cada um, em segundos")]
     //A: tempo aguardado entre cada turno, para o jogador compreender o que ocorre.
     public float entreTurnos;
     
@@ -36,15 +58,7 @@ public class CombateManager : MonoBehaviour
     //A: armazena atributos para referencias futuras
     private CombateAtributos atributosPlayer, atributosAdversario;
 
- 
-
-    //A: nomes na UI do jogador e do adversario
-    public Text nomePlayer, nomeAdversario, vidaPlayerTexto, vidaAdversarioTexto;
-
-    //A: nomes das ações do jogador
-    public Text[] nomeAcoes;
-
-
+    
 
 
     void Start()
@@ -56,6 +70,7 @@ public class CombateManager : MonoBehaviour
         //A: Atualiza nomes de player e adversario na hud
         nomePlayer.text = atributosPlayer.atributos.nome;
         nomeAdversario.text = atributosAdversario.atributos.nome;
+        efetividade.text = ""; 
 
         //A: Cada ação do jogador substitui o nome escrito em um dos botoes.
         for(int i=0; i< nomeAcoes.Length;i++)
@@ -131,14 +146,22 @@ public class CombateManager : MonoBehaviour
             if( ((int)golpe.tipo+1)%3 == (int)atributosAlvo.atributos.tipo)
             {
                 multiplicadorGolpe *= 2;
-                Debug.Log("foi super efetivo!");
+                
+                //A: texto de feedback
+                efetividade.color = Color.green;
+                efetividade.text = "super efetivo!";
+
                 Debug.Log(golpe.tipo);
                 Debug.Log(atributosAlvo.atributos.tipo);
             }
             else if(((int)atributosAlvo.atributos.tipo+1)%3 == (int)golpe.tipo)
             {
                 multiplicadorGolpe = multiplicadorGolpe/2;
-                Debug.Log("nao foi efetivo...");
+
+                //A: texto de feedback
+                efetividade.color = Color.red;
+                efetividade.text = "pouco efetivo...";
+
                 Debug.Log(golpe.tipo);
                 Debug.Log(atributosAlvo.atributos.tipo);
             }
@@ -146,6 +169,12 @@ public class CombateManager : MonoBehaviour
         Debug.Log("Multiplicador: ");
         Debug.Log(multiplicadorGolpe);
         danoResultante = (int) (ataque*multiplicadorGolpe-atributosAlvo.atributos.defesa);
+
+        //A: Garante dano minimo = 1
+        if(danoResultante <=0)
+        {
+            danoResultante = 1;
+        }
         Debug.Log("Dano calculado. Causando:");
         Debug.Log(danoResultante);
         atributosAlvo.danifica(danoResultante);
@@ -190,6 +219,7 @@ public class CombateManager : MonoBehaviour
     IEnumerator passaTurno()
     {
         yield return new WaitForSeconds(entreTurnos);
+        efetividade.text = "";
         if (atributosPlayer.getVidaAtual() == 0)
         {
             endBattle(true);

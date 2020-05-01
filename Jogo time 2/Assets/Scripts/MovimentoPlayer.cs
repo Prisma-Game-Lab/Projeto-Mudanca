@@ -6,6 +6,7 @@ public class MovimentoPlayer : MonoBehaviour
 {
     private Animator animator;
     public float StepsTime;
+    [Tooltip("Velocidade de movimento do jogador")]
     public float speed;
     private Rigidbody2D rb;
     Vector2 movement;

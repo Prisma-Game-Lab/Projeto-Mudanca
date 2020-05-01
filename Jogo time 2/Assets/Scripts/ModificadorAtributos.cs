@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ModificadorAtributos : MonoBehaviour
 {
+    [Tooltip("Objetos Modificador, contendo atributos da nova etapa e vida em que a nova etapa ocorre")]
     public Modificador[] NovosAtributos;
 
     private CombateAtributos AtributoAtual;
@@ -25,13 +26,13 @@ public class ModificadorAtributos : MonoBehaviour
     {
         VidaAtual = AtributoAtual.getVidaAtual();
 
-        if (VidaAtual <= NovosAtributos[i].Vida)
+        if (VidaAtual <= NovosAtributos[i].Vida && i<NovosAtributos.Length)
         {
              
-                ModificaAtributo(NovosAtributos[i].Atributo);
-                NovosAtributos[i].Atributo.vida = VidaAtual;
-                i++;
-                } 
+            ModificaAtributo(NovosAtributos[i].Atributo);
+            NovosAtributos[i].Atributo.vida = VidaAtual;
+            i++;
+        } 
     }
         void ModificaAtributo(CombateUnidade NovoAtributo)
         {
