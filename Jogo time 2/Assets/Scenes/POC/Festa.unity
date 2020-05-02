@@ -563,7 +563,10 @@ MonoBehaviour:
   Dialogue:
     Name: Os homi
     Sentences:
-    - Ei o que voce ta olhando?
+    - 'Ei o que voce ta olhando?
+
+
+      v'
     - Quer brigar?
     Boss: 1
 --- !u!61 &102823236
@@ -1327,11 +1330,14 @@ MonoBehaviour:
   Dialogue:
     Name: Cara do pc
     Sentences:
-    - "Hey, garota! O que voc\xEA t\xE1 fazendo aqui nessa festa?"
-    - "Cuidado que nem todo mundo aqui \xE9 t\xE3o legal como eu..."
-    - "Tem um grupinho que anda por a\xED incomodando as pessoas"
-    - Eles se acham os maiorais...
-    - "No fundo n\xE3o passam de pessoas com problemas como todo mundo por aqui..."
+    - "Hey, garota! O que voc\xEA t\xE1 fazendo aqui nessa festa? \n\nv"
+    - "Cuidado que nem todo mundo aqui \xE9 t\xE3o legal como eu...\n\nv"
+    - "Tem um grupinho que anda por a\xED incomodando as pessoas\n\nv"
+    - 'Eles se acham os maiorais...
+
+
+      v'
+    - "No fundo n\xE3o passam de pessoas com problemas como todo mundo por aqui"
     Boss: 0
 --- !u!1 &606672454
 GameObject:
@@ -1668,10 +1674,13 @@ MonoBehaviour:
   Dialogue:
     Name: Casal
     Sentences:
-    - "Menina, j\xE1 percebeu que as pessoas mudam ao longo de uma discuss\xE3o???"
-    - Do nada ela passa a agir diferente
+    - "Menina, j\xE1 percebeu que as pessoas mudam ao longo de uma discuss\xE3o???\n\nv"
+    - 'Do nada ela passa a agir diferente
+
+
+      v'
     - "Mesmo assim \xE9 sempre bom ficar atento e conhecer a pessoa com quem voc\xEA
-      est\xE1 lidando..."
+      est\xE1 lidando"
     Boss: 0
 --- !u!61 &642989772
 BoxCollider2D:
