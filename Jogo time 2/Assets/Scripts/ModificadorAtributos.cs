@@ -38,7 +38,7 @@ public class ModificadorAtributos : MonoBehaviour
         {
 
             AtributoAtual.atributos = NovoAtributo;
-
+            gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color= Color.white;
 
 
 

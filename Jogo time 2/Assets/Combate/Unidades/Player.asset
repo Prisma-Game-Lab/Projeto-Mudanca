@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ff06880a3aad548957a92387e23bab, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  nome: Player
+  nome: "Voc\xEA"
   vida: 100
   dano: 20
   defesa: 5

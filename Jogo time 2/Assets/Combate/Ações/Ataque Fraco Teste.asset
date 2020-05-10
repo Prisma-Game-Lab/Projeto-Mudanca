@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7169533083c05f54a81430fcb6b18f5d, type: 3}
   m_Name: Ataque Fraco Teste
   m_EditorClassIdentifier: 
-  nome: Culpar
+  nome: "\"N\xE3o faria isso se fosse voc\xEA\" (duvidoso)"
   dano: 100
   tipo: 1

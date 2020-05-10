@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ff06880a3aad548957a92387e23bab, type: 3}
   m_Name: InimigoTesteEstagio2
   m_EditorClassIdentifier: 
-  nome: InimigoTeste
+  nome: Grupo de meninos
   vida: 195
   dano: 12
   defesa: 15
