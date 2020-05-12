@@ -5,6 +5,8 @@ using UnityEngine;
 public class MovimentoPlayer : MonoBehaviour
 {
     private Animator animator;
+
+    private DialogueManager DialogueManager;
     public float StepsTime;
     [Tooltip("Velocidade de movimento do jogador")]
     public float speed;
@@ -18,11 +20,13 @@ public class MovimentoPlayer : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         steps= gameObject.GetComponent<AudioSource>();
         animator= gameObject.GetComponent<Animator>();
+        DialogueManager= FindObjectOfType<DialogueManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+         
         //A: Captura Movimento de jogador
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -30,12 +34,14 @@ public class MovimentoPlayer : MonoBehaviour
         //A: Previne rotação do jogador
         //transform.eulerAngles = new Vector3(0, 0, 0);
         rb.freezeRotation = true;
+        
     }
 
     private void FixedUpdate()
     {
          steps.Pause();
          
+         if (DialogueManager.DialogueOn==false){
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
         if (movement.x!=0 || movement.y!=0){
             if (movement.x < 0)
@@ -49,7 +55,7 @@ public class MovimentoPlayer : MonoBehaviour
          steps.Play();
          animator.SetBool("IsWalking",true);
         }
-       
+         }
         else animator.SetBool("IsWalking",false); 
     }
 }
