@@ -26,7 +26,7 @@ public class ModificadorAtributos : MonoBehaviour
     {
         VidaAtual = AtributoAtual.getVidaAtual();
 
-        if (VidaAtual <= NovosAtributos[i].Vida && i<NovosAtributos.Length)
+        if (i<NovosAtributos.Length && VidaAtual <= NovosAtributos[i].Vida)
         {
              
             ModificaAtributo(NovosAtributos[i].Atributo);

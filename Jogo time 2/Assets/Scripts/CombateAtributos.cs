@@ -10,14 +10,25 @@ public class CombateAtributos : MonoBehaviour
     [Tooltip("Referências de objetos CombateAcao que descrevem as acoes possiveis no combate")]
     public CombateAcao[] acoes;
     private int vidaAtual;
+    private int argumentoAtual;
     void Start()
     {
         vidaAtual = atributos.vida;
+        argumentoAtual = 0;
     }
 
     public int getVidaAtual()
     {
         return vidaAtual;
+    }
+
+    public int getArgumentos()
+    {
+        return argumentoAtual;
+    }
+    public void setArgumentos(int newArgumento)
+    {
+        argumentoAtual = newArgumento;
     }
     public CombateUnidade getAtributos() 
     {
@@ -27,7 +38,29 @@ public class CombateAtributos : MonoBehaviour
     public void danifica(int danoRecebido)
     {
         vidaAtual = Mathf.Clamp(vidaAtual-danoRecebido,0,atributos.vida);
-        Debug.Log("Vida atualizada para:");
-        Debug.Log(vidaAtual);
+    }
+
+    public bool isResistente(int tipoRecebido)
+    {
+        for (int i=0;i< atributos.tipoResistente.Length; i++)
+        {
+            if (tipoRecebido == (int)atributos.tipoResistente[i])
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public bool isVulneravel(int tipoRecebido)
+    {
+        for (int i=0;i< atributos.tipoVulneravel.Length; i++)
+        {
+            if (tipoRecebido == (int)atributos.tipoVulneravel[i])
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

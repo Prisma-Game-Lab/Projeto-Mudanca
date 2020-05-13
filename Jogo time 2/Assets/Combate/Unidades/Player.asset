@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: "Voc\xEA"
   vida: 100
+  barraArgumento: 100
   dano: 20
   defesa: 5
   iniciativa: 5
-  tipo: 3
+  tipoResistente: 03000000
+  tipoVulneravel: 03000000

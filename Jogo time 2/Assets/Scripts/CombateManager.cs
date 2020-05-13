@@ -14,7 +14,9 @@ public class CombateManager : MonoBehaviour
     [Header("Referências do Unity. Cuidado ao mexer")]
     [Tooltip("GameObjects do jogador e do adversário")]
     //A:referencias dos objetos de jogador e adversario na cena
-    public GameObject Player, Adversario;
+    public GameObject Player;
+    [Tooltip("GameObjects do jogador e do adversário")]
+    public GameObject Adversario;
     //A: referencia de objeto na UI para impedir jogador de apertar botoes na vez do adversario
     [Tooltip("Objeto que impede jogador de jogar na vez do adversário")]
     public GameObject vezDoOutro;
@@ -26,8 +28,8 @@ public class CombateManager : MonoBehaviour
     
 
     //A: referencia as barras de vida e velocidade que descem
-    [Tooltip("Objetos (Sliders) das barras de vida")]
-    public Slider VidaPlayer, VidaAdversario;
+    [Tooltip("Objetos (Sliders) das barras de vida e de argumentos")]
+    public Slider VidaPlayer, VidaAdversario, barraArgumentoPlayer, barraArgumentoAdversario;
 
     [Tooltip("Paineis de vitória e derrota")]
     //A: Telas Placeholder de vitoria e derrota
@@ -102,7 +104,9 @@ public class CombateManager : MonoBehaviour
         vidaAdversarioTexto.text= ""+(int)(atributosAdversario.getVidaAtual());
         VidaPlayer.value = Mathf.Lerp(VidaPlayer.value,atributosPlayer.getVidaAtual(),VelocidadeVida * Time.deltaTime);
         VidaAdversario.value = Mathf.Lerp(VidaAdversario.value,atributosAdversario.getVidaAtual(),VelocidadeVida * Time.deltaTime);
-        CorAtual= Adversario.transform.GetChild(0).GetComponent<SpriteRenderer>().color;
+        barraArgumentoPlayer.value = Mathf.Lerp(barraArgumentoPlayer.value,atributosPlayer.getArgumentos(),VelocidadeVida * Time.deltaTime);
+        barraArgumentoAdversario.value = Mathf.Lerp(barraArgumentoAdversario.value,atributosAdversario.getArgumentos(),VelocidadeVida * Time.deltaTime);
+        //CorAtual= Adversario.transform.GetChild(0).GetComponent<SpriteRenderer>().color;
         
     }
 
@@ -129,7 +133,7 @@ public class CombateManager : MonoBehaviour
 
       public void Acao4()
     {
-        mudaCor(atributosAdversario);
+        //mudaCor(atributosAdversario);
         vezDoOutro.SetActive(true);
         StartCoroutine (passaTurno());
     }
@@ -140,34 +144,26 @@ public class CombateManager : MonoBehaviour
         float multiplicadorGolpe = golpe.dano/100;
         int danoResultante;
 
-        if(atributosAlvo.atributos.tipo != CombateUnidade.tipoUnidade.Neutro && golpe.tipo != CombateAcao.tipoDano.Neutro)
+        if(golpe.tipo != CombateAcao.tipoDano.Neutro)
         {
             //A: ajusta multiplicador conforme tipo
-            if( ((int)golpe.tipo+1)%3 == (int)atributosAlvo.atributos.tipo)
+            if(atributosAlvo.isVulneravel((int)golpe.tipo))
             {
                 multiplicadorGolpe *= 2;
                 
                 //A: texto de feedback
                 efetividade.color = Color.green;
                 efetividade.text = "super efetivo!";
-
-                Debug.Log(golpe.tipo);
-                Debug.Log(atributosAlvo.atributos.tipo);
             }
-            else if(((int)atributosAlvo.atributos.tipo+1)%3 == (int)golpe.tipo)
+            else if(atributosAlvo.isResistente((int)golpe.tipo))
             {
                 multiplicadorGolpe = multiplicadorGolpe/2;
 
                 //A: texto de feedback
                 efetividade.color = Color.red;
                 efetividade.text = "pouco efetivo...";
-
-                Debug.Log(golpe.tipo);
-                Debug.Log(atributosAlvo.atributos.tipo);
             }
         }
-        Debug.Log("Multiplicador: ");
-        Debug.Log(multiplicadorGolpe);
         danoResultante = (int) (ataque*multiplicadorGolpe-atributosAlvo.atributos.defesa);
 
         //A: Garante dano minimo = 1
@@ -175,9 +171,16 @@ public class CombateManager : MonoBehaviour
         {
             danoResultante = 1;
         }
-        Debug.Log("Dano calculado. Causando:");
-        Debug.Log(danoResultante);
         atributosAlvo.danifica(danoResultante);
+
+        //A: ajusta barra de argumentos de acordo
+        atributosAtacante.setArgumentos(atributosAtacante.getArgumentos()+golpe.barraArgumento);
+        if(atributosAtacante.getArgumentos()>= atributosAtacante.atributos.barraArgumento)
+        {
+            atributosAtacante.setArgumentos(0);
+            Debug.Log("Criou Argumento");
+            //A: codigo para criar argumento vai aqui;
+        }
     }
 
     private void turnoAdversario()
@@ -198,7 +201,7 @@ public class CombateManager : MonoBehaviour
         }
     }
 
-    private void mudaCor(CombateAtributos atributosAlvo){
+    /*private void mudaCor(CombateAtributos atributosAlvo){
     
        
          if (atributosAlvo.getAtributos().tipo== CombateUnidade.tipoUnidade.Agressivo){
@@ -214,7 +217,7 @@ public class CombateManager : MonoBehaviour
 
          
           
-    }
+    }*/
 
     IEnumerator passaTurno()
     {

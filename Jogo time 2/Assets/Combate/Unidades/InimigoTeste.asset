@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Grupo de meninos
   vida: 300
+  barraArgumento: 100
   dano: 8
   defesa: 5
   iniciativa: 4
-  tipo: 2
+  tipoResistente: 00000000
+  tipoVulneravel: 02000000

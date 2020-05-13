@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: "\"N\xE3o faria isso se fosse voc\xEA\" (duvidoso)"
   dano: 100
+  barraArgumento: 12
   tipo: 1

@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: "\"N\xE3o precisa falar desse jeito comigo\" (calmo)"
   dano: 100
+  barraArgumento: 20
   tipo: 2

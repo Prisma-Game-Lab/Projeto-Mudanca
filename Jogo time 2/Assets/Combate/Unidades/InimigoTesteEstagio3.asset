@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: InimigoTesteEstagio3
   m_EditorClassIdentifier: 
   nome: Grupo de meninos
-  vida: 95
+  vida: 80
+  barraArgumento: 100
   dano: 20
   defesa: 5
   iniciativa: 4
-  tipo: 0
+  tipoResistente: 01000000
+  tipoVulneravel: 0000000002000000

@@ -23,6 +23,10 @@ public class CombateUnidade : ScriptableObject
     //vida: vitalidade maxima. determina hp inicial no combate
     public int vida;
 
+    [Tooltip("Tamanho da barra de argumento")]
+    //barraArgumento: tamanho máximo da barra de argumento. Cria argumento quando cheia
+    public int barraArgumento;
+
     [Tooltip("Dano base dos ataques, multiplicado pela ação escolhida")]
     //dano: dano base de ataque. multiplicado dependendo do ataque escolhido
     public int dano;
@@ -35,7 +39,11 @@ public class CombateUnidade : ScriptableObject
     //iniciativa: determina ordem do combate (talvez seja descartado)
     public int iniciativa;
  
-    [Tooltip("Tipo da unidade (Agressivo, Manipulador, Diplomatico ou Neutro), para calculo de efetividade das ações. Ordem (Derrota > Derrotado): Agressivo > Manipulador > Diplomático > Agressivo. ")]
-    //tipo: determina resistencias e desvantagens. Neutro leva dano base de qualquer tipo
-    public tipoUnidade tipo;
+    [Tooltip("Tipos aos quais a unidade é resistente")]
+    //tipoResistente: determina resistencias da unidade
+    public tipoUnidade[] tipoResistente;
+
+    [Tooltip("Tipos aos quais a unidade é vulnerável")]
+    //tipoVulneravel: determina vulnerabilidades da unidade
+    public tipoUnidade[] tipoVulneravel;
 }

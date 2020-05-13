@@ -23,7 +23,10 @@ public class CombateAcao : ScriptableObject
     //dano: porcentagem, multiplicador sobre o atributo de ataque da unidade
     public float dano;
 
-    [Tooltip("Tipo do dano causado (Agressivo, Manipulador, Diplomatico ou Neutro). Ordem (Derrota > Derrotado): Agressivo > Manipulador > Diplomático > Agressivo")]
+    [Tooltip("Quantidade carregada da barra de argumentos ao utilizar o ataque")]
+    public int barraArgumento;
+
+    [Tooltip("Tipo do dano causado.")]
     //tipo: para definir se alvo tem resistencias ou desvantagens
     public tipoDano tipo;
 }
