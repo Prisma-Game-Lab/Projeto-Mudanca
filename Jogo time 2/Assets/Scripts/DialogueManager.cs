@@ -62,7 +62,7 @@ public class DialogueManager : MonoBehaviour
         dialogue.SetActive(false);
         DialogueOn=false;
         if (Boss==true)
-            sceneControl.LoadtNextScene("Teste Combate"); 
+            sceneControl.LoadScene("Teste Combate"); 
     }
     
 }

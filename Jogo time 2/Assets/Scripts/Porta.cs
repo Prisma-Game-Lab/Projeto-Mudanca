@@ -8,6 +8,6 @@ public class Porta : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GM.GetComponent<SceneControl>().LoadtNextScene("Festa");
+        GM.GetComponent<SceneControl>().LoadScene("Festa");
     }
 }

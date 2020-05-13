@@ -5,9 +5,32 @@ using UnityEngine.SceneManagement;
 
 public class SceneControl : MonoBehaviour
 {
+    public Animator transition;
+    public float transitionTime = 1f;
 
-    public void LoadtNextScene(string sceneToLoad)
+
+    public void Start()
+    {
+        DontDestroyOnLoad(this);
+    }
+
+    public void LoadScene(string sceneToLoad)
     {
         SceneManager.LoadScene(sceneToLoad);
     }
+
+    public void LoadNextScene()
+    {
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+    }
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(levelIndex);
+    }
+
 }
