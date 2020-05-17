@@ -1,55 +1,51 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogueTrigger : MonoBehaviour
 {
-
     public GameObject dialogueCanvas;
     private bool canActivate;
-    public bool Automatic;
+    [Tooltip("Isso ativa o dialogo sem que precise apertar uma tecla")]
+    public bool Automatico;
+
+    [Tooltip("Desaparece após o dialogo ter finalizado, serve para cutscenes")]
     public bool Cutscene;
-
-
-    public Dialogue Dialogue;
-
-
+    int index;
+    [Tooltip("Coloque aqui o dialogo criado")]   
+    public DialogueBlock Dialogue;
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && canActivate)
-            if (FindObjectOfType<DialogueManager>().DialogueOn == false)
-            {
-                {
-                    dialogueCanvas.gameObject.SetActive(true);
-                    TriggerDialogue();
-                    
+        index=FindObjectOfType<DialogueManager>().i;
+        if (Input.GetKeyDown(KeyCode.Z) && canActivate){
+            if (FindObjectOfType<DialogueManager>().DialogueOn == false){
+                     TriggerDialogue();    
                 }
-            }
+        }
     }
-
+    
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(Dialogue);
-
+        dialogueCanvas.gameObject.SetActive(true);
+        FindObjectOfType<DialogueManager>().DisplayDialogue(Dialogue);
     }
-     
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             canActivate = true;
-            if (Automatic==true){
-                dialogueCanvas.gameObject.SetActive(true);
+            if (Automatico == true)
+            { 
                 TriggerDialogue();
-                if(Cutscene==true){
+                if (Cutscene == true)
+                {
                     Destroy(gameObject);
                 }
             }
         }
     }
-
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
