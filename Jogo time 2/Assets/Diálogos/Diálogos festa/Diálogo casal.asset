@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8d1f939cbcee94bb7a38c8245bc37c, type: 3}
+  m_Name: "Di\xE1logo casal"
+  m_EditorClassIdentifier: 
+  Descricao: "Dialogo  do casal\n(adicionei a feature nova da alex falando s\xF3
+    para testar o codigo)\nPara fazer um dialogo continuo s\xF3 precisa apertar o
+    bot\xE3o continuo"
+  Dialogue:
+  - Name: Casal
+    Sentences:
+    - "Menina, j\xE1 percebeu que as pessoas mudam ao longo de uma discuss\xE3o???\r\n\r "
+    - "Do nada ela passa a agir diferente\r\n\r"
+    - "Mesmo assim \xE9 sempre bom ficar atento e conhecer a pessoa com quem voc\xEA
+      est\xE1 lidando"
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000}
+  - Name: Alex
+    Sentences:
+    - "Hm...Isso \xE9 interessante"
+    Continuo: 0
+    dialogueBlock: {fileID: 11400000}
+  Boss: 0
+  i: 2
+  index: 1

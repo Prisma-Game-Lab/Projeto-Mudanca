@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8d1f939cbcee94bb7a38c8245bc37c, type: 3}
+  m_Name: DialogoInicial
+  m_EditorClassIdentifier: 
+  Descricao: Dialogo inicial do quarto
+  Dialogue:
+  - Name: Alex
+    Sentences:
+    - "Que sensa\xE7\xE3o estranha...\r"
+    - "Desde que o col\xE9gio avisou daquela festa, t\xF4 angustida.\r\n\r"
+    - "Sensa\xE7\xE3o de que n\xE3o perten\xE7o \xE0quele lugar...\r"
+    - "Pra ser sincera, nem sei se isso faz sentido...\r\n\r \n\r"
+    - "Acho que \xE9 s\xF3 coisa da minha cabe\xE7a\r"
+    - "Melhor dar uma volta s\xF3 pra esquecer tudo isso\r"
+    Continuo: 0
+    dialogueBlock: {fileID: 11400000}
+  Boss: 0
+  i: 1
+  index: 0

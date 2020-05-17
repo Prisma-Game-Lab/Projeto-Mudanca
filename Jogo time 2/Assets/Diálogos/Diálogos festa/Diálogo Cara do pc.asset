@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8d1f939cbcee94bb7a38c8245bc37c, type: 3}
+  m_Name: "Di\xE1logo Cara do pc"
+  m_EditorClassIdentifier: 
+  Descricao: "Di\xE1logo falando sobre os personagens encrenqueiros"
+  Dialogue:
+  - Name: Cara do pc
+    Sentences:
+    - "Hey, garota! O que voc\xEA t\xE1 fazendo aqui nessa festa? \r"
+    - "Cuidado que nem todo mundo aqui \xE9 t\xE3o legal como eu..."
+    - "Tem um grupinho que anda por a\xED incomodando as pessoas\n"
+    - "Eles se acham os maiorais...\r\n\r"
+    - "No fundo n\xE3o passam de pessoas com problemas como todo mundo por aqui"
+    Continuo: 0
+    dialogueBlock: {fileID: 11400000}
+  Boss: 0
+  i: 1
+  index: 0
