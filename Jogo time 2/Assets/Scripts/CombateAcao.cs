@@ -15,9 +15,9 @@ public class CombateAcao : ScriptableObject
 
     //A: atributos de um ataque:
     [Header("Dados de uma ação:")]
-    [Tooltip("Nome que aparecerá no botão")]
+    [Tooltip("Nomes que aparecerão no botão. Escolhidos aleatoriamente a cada turno")]
     //nome: o que sera mostrado no botao
-    public string nome;
+    public string[] nome;
 
     [Tooltip("Multiplicador do atributo de dano de quem executa a ação, em %")]
     //dano: porcentagem, multiplicador sobre o atributo de ataque da unidade

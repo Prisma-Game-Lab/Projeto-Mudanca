@@ -77,7 +77,8 @@ public class CombateManager : MonoBehaviour
         //A: Cada ação do jogador substitui o nome escrito em um dos botoes.
         for(int i=0; i< nomeAcoes.Length;i++)
         {
-            nomeAcoes[i].text = atributosPlayer.acoes[i].nome;
+            //escolhe nome aleatorio entre os descritos no array
+            nomeAcoes[i].text = atributosPlayer.acoes[i].nome[Random.Range(0,atributosPlayer.acoes[i].nome.Length)];
         }
         VidaPlayer.maxValue = atributosPlayer.atributos.vida;
         VidaAdversario.maxValue = atributosAdversario.atributos.vida;
@@ -237,7 +238,12 @@ public class CombateManager : MonoBehaviour
             if(turnoAtual == turno.adversario)
             {
                 turnoAtual = turno.jogador;
-                vezDoOutro.SetActive(false);
+                for(int i=0; i< nomeAcoes.Length;i++)
+                {
+                //escolhe nome aleatorio entre os descritos no array
+                    nomeAcoes[i].text = atributosPlayer.acoes[i].nome[Random.Range(0,atributosPlayer.acoes[i].nome.Length)];
+                }
+                vezDoOutro.SetActive(false);    
             }
             else 
             {
