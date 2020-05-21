@@ -9,6 +9,8 @@ public class DialogueManager : MonoBehaviour
     public Text DialogueText;
     public bool DialogueOn = false;
     private Queue<string> _sentences;
+
+    private bool complete;
     public GameObject dialogue;
     public DialogueBlock DialogueBlock;
 
@@ -26,8 +28,9 @@ public class DialogueManager : MonoBehaviour
     {
         if (DialogueOn == true)
         {
-            if (Input.GetKeyDown("z"))
+            if (Input.GetKeyDown("z")&&complete==true)
             {
+                complete=false;
                 DisplayNextSentence();
             }
         }
@@ -83,7 +86,15 @@ public class DialogueManager : MonoBehaviour
             DialogueText.text += letter;
             yield return null;
             DialogueOn = true;
+             if (Input.GetKeyDown("z"))
+            {
+                 DialogueText.text = "";
+                 DialogueText.text= sentence;
+                 complete=true;
+                break;
+            }
         }
+        complete=true;
     }
     public void DisplayDialogue(DialogueBlock dialogueBlock)
     {
