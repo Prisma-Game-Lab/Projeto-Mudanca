@@ -53,8 +53,14 @@ public class CombateUnidade : ScriptableObject
     [Tooltip("Tipos aos quais a unidade é vulnerável")]
     //tipoVulneravel: determina vulnerabilidades da unidade
     public tipoUnidade[] tipoVulneravel;
+
     [Tooltip("Define vantagens passivas em combate")]
+    //postura: comportamento da unidade, provendo habilidades passivas ou formas diferentes de tomada de decisão
     public posturaUnidade postura;
+
+    [Tooltip("Descrição da postura, que aparece na tooltip da unidade")]
+    //descricao: informacao sobre o efeito da postura. Exibido na tooltip
+    public string descricao;
 
     [Header("Referencias aos prefabs dos argumentos criados ao encher a barra ")]
     //arrayArgumentos: armazena os argumentos usados em combate

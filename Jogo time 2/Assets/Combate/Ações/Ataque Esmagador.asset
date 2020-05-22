@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7169533083c05f54a81430fcb6b18f5d, type: 3}
   m_Name: Ataque Esmagador
   m_EditorClassIdentifier: 
-  nome: []
-  dano: 0
-  barraArgumento: 0
+  nome:
+  - ESMAGA!!!!!
+  dano: 500
+  barraArgumento: 100
   tipo: 0
   buff: {fileID: 0}

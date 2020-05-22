@@ -29,9 +29,4 @@ public class CombateAcao : ScriptableObject
     [Tooltip("Tipo do dano causado.")]
     //tipo: para definir se alvo tem resistencias ou desvantagens
     public tipoDano tipo;
-
-
-    [Tooltip("Atributos bonus recebidos pela presença do argumento no combate.")]
-    //buff: vantagem adquirida enquanto o argumento está no combate
-    public CombateUnidade buff;
 }

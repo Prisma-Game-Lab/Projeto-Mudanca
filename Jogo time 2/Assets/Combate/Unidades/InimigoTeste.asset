@@ -20,3 +20,8 @@ MonoBehaviour:
   iniciativa: 4
   tipoResistente: 00000000
   tipoVulneravel: 02000000
+  postura: 1
+  descricao: " Ataques incisivos ser\xE3o retaliados"
+  argumentoAgressivo: {fileID: 0}
+  argumentoManipulador: {fileID: 0}
+  argumentoDiplomatico: {fileID: 0}

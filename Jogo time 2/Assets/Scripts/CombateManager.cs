@@ -108,6 +108,7 @@ public class CombateManager : MonoBehaviour
         {
             //escolhe nome aleatorio entre os descritos no array
             nomeAcoes[i].text = atributosPlayer.acoes[i].nome[Random.Range(0,atributosPlayer.acoes[i].nome.Length)];
+            nomeAcoes[i].GetComponent<TooltipObserver>().associaAcao(atributosPlayer.acoes[i]);
         }
         VidaPlayer.maxValue = atributosPlayer.atributos.vida;
         VidaAdversario.maxValue = atributosAdversario.atributos.vida;

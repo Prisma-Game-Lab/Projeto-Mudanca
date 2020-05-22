@@ -13,10 +13,15 @@ MonoBehaviour:
   m_Name: InimigoTesteEstagio2
   m_EditorClassIdentifier: 
   nome: Grupo de meninos
-  vida: 195
+  vida: 200
   barraArgumento: 100
   dano: 12
   defesa: 15
   iniciativa: 4
   tipoResistente: 0000000002000000
   tipoVulneravel: 01000000
+  postura: 2
+  descricao: Ele esta preparando um ataque poderoso
+  argumentoAgressivo: {fileID: 0}
+  argumentoManipulador: {fileID: 0}
+  argumentoDiplomatico: {fileID: 0}
