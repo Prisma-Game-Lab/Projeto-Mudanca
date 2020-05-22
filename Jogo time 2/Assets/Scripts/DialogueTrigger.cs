@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class DialogueTrigger : MonoBehaviour
 {
     public GameObject dialogueCanvas;
-    private bool canActivate;
+     [HideInInspector]
+    public bool canActivate;
     [Tooltip("Isso ativa o dialogo sem que precise apertar uma tecla")]
     public bool Automatico;
 
