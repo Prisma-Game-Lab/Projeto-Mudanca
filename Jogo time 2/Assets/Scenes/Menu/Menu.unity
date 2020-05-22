@@ -953,6 +953,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7926147208052313269}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &812639067 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 271645538, guid: 6542e7f373b7744c9bec2913ae1d5d9d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7926147208052313269}
+  m_PrefabAsset: {fileID: 0}
 --- !u!82 &812639071
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2060,6 +2066,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7926147208892302820, guid: 6542e7f373b7744c9bec2913ae1d5d9d,
         type: 3}
+      propertyPath: audiosInScene.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7926147208892302820, guid: 6542e7f373b7744c9bec2913ae1d5d9d,
+        type: 3}
+      propertyPath: audiosInScene.Array.data[3].music.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7926147208892302820, guid: 6542e7f373b7744c9bec2913ae1d5d9d,
+        type: 3}
       propertyPath: duration
       value: 2
       objectReference: {fileID: 0}
@@ -2083,6 +2099,16 @@ PrefabInstance:
       propertyPath: audiosInScene.Array.data[1].music.Array.data[1]
       value: 
       objectReference: {fileID: 812639072}
+    - target: {fileID: 7926147208892302820, guid: 6542e7f373b7744c9bec2913ae1d5d9d,
+        type: 3}
+      propertyPath: audiosInScene.Array.data[3].music.Array.data[0]
+      value: 
+      objectReference: {fileID: 812639067}
+    - target: {fileID: 7926147208892302820, guid: 6542e7f373b7744c9bec2913ae1d5d9d,
+        type: 3}
+      propertyPath: audiosInScene.Array.data[3].scene
+      value: Teste Combate
+      objectReference: {fileID: 0}
     - target: {fileID: 7926147208892302821, guid: 6542e7f373b7744c9bec2913ae1d5d9d,
         type: 3}
       propertyPath: m_audioClip
