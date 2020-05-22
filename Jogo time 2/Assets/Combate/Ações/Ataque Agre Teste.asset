@@ -10,9 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7169533083c05f54a81430fcb6b18f5d, type: 3}
-  m_Name: Ataque Neutro Teste
+  m_Name: Ataque Agre Teste
   m_EditorClassIdentifier: 
-  nome: "\"Voc\xEA est\xE1 completamente errado\" (agressivo)"
+  nome:
+  - Agre A
+  - Agre B
+  - Agre C
+  - Agre D
   dano: 100
   barraArgumento: 30
   tipo: 0

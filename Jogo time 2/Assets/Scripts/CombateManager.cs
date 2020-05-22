@@ -21,6 +21,8 @@ public class CombateManager : MonoBehaviour
     [Tooltip("Objeto que impede jogador de jogar na vez do adversário")]
     public GameObject vezDoOutro;
 
+    
+
     [Tooltip("Cores que representam posturas")]
     public Material CorDiplomatico,CorManipulador,CorOfensivo;
     private Color CorAtual;
@@ -49,17 +51,29 @@ public class CombateManager : MonoBehaviour
     [Header("Ajustes de tempo")]
     
     [Tooltip("Velocidade com que a vida desce")]
-    public float VelocidadeVida;
+    public float velocidadeVida;
     [Tooltip("Tempo de transição entre a vez de cada um, em segundos")]
     //A: tempo aguardado entre cada turno, para o jogador compreender o que ocorre.
     public float entreTurnos;
     
+    [Header("Listas dos argumentos. DEFINIR APENAS TAMANHO. ADICIONAR REFERENCIAS ADICIONA ARGUMENTOS AO INICIO DA BATALHA")]
+    [Tooltip("Listas de argumentos do player")]
+    //A: arrays para armazenar argumentos
+    public CombateArgumento[] argumentosPlayer;
+    [Tooltip("Listas de argumentos do adviersario")]
+    public CombateArgumento[] argumentosAdversario;
+
     //A: dono da vez
     private turno turnoAtual;
 
     //A: armazena atributos para referencias futuras
     private CombateAtributos atributosPlayer, atributosAdversario;
 
+    //A: contadores de quantas vezes ataques do tipo x foram usados, para definir argumento a ser criado
+    private int contaAgressivosPlayer = 0, contaAgressivosAdversario = 0, contaManipuladorPlayer = 0, contaManipuladorAdversario = 0, contaDiplomaticoPlayer = 0, contaDiplomaticoAdversario = 0;
+
+    //A: Contador de quantos argumentos cada atacante tem
+    private int numArgumentosPlayer, numArgumentosAdversario;
     
 
 
@@ -103,10 +117,10 @@ public class CombateManager : MonoBehaviour
     {
         vidaPlayerTexto.text= ""+ (int)(atributosPlayer.getVidaAtual());
         vidaAdversarioTexto.text= ""+(int)(atributosAdversario.getVidaAtual());
-        VidaPlayer.value = Mathf.Lerp(VidaPlayer.value,atributosPlayer.getVidaAtual(),VelocidadeVida * Time.deltaTime);
-        VidaAdversario.value = Mathf.Lerp(VidaAdversario.value,atributosAdversario.getVidaAtual(),VelocidadeVida * Time.deltaTime);
-        barraArgumentoPlayer.value = Mathf.Lerp(barraArgumentoPlayer.value,atributosPlayer.getArgumentos(),VelocidadeVida * Time.deltaTime);
-        barraArgumentoAdversario.value = Mathf.Lerp(barraArgumentoAdversario.value,atributosAdversario.getArgumentos(),VelocidadeVida * Time.deltaTime);
+        VidaPlayer.value = Mathf.Lerp(VidaPlayer.value,atributosPlayer.getVidaAtual(),velocidadeVida * Time.deltaTime);
+        VidaAdversario.value = Mathf.Lerp(VidaAdversario.value,atributosAdversario.getVidaAtual(),velocidadeVida * Time.deltaTime);
+        barraArgumentoPlayer.value = Mathf.Lerp(barraArgumentoPlayer.value,atributosPlayer.getArgumentos(),velocidadeVida * Time.deltaTime);
+        barraArgumentoAdversario.value = Mathf.Lerp(barraArgumentoAdversario.value,atributosAdversario.getArgumentos(),velocidadeVida * Time.deltaTime);
         //CorAtual= Adversario.transform.GetChild(0).GetComponent<SpriteRenderer>().color;
         
     }
@@ -174,13 +188,19 @@ public class CombateManager : MonoBehaviour
         }
         atributosAlvo.danifica(danoResultante);
 
-        //A: ajusta barra de argumentos de acordo
-        atributosAtacante.setArgumentos(atributosAtacante.getArgumentos()+golpe.barraArgumento);
-        if(atributosAtacante.getArgumentos()>= atributosAtacante.atributos.barraArgumento)
+        //A: incrementa contador de vezes que o tipo de ataque foi usado
+        somaTipo( atributosAtacante, golpe);
+
+        //A: ajusta barra de argumentos de acordo caso nao tiver maximo de argumentos
+        if ((atributosAtacante.atributos.nome == atributosPlayer.atributos.nome && numArgumentosPlayer < argumentosPlayer.Length) || (atributosAtacante.atributos.nome == atributosAdversario.atributos.nome && numArgumentosAdversario < argumentosAdversario.Length ))
         {
-            atributosAtacante.setArgumentos(0);
-            Debug.Log("Criou Argumento");
-            //A: codigo para criar argumento vai aqui;
+            atributosAtacante.setArgumentos(atributosAtacante.getArgumentos()+golpe.barraArgumento);
+            if(atributosAtacante.getArgumentos()>= atributosAtacante.atributos.barraArgumento)
+            {
+                atributosAtacante.setArgumentos(0);
+                Debug.Log("Criou Argumento");
+                //A: codigo para criar argumento vai aqui;
+            }
         }
     }
 
@@ -220,6 +240,82 @@ public class CombateManager : MonoBehaviour
           
     }*/
 
+    //A: decide a qual contador somar +1 
+    private void somaTipo(CombateAtributos atributosAtacante,CombateAcao golpe)
+    {
+        //A: se jogador foi o atacante
+        if(atributosAtacante.atributos.nome == atributosPlayer.atributos.nome)
+        {
+            switch(golpe.tipo)
+            {
+            case CombateAcao.tipoDano.Agressivo:
+            
+                contaAgressivosPlayer++;
+                break;
+                
+            case CombateAcao.tipoDano.Manipulador:
+                
+                contaManipuladorPlayer++;
+                break;
+                
+            case CombateAcao.tipoDano.Diplomatico:
+
+                contaDiplomaticoPlayer++;
+                break;  
+                
+            default:
+                return;
+            }
+        }
+        else
+        {
+            switch(golpe.tipo)
+            {
+            case CombateAcao.tipoDano.Agressivo:
+                
+                contaAgressivosAdversario++;
+                break;
+                
+            case CombateAcao.tipoDano.Manipulador:
+                
+                contaManipuladorAdversario++;
+                break;
+                
+            case CombateAcao.tipoDano.Diplomatico:
+                
+                contaDiplomaticoAdversario++;
+                break;
+                
+            default:
+                return;
+            }
+        }
+    }
+
+    //A: calcula qual dos tipos foi o maior contador para escolher argumento a ser criado: 0 se agressivo, 1 se manipulador e 2 se diplomatico
+    private int tipoMaisUsado(CombateAtributos atributosAtacante)
+    {
+        //A: se jogador for o atacante
+        if(atributosAtacante.atributos.nome == atributosPlayer.atributos.nome)
+        {
+            if (contaAgressivosPlayer > contaManipuladorPlayer && contaAgressivosPlayer > contaDiplomaticoPlayer)
+                return 0;
+            else if (contaManipuladorPlayer > contaAgressivosPlayer && contaManipuladorPlayer > contaDiplomaticoPlayer)
+                return 1;
+            else return 2;
+        }
+        else
+        {
+            if (contaAgressivosAdversario > contaManipuladorAdversario && contaAgressivosAdversario > contaDiplomaticoAdversario)
+                return 0;
+            else if (contaManipuladorAdversario > contaAgressivosAdversario && contaManipuladorAdversario > contaDiplomaticoAdversario)
+                return 1;
+            else return 2;
+        }
+    }
+
+
+    //A: gerencia variaveis relacionadas a passagem de turno
     IEnumerator passaTurno()
     {
         yield return new WaitForSeconds(entreTurnos);

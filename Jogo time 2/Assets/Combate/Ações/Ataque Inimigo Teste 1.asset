@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7169533083c05f54a81430fcb6b18f5d, type: 3}
   m_Name: Ataque Inimigo Teste 1
   m_EditorClassIdentifier: 
-  nome: Esmurrar
+  nome:
+  - foco em dano
   dano: 100
   barraArgumento: 6
   tipo: 0

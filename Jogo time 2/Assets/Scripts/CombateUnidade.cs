@@ -46,4 +46,16 @@ public class CombateUnidade : ScriptableObject
     [Tooltip("Tipos aos quais a unidade é vulnerável")]
     //tipoVulneravel: determina vulnerabilidades da unidade
     public tipoUnidade[] tipoVulneravel;
+
+    [Header("Referencias aos prefabs dos argumentos criados ao encher a barra ")]
+    //arrayArgumentos: armazena os argumentos usados em combate
+    [Tooltip("Argumento criado ao usar muito os ataques de tipo agressivo")]
+    public GameObject argumentoAgressivo;
+    [Tooltip("Argumento criado ao usar muito os ataques de tipo manipulador")]
+    public GameObject argumentoManipulador;
+    [Tooltip("Argumento criado ao usar muito os ataques de tipo diplomatico")]
+    public GameObject argumentoDiplomatico;
+    
+    
+
 }
