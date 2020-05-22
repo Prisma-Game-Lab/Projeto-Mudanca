@@ -196,12 +196,28 @@ public class CombateManager : MonoBehaviour
                 efetividade.text = "pouco efetivo...";
             }
         }
+
         danoResultante = (int) (ataque*multiplicadorGolpe-atributosAlvo.atributos.defesa);
+
+        //A: implementação da postura Reage a Agressivo
+        if(atributosAlvo.atributos.postura == CombateUnidade.posturaUnidade.reageAgressivo && golpe.tipo == CombateAcao.tipoDano.Agressivo)
+        {
+            aplicaDano(atributosAlvo, atributosAlvo.acoes[0], atributosAtacante);
+        }
 
         //A: Garante dano minimo = 1
         if(danoResultante <=0)
         {
             danoResultante = 1;
+        }
+        
+        //A: implementação da postura ignoraManipulador
+        if(atributosAlvo.atributos.postura == CombateUnidade.posturaUnidade.ignoraManipulador && golpe.tipo == CombateAcao.tipoDano.Manipulador)
+        {
+            danoResultante = 0;
+            
+            efetividade.color = Color.blue;
+            efetividade.text = "imune";
         }
         atributosAlvo.danifica(danoResultante);
 
@@ -229,8 +245,25 @@ public class CombateManager : MonoBehaviour
 
     private void turnoAdversario()
     {
-        int ataqueEscolhido = Random.Range(0, atributosAdversario.acoes.Length);
-        aplicaDano(atributosAdversario,atributosAdversario.acoes[ataqueEscolhido],atributosPlayer);
+        //A: implementação da postura Ataque Esmagador
+        if(atributosAdversario.atributos.postura == CombateUnidade.posturaUnidade.golpeEsmagador && atributosAdversario.getAuxiliar() < 2)
+        {
+            
+            efetividade.color = Color.yellow;
+            efetividade.text = "ALERTA!!!";
+            atributosAdversario.setAuxiliar(atributosAdversario.getAuxiliar()+1);
+        }
+        else if (atributosAdversario.atributos.postura == CombateUnidade.posturaUnidade.golpeEsmagador && atributosAdversario.getAuxiliar() >= 2)
+        {
+            aplicaDano(atributosAdversario,atributosAdversario.acoes[atributosAdversario.acoes.Length-1],atributosPlayer);
+            atributosAdversario.setAuxiliar(0);
+        }
+        //A: turno comum do adversario
+        else
+        {   
+            int ataqueEscolhido = Random.Range(0, atributosAdversario.acoes.Length-1);
+            aplicaDano(atributosAdversario,atributosAdversario.acoes[ataqueEscolhido],atributosPlayer);
+        }
         StartCoroutine(passaTurno());
     }
 
@@ -272,7 +305,6 @@ public class CombateManager : MonoBehaviour
                 if ((int)alinhamentoPlayer > 0) 
                 {
                     alinhamentoPlayer --;
-                    Debug.Log ("Agressivo --");
                 }
                 break;
             case CombateAcao.tipoDano.Manipulador:
@@ -280,20 +312,16 @@ public class CombateManager : MonoBehaviour
                 if ((int)alinhamentoPlayer < 4)
                 {
                     alinhamentoPlayer ++;
-                    Debug.Log ("Manipulador ++");
                 }
                 break;
             case CombateAcao.tipoDano.Diplomatico:
                 if((int)alinhamentoPlayer < 2) 
                 {
                     alinhamentoPlayer++;
-                    Debug.Log ("Diplomatico ++");
                 }
                 else if ((int)alinhamentoPlayer > 2)
                 {
                     alinhamentoPlayer--;
-                    
-                    Debug.Log ("Diplomatico --");
                 }
                 break;
             default:

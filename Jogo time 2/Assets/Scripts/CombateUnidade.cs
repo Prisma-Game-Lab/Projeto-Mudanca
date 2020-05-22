@@ -12,6 +12,13 @@ public class CombateUnidade : ScriptableObject
         Diplomatico,
         Neutro
     }
+    public enum posturaUnidade
+    {
+        player,
+        reageAgressivo,
+        golpeEsmagador,
+        ignoraManipulador
+    }
 
     [Header("Atributos de uma unidade em combate:")]
     //A: Atributos de uma unidade:
@@ -46,6 +53,8 @@ public class CombateUnidade : ScriptableObject
     [Tooltip("Tipos aos quais a unidade é vulnerável")]
     //tipoVulneravel: determina vulnerabilidades da unidade
     public tipoUnidade[] tipoVulneravel;
+    [Tooltip("Define vantagens passivas em combate")]
+    public posturaUnidade postura;
 
     [Header("Referencias aos prefabs dos argumentos criados ao encher a barra ")]
     //arrayArgumentos: armazena os argumentos usados em combate
@@ -55,7 +64,6 @@ public class CombateUnidade : ScriptableObject
     public GameObject argumentoManipulador;
     [Tooltip("Argumento criado ao usar muito os ataques de tipo diplomatico")]
     public GameObject argumentoDiplomatico;
-    
     
 
 }

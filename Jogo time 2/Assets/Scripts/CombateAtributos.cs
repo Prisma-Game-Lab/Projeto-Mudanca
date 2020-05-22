@@ -7,10 +7,11 @@ public class CombateAtributos : MonoBehaviour
     //A: Recebe atributos de um elemento CombateUnidade
     [Tooltip("Referência de um objeto CombateUnidade contendo os atributos desejados para o início do combate")]
     public CombateUnidade atributos;
-    [Tooltip("Referências de objetos CombateAcao que descrevem as acoes possiveis no combate")]
+    [Tooltip("Referências de objetos CombateAcao que descrevem as acoes possiveis no combate. Ultima ação é reservada para a postura ATAQUE ESMAGADOR")]
     public CombateAcao[] acoes;
     private int vidaAtual;
     private int argumentoAtual;
+    private float auxiliar;
     void Start()
     {
         vidaAtual = atributos.vida;
@@ -62,5 +63,13 @@ public class CombateAtributos : MonoBehaviour
             }
         }
         return false;
+    }
+    public float getAuxiliar()
+    {
+        return auxiliar;
+    }
+    public void setAuxiliar(float novoValor)
+    {
+        auxiliar = novoValor;
     }
 }
