@@ -90,6 +90,9 @@ public class CombateManager : MonoBehaviour
     private alinhamento alinhamentoPlayer;
 
 
+    public AudioSource atacAudio;
+
+
     void Start()
     {
         
@@ -199,6 +202,8 @@ public class CombateManager : MonoBehaviour
         }
 
         danoResultante = (int) (ataque*multiplicadorGolpe-atributosAlvo.atributos.defesa);
+
+        atacAudio.Play();
 
         //A: implementação da postura Reage a Agressivo
         if(atributosAlvo.atributos.postura == CombateUnidade.posturaUnidade.reageAgressivo && golpe.tipo == CombateAcao.tipoDano.Agressivo)
