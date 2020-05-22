@@ -11,6 +11,15 @@ public class CombateManager : MonoBehaviour
         adversario
     }
 
+    enum alinhamento 
+    {
+        agressivo,
+        agrematico,
+        diplomatico,
+        diplolador,
+        manipulador
+    }
+
     [Header("Referências do Unity. Cuidado ao mexer")]
     [Tooltip("GameObjects do jogador e do adversário")]
     //A:referencias dos objetos de jogador e adversario na cena
@@ -32,6 +41,9 @@ public class CombateManager : MonoBehaviour
     //A: referencia as barras de vida e velocidade que descem
     [Tooltip("Objetos (Sliders) das barras de vida e de argumentos")]
     public Slider VidaPlayer, VidaAdversario, barraArgumentoPlayer, barraArgumentoAdversario;
+
+    [Tooltip("Objeto (Slider) que exibe o alinhamento atual")]
+    public Slider sliderAlinhamento;
 
     [Tooltip("Paineis de vitória e derrota")]
     //A: Telas Placeholder de vitoria e derrota
@@ -75,6 +87,7 @@ public class CombateManager : MonoBehaviour
     //A: Contador de quantos argumentos cada atacante tem
     private int numArgumentosPlayer, numArgumentosAdversario;
     
+    private alinhamento alinhamentoPlayer;
 
 
     void Start()
@@ -83,6 +96,8 @@ public class CombateManager : MonoBehaviour
         atributosPlayer = Player.GetComponent<CombateAtributos>();
         atributosAdversario = Adversario.GetComponent<CombateAtributos>();
 
+        //A: inicializa alinhamento no centro
+        alinhamentoPlayer = alinhamento.diplomatico;
         //A: Atualiza nomes de player e adversario na hud
         nomePlayer.text = atributosPlayer.atributos.nome;
         nomeAdversario.text = atributosAdversario.atributos.nome;
@@ -121,6 +136,7 @@ public class CombateManager : MonoBehaviour
         VidaAdversario.value = Mathf.Lerp(VidaAdversario.value,atributosAdversario.getVidaAtual(),velocidadeVida * Time.deltaTime);
         barraArgumentoPlayer.value = Mathf.Lerp(barraArgumentoPlayer.value,atributosPlayer.getArgumentos(),velocidadeVida * Time.deltaTime);
         barraArgumentoAdversario.value = Mathf.Lerp(barraArgumentoAdversario.value,atributosAdversario.getArgumentos(),velocidadeVida * Time.deltaTime);
+        sliderAlinhamento.value = (int)alinhamentoPlayer;
         //CorAtual= Adversario.transform.GetChild(0).GetComponent<SpriteRenderer>().color;
         
     }
@@ -164,11 +180,12 @@ public class CombateManager : MonoBehaviour
             //A: ajusta multiplicador conforme tipo
             if(atributosAlvo.isVulneravel((int)golpe.tipo))
             {
-                multiplicadorGolpe *= 2;
+                multiplicadorGolpe *= 2 + (float)bonusAlinhamento(golpe);
                 
                 //A: texto de feedback
                 efetividade.color = Color.green;
                 efetividade.text = "super efetivo!";
+                Debug.Log(bonusAlinhamento(golpe));
             }
             else if(atributosAlvo.isResistente((int)golpe.tipo))
             {
@@ -188,6 +205,12 @@ public class CombateManager : MonoBehaviour
         }
         atributosAlvo.danifica(danoResultante);
 
+        //A: ajusta multiplicador do alinhamento baseado em ataque escolhido, caso seja vez do player
+        if (atributosAtacante.atributos.nome == atributosPlayer.atributos.nome)
+        {
+            ajustaAlinhamento(golpe);
+        }
+        
         //A: incrementa contador de vezes que o tipo de ataque foi usado
         somaTipo( atributosAtacante, golpe);
 
@@ -239,6 +262,67 @@ public class CombateManager : MonoBehaviour
          
           
     }*/
+
+    //A: ajusta alinhamento conforme ataque escolhido
+    private void ajustaAlinhamento(CombateAcao golpe)
+    {
+        switch (golpe.tipo)
+        {
+            case CombateAcao.tipoDano.Agressivo:
+                if ((int)alinhamentoPlayer > 0) 
+                {
+                    alinhamentoPlayer --;
+                    Debug.Log ("Agressivo --");
+                }
+                break;
+            case CombateAcao.tipoDano.Manipulador:
+            
+                if ((int)alinhamentoPlayer < 4)
+                {
+                    alinhamentoPlayer ++;
+                    Debug.Log ("Manipulador ++");
+                }
+                break;
+            case CombateAcao.tipoDano.Diplomatico:
+                if((int)alinhamentoPlayer < 2) 
+                {
+                    alinhamentoPlayer++;
+                    Debug.Log ("Diplomatico ++");
+                }
+                else if ((int)alinhamentoPlayer > 2)
+                {
+                    alinhamentoPlayer--;
+                    
+                    Debug.Log ("Diplomatico --");
+                }
+                break;
+            default:
+                return;
+        }
+    }
+
+    //A: calcula dano bonus baseado no alinhamento
+    private double bonusAlinhamento(CombateAcao golpe)
+    {
+        switch (golpe.tipo)
+        {
+            case CombateAcao.tipoDano.Agressivo:
+                if ((int)alinhamentoPlayer == 0) return 1;
+                else if ((int)alinhamentoPlayer == 0) return 0.5;
+                else return 0;
+            case CombateAcao.tipoDano.Manipulador:
+                if ((int)alinhamentoPlayer == 4)return 1;
+                else if ((int)alinhamentoPlayer == 3) return 0.5;
+                else return 0;
+            case CombateAcao.tipoDano.Diplomatico:
+                if ((int)alinhamentoPlayer == 2)return 1;
+                else if ((int)alinhamentoPlayer == 1 || (int)alinhamentoPlayer == 3) return 0.5;
+                else return 0;
+            default:
+                return 0;
+        }
+
+    }
 
     //A: decide a qual contador somar +1 
     private void somaTipo(CombateAtributos atributosAtacante,CombateAcao golpe)
