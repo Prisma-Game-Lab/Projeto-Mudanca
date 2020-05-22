@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7169533083c05f54a81430fcb6b18f5d, type: 3}
-  m_Name: Ataque Fraco Teste
+  m_Name: Ataque Mani Teste
   m_EditorClassIdentifier: 
-  nome: "\"N\xE3o faria isso se fosse voc\xEA\" (duvidoso)"
+  nome: []
   dano: 100
   barraArgumento: 12
   tipo: 1
