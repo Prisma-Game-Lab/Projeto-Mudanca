@@ -11,7 +11,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> _sentences;
 
     private bool complete;
-    public GameObject dialogue;
+    public GameObject dialogueUI;
     public DialogueBlock DialogueBlock;
 
     [HideInInspector]
@@ -37,10 +37,21 @@ public class DialogueManager : MonoBehaviour
     }
     public void StartDialogue(Dialogue dialogue)
     {
+        dialogueUI.transform.GetChild(0).gameObject.SetActive(false);   
+        dialogueUI.transform.GetChild(1).gameObject.SetActive(false);    
+        dialogueUI.transform.GetChild(2).gameObject.SetActive(false);
         NameText.text = dialogue.Name;
+            
         DialogueBlock = dialogue.dialogueBlock; //ele pega o bloco de dialogo que contem todos os dialogos
         DialogueBlock.index = i;
         Boss = DialogueBlock.Boss;
+         if (NameText.text=="Alex"){
+            dialogueUI.transform.GetChild(2).gameObject.SetActive(true);  
+        }
+        else if(NameText.text!="Alex" &&Boss==true){
+             dialogueUI.transform.GetChild(1).gameObject.SetActive(true);    
+        }
+        else  dialogueUI.transform.GetChild(0).gameObject.SetActive(true);
 
         _sentences.Clear();
         foreach (string sentence in dialogue.Sentences)
@@ -108,7 +119,7 @@ public class DialogueManager : MonoBehaviour
         }
         else i++; //caso contrario ele adiciona 1 ao index para da proxima vez que se clicar, o proxmo dialogo seja exibido
 
-        dialogue.SetActive(false);
+        dialogueUI.SetActive(false);
         DialogueOn = false;
         if (Boss == true)
             sceneControl.LoadScene("Teste Combate");
