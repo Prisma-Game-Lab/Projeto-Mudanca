@@ -960,7 +960,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812639066}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 121d3d24118c549e3acab158840583ca, type: 3}
@@ -1056,7 +1056,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812639066}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c34a41f130d1143739eb3900696c53ae, type: 3}
@@ -2079,6 +2079,11 @@ PrefabInstance:
       propertyPath: audiosInScene.Array.data[1].music.Array.data[1]
       value: 
       objectReference: {fileID: 812639072}
+    - target: {fileID: 7926147208892302821, guid: 6542e7f373b7744c9bec2913ae1d5d9d,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 30e811c739eec4e05b35daa7174c133d, type: 3}
     - target: {fileID: 7926147208892302842, guid: 6542e7f373b7744c9bec2913ae1d5d9d,
         type: 3}
       propertyPath: m_LocalPosition.x
