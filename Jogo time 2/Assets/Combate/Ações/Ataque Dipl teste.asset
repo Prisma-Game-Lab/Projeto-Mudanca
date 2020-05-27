@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Ataque Dipl teste
   m_EditorClassIdentifier: 
   nome:
-  - diplo A
-  - diplo B
-  - diplo C
-  - diplo D
+  - Vai com calma.
+  - "Essa briga \xE9 desnecess\xE1ria."
+  - "Voc\xEAs podem ganhar ano que vem!"
+  - Podemos treinar juntos!
   dano: 100
   barraArgumento: 20
   tipo: 2

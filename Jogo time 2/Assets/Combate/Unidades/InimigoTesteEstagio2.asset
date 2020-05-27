@@ -21,7 +21,7 @@ MonoBehaviour:
   tipoResistente: 0000000002000000
   tipoVulneravel: 01000000
   postura: 2
-  descricao: Ele esta preparando um ataque poderoso
+  descricao: A postura dele mudou?! Ele parece estar preparando um ataque poderoso.
   argumentoAgressivo: {fileID: 0}
   argumentoManipulador: {fileID: 0}
   argumentoDiplomatico: {fileID: 0}

@@ -21,7 +21,7 @@ MonoBehaviour:
   tipoResistente: 00000000
   tipoVulneravel: 02000000
   postura: 1
-  descricao: " Ataques incisivos ser\xE3o retaliados"
+  descricao: "Ele \xE9 muito cabe\xE7a dura, ser incisiva n\xE3o vai fazer efeito."
   argumentoAgressivo: {fileID: 0}
   argumentoManipulador: {fileID: 0}
   argumentoDiplomatico: {fileID: 0}

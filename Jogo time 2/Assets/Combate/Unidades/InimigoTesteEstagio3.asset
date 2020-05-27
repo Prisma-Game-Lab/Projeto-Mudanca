@@ -21,7 +21,8 @@ MonoBehaviour:
   tipoResistente: 01000000
   tipoVulneravel: 0000000002000000
   postura: 3
-  descricao: Ataques defensivos nao tem efeito
+  descricao: "Parece que ele j\xE1 t\xE1 sem paci\xEAncia! Falar de forma defensiva
+    n\xE3o vai ajudar muito."
   argumentoAgressivo: {fileID: 0}
   argumentoManipulador: {fileID: 0}
   argumentoDiplomatico: {fileID: 0}

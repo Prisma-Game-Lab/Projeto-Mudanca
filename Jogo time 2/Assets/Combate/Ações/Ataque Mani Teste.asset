@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Ataque Mani Teste
   m_EditorClassIdentifier: 
   nome:
-  - manip A
-  - manip B
-  - manip C
-  - manip D
+  - "Voc\xEA s\xF3 quer se mostrar, n\xE9?"
+  - "Est\xE1 com medo de perder de novo?"
+  - "N\xE3o tem outro jeito de resolver isso?"
+  - "Voc\xEA s\xF3 consegue falar gritando?"
   dano: 100
   barraArgumento: 12
   tipo: 1

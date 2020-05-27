@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Ataque Agre Teste
   m_EditorClassIdentifier: 
   nome:
-  - Agre A
-  - Agre B
-  - Agre C
-  - Agre D
+  - "Voc\xEA n\xE3o cansa de ser babaca?"
+  - Desiste pagar de maioral!
+  - "N\xE3o cansou de perder?"
+  - "Voc\xEAs nunca v\xE3o ganhar assim!!"
   dano: 100
   barraArgumento: 30
   tipo: 0
