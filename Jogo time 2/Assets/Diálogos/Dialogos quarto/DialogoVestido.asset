@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8d1f939cbcee94bb7a38c8245bc37c, type: 3}
+  m_Name: DialogoVestido
+  m_EditorClassIdentifier: 
+  Descricao: 
+  Dialogue:
+  - Name: Alex
+    Sentences:
+    - Vestido idiota!
+    - "Desde que a diretora anunciou a festa de formatura desse fim de semana minha
+      m\xE3e n\xE3o fala de outra coisa..."
+    - "\"Olha Alexandra, que vestido lindo que comprei pra voc\xEA...\""
+    - "\"N\xE3o esquece de experimentar o vestido..\""
+    - ' "Minha menininha vai ficar linda nesse vestido.."'
+    - Aff... nem me perguntam se quero usar um vestido
+    - "Se eu achar alguma outra roupa mais legal, talvez minha m\xE3e mude de ideia."
+    Continuo: 0
+    dialogueBlock: {fileID: 11400000}
+  Boss: 0
+  i: 1
+  index: 0
