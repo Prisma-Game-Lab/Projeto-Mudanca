@@ -80,17 +80,14 @@ public class TooltipObserver : MonoBehaviour
     }
     void OnMouseOver()
     {
-        Debug.Log("Exibindo Tooltip");
         TooltipScript.ExibirTooltip(textoTooltip);
     }
     void OnMouseExit()
     {
-        Debug.Log("Escondendo Tooltip");
         TooltipScript.EsconderTooltip();
     }
     public void OnPointerEnter()
     {
-        Debug.Log("Exibindo Tooltip");
         TooltipScript.ExibirTooltip(textoTooltip);
     }
     public void OnPointerExit()

@@ -12,6 +12,7 @@ public class CombateAtributos : MonoBehaviour
     private int vidaAtual;
     private int argumentoAtual;
     private float auxiliar;
+    private CombateAcao tempGO;
     void Start()
     {
         vidaAtual = atributos.vida;
@@ -71,5 +72,16 @@ public class CombateAtributos : MonoBehaviour
     public void setAuxiliar(float novoValor)
     {
         auxiliar = novoValor;
+    }
+
+    public void Shuffle() 
+    {
+        for (int i = 0; i < acoes.Length; i++) 
+        {
+            int rnd = Random.Range(0, acoes.Length);
+            tempGO = acoes[rnd];
+            acoes[rnd] = acoes[i];
+            acoes[i] = tempGO;
+        }
     }
 }

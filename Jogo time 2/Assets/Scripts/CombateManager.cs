@@ -452,10 +452,12 @@ public class CombateManager : MonoBehaviour
             if(turnoAtual == turno.adversario)
             {
                 turnoAtual = turno.jogador;
+                atributosPlayer.Shuffle();
                 for(int i=0; i< nomeAcoes.Length;i++)
                 {
                 //escolhe nome aleatorio entre os descritos no array
                     nomeAcoes[i].text = atributosPlayer.acoes[i].nome[Random.Range(0,atributosPlayer.acoes[i].nome.Length)];
+                    nomeAcoes[i].GetComponent<TooltipObserver>().associaAcao(atributosPlayer.acoes[i]);
                 }
                 vezDoOutro.SetActive(false);    
             }
