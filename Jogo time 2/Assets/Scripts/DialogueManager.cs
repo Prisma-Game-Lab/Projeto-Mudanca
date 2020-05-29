@@ -10,6 +10,8 @@ public class DialogueManager : MonoBehaviour
     public bool DialogueOn = false;
     private Queue<string> _sentences;
 
+    public float TextTime=0.2f;
+
     private bool complete;
     public GameObject dialogueUI;
     public DialogueBlock DialogueBlock;
@@ -28,7 +30,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (DialogueOn == true)
         {
-            if (Input.GetKeyDown("z")&&complete==true)
+            if (Input.GetKeyDown("z")||Input.GetKeyDown("space")&&complete==true)
             {
                 complete=false;
                 DisplayNextSentence();
@@ -97,7 +99,7 @@ public class DialogueManager : MonoBehaviour
             DialogueText.text += letter;
             yield return null;
             DialogueOn = true;
-             if (Input.GetKeyDown("z"))
+             if (Input.GetKeyDown("z")||Input.GetKeyDown("space"))
             {
                  DialogueText.text = "";
                  DialogueText.text= sentence;
