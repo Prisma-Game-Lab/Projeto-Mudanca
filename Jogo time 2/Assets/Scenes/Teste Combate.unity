@@ -954,7 +954,6 @@ MonoBehaviour:
   - {fileID: 25255650}
   - {fileID: 347868531}
   - {fileID: 1067385308}
-  - {fileID: 29344908}
   efetividade: {fileID: 134063021}
   velocidadeVida: 5
   entreTurnos: 1
@@ -5838,7 +5837,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ef92e56a93b4738469535e56e829b3ee, type: 2}
   - {fileID: 11400000, guid: 9019b3ba414c62a4f9c63ce9fa2404ad, type: 2}
   - {fileID: 11400000, guid: 0346dcbb75cc59e46a237a2586210eab, type: 2}
-  - {fileID: 11400000, guid: 4c67c61973868f246ac00acc01fc3bfc, type: 2}
 --- !u!4 &1741863316
 Transform:
   m_ObjectHideFlags: 0
