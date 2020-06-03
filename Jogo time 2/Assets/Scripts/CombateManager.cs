@@ -141,10 +141,10 @@ public class CombateManager : MonoBehaviour
         atributosPlayer.setFase(gerenteFase.getFase());
         atributosAdversario.setFase(gerenteFase.getFase());
 
-        /*for(int i=0;i<nomeAcoes.Length;i++)
+        for(int i=0;i<nomeAcoes.Length;i++)
         {
             nomeAcoes[i].GetComponent<TooltipObserver>().associaAcao(atributosPlayer.getAcao(i));
-        }*/
+        }
         vidaPlayerTexto.text= ""+ (int)(atributosPlayer.getVidaAtual());
         vidaAdversarioTexto.text= ""+(int)(atributosAdversario.getVidaAtual());
         VidaPlayer.value = Mathf.Lerp(VidaPlayer.value,atributosPlayer.getVidaAtual(),velocidadeVida * Time.deltaTime);

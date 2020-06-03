@@ -5831,10 +5831,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atributos: {fileID: 11400000, guid: f80122f07ff0d1b4a800af74da9b0c7c, type: 2}
-  atributosDaFase:
-  - {fileID: 11400000, guid: f80122f07ff0d1b4a800af74da9b0c7c, type: 2}
-  - {fileID: 11400000, guid: f80122f07ff0d1b4a800af74da9b0c7c, type: 2}
-  - {fileID: 11400000, guid: f80122f07ff0d1b4a800af74da9b0c7c, type: 2}
   listaAcoesDaFase:
   - {fileID: 11400000, guid: f9a27bdbdfd10844891a0f50f5f0456c, type: 2}
   - {fileID: 11400000, guid: f9a27bdbdfd10844891a0f50f5f0456c, type: 2}
@@ -6718,10 +6714,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atributos: {fileID: 11400000, guid: bda70af52db38be4896a9cdf7ec7fb57, type: 2}
-  atributosDaFase:
-  - {fileID: 11400000, guid: bda70af52db38be4896a9cdf7ec7fb57, type: 2}
-  - {fileID: 11400000, guid: 906bfeeaa019f8b418dbfe84fe58c27b, type: 2}
-  - {fileID: 11400000, guid: e3cc27ec54b3fab428325019728516ee, type: 2}
   listaAcoesDaFase:
   - {fileID: 11400000, guid: 814d404760670664793e39c3b1ed5c22, type: 2}
   - {fileID: 11400000, guid: 84a7230d19fcc6d47924d045a4eae3c5, type: 2}
@@ -6760,9 +6752,6 @@ MonoBehaviour:
     Vida: 200
   - Atributo: {fileID: 11400000, guid: e3cc27ec54b3fab428325019728516ee, type: 2}
     Vida: 100
-  AcoesDaFase:
-  - {fileID: 11400000, guid: 84a7230d19fcc6d47924d045a4eae3c5, type: 2}
-  - {fileID: 11400000, guid: f1cc18ed118b18e4884a750a97e77a5d, type: 2}
 --- !u!114 &2064235626
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -22,6 +22,8 @@ public class TooltipObserver : MonoBehaviour
 
     //A: uma acao estara associada ao objeto caso ele seja um botao
     private CombateAcao acaoAssociada;
+
+    private bool exibindo = false;
     void Update()
     {
         switch(classificacao)
@@ -54,11 +56,10 @@ public class TooltipObserver : MonoBehaviour
                     default:
                         textoTooltip = "Bonus de dano efetivo:\nIncisivo: x2\nDiplomatico: x2\nDefensivo: x2";
                         break;
-
-
                 }
                 break;
             case tipoTooltip.acao:
+                Debug.Log((int)acaoAssociada.tipo);
                 switch(acaoAssociada.tipo)
                 {
                     case CombateAcao.tipoDano.Agressivo:
@@ -78,24 +79,30 @@ public class TooltipObserver : MonoBehaviour
             default:
                 textoTooltip = "";
                 break;
-
-
+        }
+        if(exibindo)
+        {
+            TooltipScript.ExibirTooltip(textoTooltip);
         }
     }
-    void OnMouseOver()
+    /*void OnMouseOver()
     {
+        exibindo = true;
         TooltipScript.ExibirTooltip(textoTooltip);
     }
     void OnMouseExit()
     {
+        exibindo = false;
         TooltipScript.EsconderTooltip();
-    }
+    }*/
     public void OnPointerEnter()
     {
+        exibindo = true;
         TooltipScript.ExibirTooltip(textoTooltip);
     }
     public void OnPointerExit()
     {
+        exibindo = false;
         TooltipScript.EsconderTooltip();
     }
     public void associaAcao(CombateAcao novaAssociada)
