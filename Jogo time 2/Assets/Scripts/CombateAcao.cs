@@ -29,4 +29,13 @@ public class CombateAcao : ScriptableObject
     [Tooltip("Tipo do dano causado.")]
     //tipo: para definir se alvo tem resistencias ou desvantagens
     public tipoDano tipo;
+
+    public bool isEqual(CombateAcao comparado)
+    {
+        if (this.nome == comparado.nome && this.dano == comparado.dano && this.barraArgumento == comparado.barraArgumento && this.tipo == comparado.tipo)
+        {
+            return true;
+        }
+        else return false;
+    }
 }

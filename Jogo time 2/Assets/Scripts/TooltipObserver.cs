@@ -8,7 +8,8 @@ public enum tipoTooltip
     player,
     adversario,
     alinhamento,
-    acao
+    acao,
+    nenhum
 }
 public class TooltipObserver : MonoBehaviour
 {
@@ -57,7 +58,7 @@ public class TooltipObserver : MonoBehaviour
 
                 }
                 break;
-            default:
+            case tipoTooltip.acao:
                 switch(acaoAssociada.tipo)
                 {
                     case CombateAcao.tipoDano.Agressivo:
@@ -73,6 +74,9 @@ public class TooltipObserver : MonoBehaviour
                         textoTooltip = string.Format("Tipo: Neutro\nDano: {0}%\nArgumentação: {1}",acaoAssociada.dano,acaoAssociada.barraArgumento);
                         break;
                 }
+                break;
+            default:
+                textoTooltip = "";
                 break;
 
 

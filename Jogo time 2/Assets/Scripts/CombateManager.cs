@@ -75,6 +75,9 @@ public class CombateManager : MonoBehaviour
     [Tooltip("Listas de argumentos do adviersario")]
     public CombateArgumento[] argumentosAdversario;
 
+    //A: Armazena gerenciador de fase de batalha
+    private ModificadorAtributos gerenteFase;
+
     //A: dono da vez
     private turno turnoAtual;
 
@@ -98,6 +101,7 @@ public class CombateManager : MonoBehaviour
         
         atributosPlayer = Player.GetComponent<CombateAtributos>();
         atributosAdversario = Adversario.GetComponent<CombateAtributos>();
+        gerenteFase = Adversario.GetComponent<ModificadorAtributos>();
 
         //A: inicializa alinhamento no centro
         alinhamentoPlayer = alinhamento.diplomatico;
@@ -110,8 +114,8 @@ public class CombateManager : MonoBehaviour
         for(int i=0; i< nomeAcoes.Length;i++)
         {
             //escolhe nome aleatorio entre os descritos no array
-            nomeAcoes[i].text = atributosPlayer.acoes[i].nome[Random.Range(0,atributosPlayer.acoes[i].nome.Length)];
-            nomeAcoes[i].GetComponent<TooltipObserver>().associaAcao(atributosPlayer.acoes[i]);
+            nomeAcoes[i].text = atributosPlayer.getAcao(i).nome[Random.Range(0,atributosPlayer.getAcao(i).nome.Length)];
+            nomeAcoes[i].GetComponent<TooltipObserver>().associaAcao(atributosPlayer.getAcao(i));
         }
         VidaPlayer.maxValue = atributosPlayer.atributos.vida;
         VidaAdversario.maxValue = atributosAdversario.atributos.vida;
@@ -134,6 +138,13 @@ public class CombateManager : MonoBehaviour
 
     void Update()
     {
+        atributosPlayer.setFase(gerenteFase.getFase());
+        atributosAdversario.setFase(gerenteFase.getFase());
+
+        /*for(int i=0;i<nomeAcoes.Length;i++)
+        {
+            nomeAcoes[i].GetComponent<TooltipObserver>().associaAcao(atributosPlayer.getAcao(i));
+        }*/
         vidaPlayerTexto.text= ""+ (int)(atributosPlayer.getVidaAtual());
         vidaAdversarioTexto.text= ""+(int)(atributosAdversario.getVidaAtual());
         VidaPlayer.value = Mathf.Lerp(VidaPlayer.value,atributosPlayer.getVidaAtual(),velocidadeVida * Time.deltaTime);
@@ -147,21 +158,21 @@ public class CombateManager : MonoBehaviour
 
     public void Acao1()
     {
-        aplicaDano(atributosPlayer,atributosPlayer.acoes[0],atributosAdversario);
+        aplicaDano(atributosPlayer,atributosPlayer.getAcao(0),atributosAdversario);
         vezDoOutro.SetActive(true);
         StartCoroutine (passaTurno());
     }
 
     public void Acao2()
     {
-        aplicaDano(atributosPlayer,atributosPlayer.acoes[1],atributosAdversario);
+        aplicaDano(atributosPlayer,atributosPlayer.getAcao(1),atributosAdversario);
         vezDoOutro.SetActive(true);
         StartCoroutine (passaTurno());
     }
 
     public void Acao3()
     {
-        aplicaDano(atributosPlayer,atributosPlayer.acoes[2],atributosAdversario);
+        aplicaDano(atributosPlayer,atributosPlayer.getAcao(2),atributosAdversario);
         vezDoOutro.SetActive(true);
         StartCoroutine (passaTurno());
     }
@@ -189,7 +200,6 @@ public class CombateManager : MonoBehaviour
                 //A: texto de feedback
                 efetividade.color = Color.green;
                 efetividade.text = "super efetivo!";
-                Debug.Log(bonusAlinhamento(golpe));
             }
             else if(atributosAlvo.isResistente((int)golpe.tipo))
             {
@@ -208,7 +218,7 @@ public class CombateManager : MonoBehaviour
         //A: implementação da postura Reage a Agressivo
         if(atributosAlvo.atributos.postura == CombateUnidade.posturaUnidade.reageAgressivo && golpe.tipo == CombateAcao.tipoDano.Agressivo)
         {
-            aplicaDano(atributosAlvo, atributosAlvo.acoes[0], atributosAtacante);
+            aplicaDano(atributosAlvo, atributosAlvo.getAcao(0), atributosAtacante);
         }
 
         //A: Garante dano minimo = 1
@@ -240,12 +250,6 @@ public class CombateManager : MonoBehaviour
         if ((atributosAtacante.atributos.nome == atributosPlayer.atributos.nome && numArgumentosPlayer < argumentosPlayer.Length) || (atributosAtacante.atributos.nome == atributosAdversario.atributos.nome && numArgumentosAdversario < argumentosAdversario.Length ))
         {
             atributosAtacante.setArgumentos(atributosAtacante.getArgumentos()+golpe.barraArgumento);
-            if(atributosAtacante.getArgumentos()>= atributosAtacante.atributos.barraArgumento)
-            {
-                atributosAtacante.setArgumentos(0);
-                Debug.Log("Criou Argumento");
-                //A: codigo para criar argumento vai aqui;
-            }
         }
     }
 
@@ -261,14 +265,14 @@ public class CombateManager : MonoBehaviour
         }
         else if (atributosAdversario.atributos.postura == CombateUnidade.posturaUnidade.golpeEsmagador && atributosAdversario.getAuxiliar() >= 2)
         {
-            aplicaDano(atributosAdversario,atributosAdversario.acoes[atributosAdversario.acoes.Length-1],atributosPlayer);
+            aplicaDano(atributosAdversario,atributosAdversario.getAcao(0),atributosPlayer);
             atributosAdversario.setAuxiliar(0);
         }
         //A: turno comum do adversario
         else
         {   
-            int ataqueEscolhido = Random.Range(0, atributosAdversario.acoes.Length-1);
-            aplicaDano(atributosAdversario,atributosAdversario.acoes[ataqueEscolhido],atributosPlayer);
+            int ataqueEscolhido = Random.Range(0, atributosAdversario.getLengthAcoes());
+            aplicaDano(atributosAdversario,atributosAdversario.getAcao(ataqueEscolhido),atributosPlayer);
         }
         StartCoroutine(passaTurno());
     }
@@ -436,7 +440,25 @@ public class CombateManager : MonoBehaviour
     //A: gerencia variaveis relacionadas a passagem de turno
     IEnumerator passaTurno()
     {
-        yield return new WaitForSeconds(entreTurnos);
+        yield return new WaitForSeconds(entreTurnos/2);
+
+        //A: gerencia criacao de argumentos de ambos (pois existem posturas com retorno de dano, etc)
+        if(atributosAdversario.getArgumentos()>= atributosAdversario.atributos.barraArgumento)
+        {
+            atributosAdversario.setArgumentos(0);
+            //Debug.Log("Criou Argumento");
+            //A: codigo para criar argumento para adversario vai aqui;
+        }
+        if(atributosPlayer.getArgumentos()>= atributosPlayer.atributos.barraArgumento)
+        {
+            atributosPlayer.setArgumentos(0);
+            //Debug.Log("Criou Argumento");
+            //A: codigo para criar argumento para jogador vai aqui;
+        }
+
+        yield return new WaitForSeconds(entreTurnos/2);
+               
+        //A: Verifica se combate acabou
         efetividade.text = "";
         if (atributosPlayer.getVidaAtual() == 0)
         {
@@ -446,7 +468,7 @@ public class CombateManager : MonoBehaviour
         {
             endBattle(false);
         }
-
+        //A: Se nao acabou, passa vez
         else
         {
             if(turnoAtual == turno.adversario)
@@ -456,8 +478,8 @@ public class CombateManager : MonoBehaviour
                 for(int i=0; i< nomeAcoes.Length;i++)
                 {
                 //escolhe nome aleatorio entre os descritos no array
-                    nomeAcoes[i].text = atributosPlayer.acoes[i].nome[Random.Range(0,atributosPlayer.acoes[i].nome.Length)];
-                    nomeAcoes[i].GetComponent<TooltipObserver>().associaAcao(atributosPlayer.acoes[i]);
+                    nomeAcoes[i].text = atributosPlayer.getAcao(i).nome[Random.Range(0,atributosPlayer.getAcao(i).nome.Length)];
+                    nomeAcoes[i].GetComponent<TooltipObserver>().associaAcao(atributosPlayer.getAcao(i));
                 }
                 vezDoOutro.SetActive(false);    
             }

@@ -957,10 +957,8 @@ MonoBehaviour:
   efetividade: {fileID: 134063021}
   velocidadeVida: 5
   entreTurnos: 1
-  argumentosPlayer:
-  - {fileID: 0}
-  argumentosAdversario:
-  - {fileID: 0}
+  argumentosPlayer: []
+  argumentosAdversario: []
   atacAudio: {fileID: 1644273573}
 --- !u!4 &198305778
 Transform:
@@ -3107,6 +3105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 777748481}
+  - component: {fileID: 777748482}
   m_Layer: 8
   m_Name: Tooltip
   m_TagString: Untagged
@@ -3135,6 +3134,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &777748482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777748480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61eaa10a1a59f7e438edd16fd8e828b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textPaddingSize: 5
+  tooltipOffset: {x: 0, y: 0}
+  uiCamera: {fileID: 1679315055}
 --- !u!1 &779894023
 GameObject:
   m_ObjectHideFlags: 0
@@ -3928,7 +3942,6 @@ GameObject:
   - component: {fileID: 1104738443}
   - component: {fileID: 1104738445}
   - component: {fileID: 1104738444}
-  - component: {fileID: 1104738446}
   m_Layer: 8
   m_Name: TextoTooltip
   m_TagString: Untagged
@@ -3995,21 +4008,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104738442}
   m_CullTransparentMesh: 0
---- !u!114 &1104738446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104738442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61eaa10a1a59f7e438edd16fd8e828b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textPaddingSize: 5
-  tooltipOffset: {x: 0, y: 0}
-  uiCamera: {fileID: 1679315055}
 --- !u!1 &1143257510
 GameObject:
   m_ObjectHideFlags: 0
@@ -5833,10 +5831,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atributos: {fileID: 11400000, guid: f80122f07ff0d1b4a800af74da9b0c7c, type: 2}
-  acoes:
-  - {fileID: 11400000, guid: ef92e56a93b4738469535e56e829b3ee, type: 2}
-  - {fileID: 11400000, guid: 9019b3ba414c62a4f9c63ce9fa2404ad, type: 2}
-  - {fileID: 11400000, guid: 0346dcbb75cc59e46a237a2586210eab, type: 2}
+  atributosDaFase:
+  - {fileID: 11400000, guid: f80122f07ff0d1b4a800af74da9b0c7c, type: 2}
+  - {fileID: 11400000, guid: f80122f07ff0d1b4a800af74da9b0c7c, type: 2}
+  - {fileID: 11400000, guid: f80122f07ff0d1b4a800af74da9b0c7c, type: 2}
+  listaAcoesDaFase:
+  - {fileID: 11400000, guid: f9a27bdbdfd10844891a0f50f5f0456c, type: 2}
+  - {fileID: 11400000, guid: f9a27bdbdfd10844891a0f50f5f0456c, type: 2}
+  - {fileID: 11400000, guid: f9a27bdbdfd10844891a0f50f5f0456c, type: 2}
 --- !u!4 &1741863316
 Transform:
   m_ObjectHideFlags: 0
@@ -6716,10 +6718,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atributos: {fileID: 11400000, guid: bda70af52db38be4896a9cdf7ec7fb57, type: 2}
-  acoes:
-  - {fileID: 11400000, guid: 2b12ce3b22f91ab4aba7cd89dab2d914, type: 2}
-  - {fileID: 11400000, guid: 67c2878d6ea51bc4a891dc8aefabfcf0, type: 2}
-  - {fileID: 11400000, guid: f92772605b1f8ed4e94714d0d4b41777, type: 2}
+  atributosDaFase:
+  - {fileID: 11400000, guid: bda70af52db38be4896a9cdf7ec7fb57, type: 2}
+  - {fileID: 11400000, guid: 906bfeeaa019f8b418dbfe84fe58c27b, type: 2}
+  - {fileID: 11400000, guid: e3cc27ec54b3fab428325019728516ee, type: 2}
+  listaAcoesDaFase:
+  - {fileID: 11400000, guid: 814d404760670664793e39c3b1ed5c22, type: 2}
+  - {fileID: 11400000, guid: 84a7230d19fcc6d47924d045a4eae3c5, type: 2}
+  - {fileID: 11400000, guid: f1cc18ed118b18e4884a750a97e77a5d, type: 2}
 --- !u!4 &2064235624
 Transform:
   m_ObjectHideFlags: 0
@@ -6754,6 +6760,9 @@ MonoBehaviour:
     Vida: 200
   - Atributo: {fileID: 11400000, guid: e3cc27ec54b3fab428325019728516ee, type: 2}
     Vida: 100
+  AcoesDaFase:
+  - {fileID: 11400000, guid: 84a7230d19fcc6d47924d045a4eae3c5, type: 2}
+  - {fileID: 11400000, guid: f1cc18ed118b18e4884a750a97e77a5d, type: 2}
 --- !u!114 &2064235626
 MonoBehaviour:
   m_ObjectHideFlags: 0

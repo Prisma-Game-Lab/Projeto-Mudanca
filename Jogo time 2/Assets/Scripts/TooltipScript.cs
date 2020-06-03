@@ -26,7 +26,7 @@ public class TooltipScript : MonoBehaviour
 
         //A: encontra componentes (texto e fundo)
         //backgroundRectTransform = transform.Find("Fundo").GetComponent<RectTransform>();
-        tooltipText = /*transform.Find("TextoTooltip").GetComponent<Text>()*/ this.GetComponent<Text>();
+        tooltipText = transform.Find("TextoTooltip").GetComponent<Text>();// this.GetComponent<Text>(); //A: alternar qual metade da linha esta comentada para mudar entre mmostrar ou esconder background quando sem texto
 
         ShowTooltip("");
         gameObject.SetActive(false);
