@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
- 
+
 public class DialogueManager : MonoBehaviour
 {
     public Text NameText;
@@ -35,7 +35,8 @@ public class DialogueManager : MonoBehaviour
     void Update()
     {
         if (DialogueOn == true)
-        {    if ((Input.GetKeyDown("z") || Input.GetKeyDown("space")) && complete == true)
+        {
+            if ((Input.GetKeyDown("z") || Input.GetKeyDown("space")) && complete == true)
             {
                 complete = false;
                 DisplayNextSentence();
@@ -48,7 +49,7 @@ public class DialogueManager : MonoBehaviour
         dialogueUI.transform.GetChild(1).gameObject.SetActive(false);
         dialogueUI.transform.GetChild(2).gameObject.SetActive(false);
         NameText.text = dialogue.Name;
-    
+
 
         DialogueBlock = dialogue.dialogueBlock; //ele pega o bloco de dialogo que contem todos os dialogos
         DialogueBlock.index = i;
@@ -66,7 +67,7 @@ public class DialogueManager : MonoBehaviour
             dialogueUI.transform.GetChild(0).gameObject.SetActive(true);
         }
         animator.SetBool("IsOpen", true);
-        
+
 
         _sentences.Clear();
         foreach (string sentence in dialogue.Sentences)
@@ -109,8 +110,8 @@ public class DialogueManager : MonoBehaviour
         DialogueText.text = "";
         bool mudavelocidade = false;
         float pivot = TextSpeed;
-         DialogueOn = true;
-         
+        DialogueOn = true;
+
         foreach (char letter in sentence.ToCharArray())
         {
             if (mudavelocidade == true)
@@ -120,15 +121,15 @@ public class DialogueManager : MonoBehaviour
                     case '+':
                         {
                             TextSpeed = FastTextSpeed;
-                             
+
                             break;
                         }
                     case '-':
                         {
-                            TextSpeed = SlowTextSpeed; 
-                            
+                            TextSpeed = SlowTextSpeed;
+
                             Debug.Log(sentence);
-                             
+
                             break;
                         }
                     default:
@@ -138,41 +139,46 @@ public class DialogueManager : MonoBehaviour
                         }
                 }
             }
-           
-                    if(letter=='+'||letter=='-'){
-                         if (!mudavelocidade){
-                             mudavelocidade=true;}
-                             else TextSpeed=pivot;
-                    }
-                
+
+            if (letter == '+' || letter == '-')
+            {
+                if (!mudavelocidade)
+                {
+                    mudavelocidade = true;
+                }
+                else TextSpeed = pivot;
+            }
+
             else
-             DialogueText.text += letter;
-             
-             
-             
+                DialogueText.text += letter;
+
+
+
             yield return new WaitForSeconds(TextSpeed / 100);
             if (Input.GetKeyDown("z") || Input.GetKeyDown("space"))
             {
-                string temp="";
+                string temp = "";
                 DialogueText.text = "";
-                if (sentence.Contains("+")||sentence.Contains("-")){
-                temp=sentence;
-                temp= temp.Replace("+","");
-                temp= temp.Replace("-","");
-                DialogueText.text = temp;
+                if (sentence.Contains("+") || sentence.Contains("-"))
+                {
+                    temp = sentence;
+                    temp = temp.Replace("+", "");
+                    temp = temp.Replace("-", "");
+                    DialogueText.text = temp;
                 }
-                else {
-                 
-                DialogueText.text = sentence;
+                else
+                {
+
+                    DialogueText.text = sentence;
                 }
                 complete = true;
                 TextSpeed = pivot;
                 break;
-                
+
             }
         }
         complete = true;
-        
+
     }
     public void DisplayDialogue(DialogueBlock dialogueBlock)
     {
