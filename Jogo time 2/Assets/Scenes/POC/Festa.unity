@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1489,10 +1489,14 @@ MonoBehaviour:
   NameText: {fileID: 1492061880}
   DialogueText: {fileID: 1989226154}
   DialogueOn: 0
+  TextTime: 3
+  FastTextTime: 1
+  SlowTextTime: 9
   dialogueUI: {fileID: 1902668371}
   DialogueBlock: {fileID: 0}
   i: 0
   sceneControl: {fileID: 195707479}
+  animator: {fileID: 1902668373}
   Boss: 0
 --- !u!4 &606672456
 Transform:
@@ -2172,7 +2176,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741206974}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.14402485, y: -0.10447931, z: 0}
+  m_LocalPosition: {x: -0.13975239, y: -0.10447931, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 879516045}
@@ -4014,13 +4018,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1902668372}
+  - component: {fileID: 1902668373}
   m_Layer: 5
   m_Name: Dialogue1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1902668372
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4046,6 +4051,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1902668373
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902668371}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2bd9862c65adca34ca4097347099f66c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1946716449
 GameObject:
   m_ObjectHideFlags: 0
@@ -4345,7 +4369,7 @@ PrefabInstance:
     - target: {fileID: 371259662853984902, guid: dcf557f38ddcbb94eb6bb3d26b61abec,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 371259662853984902, guid: dcf557f38ddcbb94eb6bb3d26b61abec,
         type: 3}

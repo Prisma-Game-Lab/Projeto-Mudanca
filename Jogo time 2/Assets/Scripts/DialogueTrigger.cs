@@ -28,7 +28,7 @@ public class DialogueTrigger : MonoBehaviour
     
     public void TriggerDialogue()
     {
-        dialogueCanvas.gameObject.SetActive(true);
+        //dialogueCanvas.gameObject.SetActive(true);
         FindObjectOfType<DialogueManager>().DisplayDialogue(Dialogue);
     }
 
