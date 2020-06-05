@@ -114,39 +114,31 @@ public class DialogueManager : MonoBehaviour
 
         foreach (char letter in sentence.ToCharArray())
         {
-            if (mudavelocidade == true)
-            {
-                switch (letter)
-                {
-                    case '+':
-                        {
-                            TextSpeed = FastTextSpeed;
-
-                            break;
-                        }
-                    case '-':
-                        {
-                            TextSpeed = SlowTextSpeed;
-
-                            Debug.Log(sentence);
-
-                            break;
-                        }
-                    default:
-                        {
-                            mudavelocidade = false;
-                            break;
-                        }
-                }
-            }
-
-            if (letter == '+' || letter == '-')
+            if (letter == '+')
             {
                 if (!mudavelocidade)
                 {
+                    TextSpeed = FastTextSpeed;
                     mudavelocidade = true;
                 }
-                else TextSpeed = pivot;
+                 
+                else {
+                mudavelocidade=false;
+                TextSpeed = pivot;
+            }
+            }
+             if (letter == '-')
+            {
+                if (!mudavelocidade)
+                {
+                    TextSpeed = SlowTextSpeed;
+                    mudavelocidade = true;
+                }
+                 
+                else {
+                mudavelocidade=false;
+                TextSpeed = pivot;
+            }
             }
 
             else
