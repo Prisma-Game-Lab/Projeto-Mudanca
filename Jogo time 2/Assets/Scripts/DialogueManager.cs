@@ -121,31 +121,27 @@ public class DialogueManager : MonoBehaviour
                     TextSpeed = FastTextSpeed;
                     mudavelocidade = true;
                 }
-                 
-                else {
-                mudavelocidade=false;
-                TextSpeed = pivot;
+                else
+                {
+                    mudavelocidade = false;
+                    TextSpeed = pivot;
+                }
             }
-            }
-             if (letter == '-')
+            if (letter == '-')
             {
                 if (!mudavelocidade)
                 {
                     TextSpeed = SlowTextSpeed;
                     mudavelocidade = true;
                 }
-                 
-                else {
-                mudavelocidade=false;
-                TextSpeed = pivot;
+                else
+                {
+                    mudavelocidade = false;
+                    TextSpeed = pivot;
+                }
             }
-            }
-
             else
                 DialogueText.text += letter;
-
-
-
             yield return new WaitForSeconds(TextSpeed / 100);
             if (Input.GetKeyDown("z") || Input.GetKeyDown("space"))
             {
