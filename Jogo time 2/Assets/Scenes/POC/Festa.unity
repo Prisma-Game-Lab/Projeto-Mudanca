@@ -1489,9 +1489,9 @@ MonoBehaviour:
   NameText: {fileID: 1492061880}
   DialogueText: {fileID: 1989226154}
   DialogueOn: 0
-  TextTime: 3
-  FastTextTime: 1
-  SlowTextTime: 9
+  TextSpeed: 3
+  FastTextSpeed: 1
+  SlowTextSpeed: 10
   dialogueUI: {fileID: 1902668371}
   DialogueBlock: {fileID: 0}
   i: 0

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+ 
 public class DialogueManager : MonoBehaviour
 {
     public Text NameText;
@@ -10,11 +10,11 @@ public class DialogueManager : MonoBehaviour
     public bool DialogueOn = false;
     private Queue<string> _sentences;
 
-    public float TextTime;
+    public float TextSpeed;
 
-    public float FastTextTime;
+    public float FastTextSpeed;
 
-    public float SlowTextTime;
+    public float SlowTextSpeed;
 
     private bool complete;
     public GameObject dialogueUI;
@@ -108,22 +108,27 @@ public class DialogueManager : MonoBehaviour
     { //animação das letras aparecendo
         DialogueText.text = "";
         bool mudavelocidade = false;
-        float pivot = TextTime;
+        float pivot = TextSpeed;
          DialogueOn = true;
+         
         foreach (char letter in sentence.ToCharArray())
         {
             if (mudavelocidade == true)
             {
                 switch (letter)
                 {
-                    case 'f':
+                    case '+':
                         {
-                            TextTime = FastTextTime; //f de fast
+                            TextSpeed = FastTextSpeed;
+                             
                             break;
                         }
-                    case 's':
+                    case '-':
                         {
-                            TextTime = SlowTextTime; //s de slow... sou criativa ne 
+                            TextSpeed = SlowTextSpeed; 
+                            
+                            Debug.Log(sentence);
+                             
                             break;
                         }
                     default:
@@ -133,34 +138,41 @@ public class DialogueManager : MonoBehaviour
                         }
                 }
             }
-            switch (letter)
-            {
-                case '<':
-                    mudavelocidade = true; //verifica se querem mudar avelocidade do trecho
-                    break;
-                case '>':
-                    TextTime = pivot; //finaliza a frase dentro da velocidade especifica e volta ao normal
-                    break;
-                default:
-                    if (!mudavelocidade)
-                    {
-                        DialogueText.text += letter;
+           
+                    if(letter=='+'||letter=='-'){
+                         if (!mudavelocidade){
+                             mudavelocidade=true;}
+                             else TextSpeed=pivot;
                     }
-                     
-                    break;
-            }
+                
+            else
+             DialogueText.text += letter;
              
-            yield return new WaitForSeconds(TextTime / 100);
+             
+             
+            yield return new WaitForSeconds(TextSpeed / 100);
             if (Input.GetKeyDown("z") || Input.GetKeyDown("space"))
             {
+                string temp="";
                 DialogueText.text = "";
+                if (sentence.Contains("+")||sentence.Contains("-")){
+                temp=sentence;
+                temp= temp.Replace("+","");
+                temp= temp.Replace("-","");
+                DialogueText.text = temp;
+                }
+                else {
+                 
                 DialogueText.text = sentence;
+                }
                 complete = true;
-                TextTime = pivot;
+                TextSpeed = pivot;
                 break;
+                
             }
         }
         complete = true;
+        
     }
     public void DisplayDialogue(DialogueBlock dialogueBlock)
     {
