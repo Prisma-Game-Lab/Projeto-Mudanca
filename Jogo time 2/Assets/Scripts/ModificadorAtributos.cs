@@ -13,12 +13,10 @@ public class ModificadorAtributos : MonoBehaviour
 
     private int VidaAtual;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
         AtributoAtual = gameObject.GetComponent<CombateAtributos>();
         i = 0;
-
     }
 
     // Update is called once per frame
@@ -28,19 +26,20 @@ public class ModificadorAtributos : MonoBehaviour
 
         if (i<NovosAtributos.Length && VidaAtual <= NovosAtributos[i].Vida)
         {
-             
             ModificaAtributo(NovosAtributos[i].Atributo);
             NovosAtributos[i].Atributo.vida = VidaAtual;
             i++;
         } 
     }
-        void ModificaAtributo(CombateUnidade NovoAtributo)
-        {
-
-            AtributoAtual.atributos = NovoAtributo;
-            gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color= Color.white;
-
-
-
-        }
+    void ModificaAtributo(CombateUnidade NovoAtributo)
+    {
+        AtributoAtual.atributos = NovoAtributo;
+        //gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color= Color.white;
     }
+
+    public int getFase()
+    {
+        return i;
+    }
+
+}

@@ -10,7 +10,11 @@ public class DialogueManager : MonoBehaviour
     public bool DialogueOn = false;
     private Queue<string> _sentences;
 
-    public float TextTime=0.2f;
+    public float TextSpeed;
+
+    public float FastTextSpeed;
+
+    public float SlowTextSpeed;
 
     private bool complete;
     public GameObject dialogueUI;
@@ -19,6 +23,8 @@ public class DialogueManager : MonoBehaviour
     [HideInInspector]
     public int i;
     public SceneControl sceneControl;
+
+    public Animator animator;
     public bool Boss;
     // Start is called before the first frame update
     void Start()
@@ -30,30 +36,38 @@ public class DialogueManager : MonoBehaviour
     {
         if (DialogueOn == true)
         {
-            if (Input.GetKeyDown("z")||Input.GetKeyDown("space")&&complete==true)
+            if ((Input.GetKeyDown("z") || Input.GetKeyDown("space")) && complete == true)
             {
-                complete=false;
+                complete = false;
                 DisplayNextSentence();
             }
         }
     }
     public void StartDialogue(Dialogue dialogue)
     {
-        dialogueUI.transform.GetChild(0).gameObject.SetActive(false);   
-        dialogueUI.transform.GetChild(1).gameObject.SetActive(false);    
+        dialogueUI.transform.GetChild(0).gameObject.SetActive(false);
+        dialogueUI.transform.GetChild(1).gameObject.SetActive(false);
         dialogueUI.transform.GetChild(2).gameObject.SetActive(false);
         NameText.text = dialogue.Name;
-            
+
+
         DialogueBlock = dialogue.dialogueBlock; //ele pega o bloco de dialogo que contem todos os dialogos
         DialogueBlock.index = i;
         Boss = DialogueBlock.Boss;
-         if (NameText.text=="Alex"){
-            dialogueUI.transform.GetChild(2).gameObject.SetActive(true);  
+        if (NameText.text == "Alex")
+        {
+            dialogueUI.transform.GetChild(2).gameObject.SetActive(true);
         }
-        else if(NameText.text!="Alex" &&Boss==true){
-             dialogueUI.transform.GetChild(1).gameObject.SetActive(true);    
+        else if (NameText.text != "Alex" && Boss == true)
+        {
+            dialogueUI.transform.GetChild(1).gameObject.SetActive(true);
         }
-        else  dialogueUI.transform.GetChild(0).gameObject.SetActive(true);
+        else
+        {
+            dialogueUI.transform.GetChild(0).gameObject.SetActive(true);
+        }
+        animator.SetBool("IsOpen", true);
+
 
         _sentences.Clear();
         foreach (string sentence in dialogue.Sentences)
@@ -69,7 +83,7 @@ public class DialogueManager : MonoBehaviour
         if (_sentences.Count == 0)
         {
             if (i >= DialogueBlock.Dialogue.Length - 1)
-            { 
+            {
                 EndDialogue(); //veriifca se há mais algum dialogo disponivel, se esse for o ultimo ele encerra o dialogo
             }
             else
@@ -94,20 +108,65 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence(string sentence)
     { //animação das letras aparecendo
         DialogueText.text = "";
+        bool mudavelocidade = false;
+        float pivot = TextSpeed;
+        DialogueOn = true;
+
         foreach (char letter in sentence.ToCharArray())
         {
-            DialogueText.text += letter;
-            yield return null;
-            DialogueOn = true;
-             if (Input.GetKeyDown("z")||Input.GetKeyDown("space"))
+            if (letter == '+')
             {
-                 DialogueText.text = "";
-                 DialogueText.text= sentence;
-                 complete=true;
+                if (!mudavelocidade)
+                {
+                    TextSpeed = FastTextSpeed;
+                    mudavelocidade = true;
+                }
+                else
+                {
+                    mudavelocidade = false;
+                    TextSpeed = pivot;
+                }
+            }
+            if (letter == '-')
+            {
+                if (!mudavelocidade)
+                {
+                    TextSpeed = SlowTextSpeed;
+                    mudavelocidade = true;
+                }
+                else
+                {
+                    mudavelocidade = false;
+                    TextSpeed = pivot;
+                }
+            }
+            else
+                DialogueText.text += letter;
+            yield return new WaitForSeconds(TextSpeed / 100);
+            if (Input.GetKeyDown("z") || Input.GetKeyDown("space"))
+            {
+                string temp = "";
+                DialogueText.text = "";
+                if (sentence.Contains("+") || sentence.Contains("-"))
+                {
+                    temp = sentence;
+                    temp = temp.Replace("+", "");
+                    temp = temp.Replace("-", "");
+                    DialogueText.text = temp;
+                }
+                else
+                {
+
+                    DialogueText.text = sentence;
+                }
+                complete = true;
+                TextSpeed = pivot;
                 break;
+
             }
         }
-        complete=true;
+        complete = true;
+
     }
     public void DisplayDialogue(DialogueBlock dialogueBlock)
     {
@@ -120,8 +179,7 @@ public class DialogueManager : MonoBehaviour
             i = 0; //se o index passar do limite, ele reseta pro primeiro dialogo 
         }
         else i++; //caso contrario ele adiciona 1 ao index para da proxima vez que se clicar, o proxmo dialogo seja exibido
-
-        dialogueUI.SetActive(false);
+        animator.SetBool("IsOpen", false);
         DialogueOn = false;
         if (Boss == true)
             sceneControl.LoadScene("Teste Combate");

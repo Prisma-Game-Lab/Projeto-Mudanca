@@ -7,16 +7,39 @@ public class CombateAtributos : MonoBehaviour
     //A: Recebe atributos de um elemento CombateUnidade
     [Tooltip("Referência de um objeto CombateUnidade contendo os atributos desejados para o início do combate")]
     public CombateUnidade atributos;
-    [Tooltip("Referências de objetos CombateAcao que descrevem as acoes possiveis no combate. Ultima ação é reservada para a postura ATAQUE ESMAGADOR")]
-    public CombateAcao[] acoes;
+
+    /*[Tooltip("Atributos em cada fase da batalha")]
+    public CombateUnidade[] atributosDaFase;*/
+
+    [Tooltip("Listas de ações de cada fase da batalha. Tamanho deve ser igual ao numero de fases")]
+    public CombateAcoesDaFase[] listaAcoesDaFase;
+
+    private CombateAcoesDaFase listaAcoesAtual;
+    private int fase;
+    private CombateAcao[] acoes;
     private int vidaAtual;
     private int argumentoAtual;
     private float auxiliar;
     private CombateAcao tempGO;
+
+    void Awake()
+    {
+        listaAcoesAtual = listaAcoesDaFase[0];
+        setAcoes(listaAcoesAtual);
+    }
     void Start()
     {
         vidaAtual = atributos.vida;
         argumentoAtual = 0;
+    }
+
+    void Update()
+    {
+        if (!listaAcoesAtual.isEqual(listaAcoesDaFase[fase]))
+        {
+            listaAcoesAtual = listaAcoesDaFase[fase];
+            this.setAcoes(listaAcoesDaFase[fase]);
+        }
     }
 
     public int getVidaAtual()
@@ -73,7 +96,6 @@ public class CombateAtributos : MonoBehaviour
     {
         auxiliar = novoValor;
     }
-
     public void Shuffle() 
     {
         for (int i = 0; i < acoes.Length; i++) 
@@ -84,4 +106,29 @@ public class CombateAtributos : MonoBehaviour
             acoes[i] = tempGO;
         }
     }
+    public void setAcoes(CombateAcoesDaFase novasAcoes)
+    {
+        this.acoes = novasAcoes.ListaAcoes;
+        Debug.Log(atributos.nome);
+        Debug.Log(acoes.Length);
+        for(int i=0;i<acoes.Length;i++)
+        {
+            Debug.Log(acoes[i]);
+        }
+    }
+    public CombateAcao getAcao(int index)
+    {
+        return acoes[index];
+    }
+    public int getLengthAcoes()
+    {
+        return acoes.Length;
+    }
+
+    public void setFase(int novaFase)
+    {
+        fase = novaFase;
+    }
+
+
 }

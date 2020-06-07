@@ -18,7 +18,8 @@ MonoBehaviour:
   Dialogue:
   - Name: Casal
     Sentences:
-    - "Menina, j\xE1 percebeu que as pessoas mudam ao longo de uma discuss\xE3o???\r\n\r "
+    - "Menina, j\xE1 percebeu que as pessoas mudam ao longo de uma -D I S C U S S
+      \xC3 O-"
     - "Do nada ela passa a agir diferente\r\n\r"
     - "Mesmo assim \xE9 sempre bom ficar atento e conhecer a pessoa com quem voc\xEA
       est\xE1 lidando"
@@ -31,4 +32,4 @@ MonoBehaviour:
     dialogueBlock: {fileID: 11400000}
   Boss: 0
   i: 2
-  index: 1
+  index: 0
