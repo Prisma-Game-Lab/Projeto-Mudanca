@@ -19,11 +19,13 @@ public class DialogueTrigger : MonoBehaviour
     public void Update()
     {
         index=FindObjectOfType<DialogueManager>().i;
-        if (Input.GetKeyDown(KeyCode.Z)||Input.GetKeyDown("space") && canActivate){
+        if (Input.GetKeyDown(KeyCode.Z)||Input.GetKeyDown("space")){
+        if( canActivate){
             if (FindObjectOfType<DialogueManager>().DialogueOn == false){
                      TriggerDialogue();    
                 }
         }
+    }
     }
     
     public void TriggerDialogue()
