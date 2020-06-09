@@ -1,8 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Playables;
  
-public class Cutscenetrigger : MonoBehaviour
+
+public class CutsceneTrigger : MonoBehaviour
 {
+
     public PlayableDirector timeline;
     private DialogueManager dialogue;
 
@@ -10,14 +14,14 @@ public class Cutscenetrigger : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        timeline = GetComponent<PlayableDirector>();
+         
         dialogue=FindObjectOfType<DialogueManager>();
     }
  
  
-    void OnTriggerEnter(Collider c)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (c.gameObject.tag == "Player" &&dialogue.DialogueOn==false)
+       if (other.CompareTag("Player"))
         {
             timeline.Play();
         }
