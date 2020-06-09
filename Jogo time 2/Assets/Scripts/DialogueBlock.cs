@@ -11,6 +11,7 @@ public class DialogueBlock : ScriptableObject
     public Dialogue[] Dialogue;
      [Tooltip("Caso marcado, esse botão faz com que se inicie a boss battle")]
     public bool Boss=false; 
+    public bool Festa=false; 
     [HideInInspector]
     public int i;
     [HideInInspector]

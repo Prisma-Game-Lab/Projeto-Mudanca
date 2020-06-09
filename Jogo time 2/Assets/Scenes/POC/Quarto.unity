@@ -353,6 +353,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &97870472 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3739563306902303335, guid: af38bd4eb2460344db047191ceca7550,
+    type: 3}
+  m_PrefabInstance: {fileID: 1769018398}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &143885572
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436e8fd3e58834ccaa201a3aa34f08e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 0}
+  transition: {fileID: 97870472}
   transitionTime: 1
 --- !u!4 &195707480 stripped
 Transform:
@@ -1382,6 +1388,7 @@ MonoBehaviour:
   DialogueText: {fileID: 143885573}
   DialogueOn: 0
   TextSpeed: 3
+  Festa: 0
   FastTextSpeed: 10
   SlowTextSpeed: 1
   dialogueUI: {fileID: 490045919}
@@ -2986,6 +2993,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 7331145311871057380, guid: af38bd4eb2460344db047191ceca7550,
+        type: 3}
+      propertyPath: transitionTime
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af38bd4eb2460344db047191ceca7550, type: 3}

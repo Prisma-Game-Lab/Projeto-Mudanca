@@ -20,5 +20,6 @@ MonoBehaviour:
     Continuo: 0
     dialogueBlock: {fileID: 11400000}
   Boss: 0
+  Festa: 1
   i: 1
   index: 0
