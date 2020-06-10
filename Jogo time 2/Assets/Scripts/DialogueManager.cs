@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> _sentences;
 
     public float TextSpeed;
+    public bool Festa; 
 
     public float FastTextSpeed;
 
@@ -26,6 +27,8 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
     public bool Boss;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +57,7 @@ public class DialogueManager : MonoBehaviour
         DialogueBlock = dialogue.dialogueBlock; //ele pega o bloco de dialogo que contem todos os dialogos
         DialogueBlock.index = i;
         Boss = DialogueBlock.Boss;
+        Festa= DialogueBlock.Festa;
         if (NameText.text == "Alex")
         {
             dialogueUI.transform.GetChild(2).gameObject.SetActive(true);
@@ -183,5 +187,10 @@ public class DialogueManager : MonoBehaviour
         DialogueOn = false;
         if (Boss == true)
             sceneControl.LoadScene("Teste Combate");
+
+        else if (Festa == true)
+          sceneControl.LoadNextScene();   
     }
+
+ 
 }

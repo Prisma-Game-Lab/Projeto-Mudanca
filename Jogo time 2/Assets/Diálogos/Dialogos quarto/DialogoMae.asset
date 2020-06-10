@@ -10,16 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d8d1f939cbcee94bb7a38c8245bc37c, type: 3}
-  m_Name: DialogoArmarioPosVestido
+  m_Name: DialogoMae
   m_EditorClassIdentifier: 
   Descricao: 
   Dialogue:
+  - Name: "M\xE3e"
+    Sentences:
+    - "(...)e v\xEA se n\xE3o esquece de experimentar o vestido! Deixei em cima da
+      sua cama."
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
-    - Talvez eu tenha algo...
+    - " Ta beeem, m\xE3e.. eu j\xE1 vou experimentar."
     Continuo: 0
     dialogueBlock: {fileID: 11400000}
   Boss: 0
-  Festa: 1
-  i: 1
+  i: 2
   index: 0
