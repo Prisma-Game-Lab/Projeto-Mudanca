@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Ataque Inimigo Dano
   m_EditorClassIdentifier: 
   nome:
-  - foco em dano
+  - A gente merecia BEM mais
+  respostas:
+  - Se merecessem tinham ganho
   dano: 100
   barraArgumento: 6
   tipo: 0
-  buff: {fileID: 0}

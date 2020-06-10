@@ -101,20 +101,23 @@ public class CombateAtributos : MonoBehaviour
         for (int i = 0; i < acoes.Length; i++) 
         {
             int rnd = Random.Range(0, acoes.Length);
+            
             tempGO = acoes[rnd];
             acoes[rnd] = acoes[i];
             acoes[i] = tempGO;
         }
+        for(int i = 0; i < acoes.Length; i++)
+        {
+            
+            acoes[i].ShuffleFalas();
+            
+        Debug.LogFormat("Falas {0}: {1} - {2} - {3} - {4}",i,acoes[i].nome[0],acoes[i].nome[1],acoes[i].nome[2],acoes[i].nome[3]);
+        }
+        
     }
     public void setAcoes(CombateAcoesDaFase novasAcoes)
     {
         this.acoes = novasAcoes.ListaAcoes;
-        Debug.Log(atributos.nome);
-        Debug.Log(acoes.Length);
-        for(int i=0;i<acoes.Length;i++)
-        {
-            Debug.Log(acoes[i]);
-        }
     }
     public CombateAcao getAcao(int index)
     {

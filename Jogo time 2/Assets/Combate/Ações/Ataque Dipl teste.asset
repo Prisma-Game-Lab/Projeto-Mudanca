@@ -15,8 +15,13 @@ MonoBehaviour:
   nome:
   - Vai com calma.
   - "Essa briga \xE9 desnecess\xE1ria."
-  - "Voc\xEAs podem ganhar ano que vem!"
   - Podemos treinar juntos!
+  - "Voc\xEAs podem ganhar ano que vem!"
+  respostas:
+  - "EU N\xC3O T\xD4 IRRITADO!!!"
+  - "Desnecess\xE1rio foi seu jogo sujo"
+  - "E como eu ultrapasso voc\xEA assim?"
+  - "N\xF3s VAMOS ganhar"
   dano: 100
   barraArgumento: 20
   tipo: 2

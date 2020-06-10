@@ -30,13 +30,9 @@ public class CombateManager : MonoBehaviour
     [Tooltip("Objeto que impede jogador de jogar na vez do adversário")]
     public GameObject vezDoOutro;
 
-    
-
     [Tooltip("Cores que representam posturas")]
     public Material CorDiplomatico,CorManipulador,CorOfensivo;
     private Color CorAtual;
-
-    
 
     //A: referencia as barras de vida e velocidade que descem
     [Tooltip("Objetos (Sliders) das barras de vida e de argumentos")]
@@ -60,6 +56,11 @@ public class CombateManager : MonoBehaviour
     //A: Texto que da feedback se ataque foi efetivo ou não
     public Text efetividade;
 
+    [Tooltip("Texto de falas dos personagens conforme a ação utilizada")]
+    public GameObject falasPlayer,falasAdversario;
+
+
+
     [Header("Ajustes de tempo")]
     
     [Tooltip("Velocidade com que a vida desce")]
@@ -72,7 +73,7 @@ public class CombateManager : MonoBehaviour
     [Tooltip("Listas de argumentos do player")]
     //A: arrays para armazenar argumentos
     public CombateArgumento[] argumentosPlayer;
-    [Tooltip("Listas de argumentos do adviersario")]
+    [Tooltip("Listas de argumentos do adversario")]
     public CombateArgumento[] argumentosAdversario;
 
     //A: Armazena gerenciador de fase de batalha
@@ -92,6 +93,7 @@ public class CombateManager : MonoBehaviour
     
     private alinhamento alinhamentoPlayer;
 
+    private string resposta;
 
     public AudioSource atacAudio;
 
@@ -110,12 +112,18 @@ public class CombateManager : MonoBehaviour
         nomeAdversario.text = atributosAdversario.atributos.nome;
         efetividade.text = ""; 
 
+        
+        atributosPlayer.Shuffle();
         //A: Cada ação do jogador substitui o nome escrito em um dos botoes.
         for(int i=0; i< nomeAcoes.Length;i++)
         {
             //escolhe nome aleatorio entre os descritos no array
-            nomeAcoes[i].text = atributosPlayer.getAcao(i).nome[Random.Range(0,atributosPlayer.getAcao(i).nome.Length)];
+            nomeAcoes[i].text = atributosPlayer.getAcao(i).nome[0];
             nomeAcoes[i].GetComponent<TooltipObserver>().associaAcao(atributosPlayer.getAcao(i));
+
+            //A: Antigo
+            //nomeAcoes[i].text = atributosPlayer.getAcao(i).nome[Random.Range(0,atributosPlayer.getAcao(i).nome.Length)];
+            //nomeAcoes[i].GetComponent<TooltipObserver>().associaAcao(atributosPlayer.getAcao(i));
         }
         VidaPlayer.maxValue = atributosPlayer.atributos.vida;
         VidaAdversario.maxValue = atributosAdversario.atributos.vida;
@@ -158,6 +166,7 @@ public class CombateManager : MonoBehaviour
 
     public void Acao1()
     {
+        resposta = atributosPlayer.getAcao(0).respostas[0];
         aplicaDano(atributosPlayer,atributosPlayer.getAcao(0),atributosAdversario);
         vezDoOutro.SetActive(true);
         StartCoroutine (passaTurno());
@@ -165,6 +174,7 @@ public class CombateManager : MonoBehaviour
 
     public void Acao2()
     {
+        resposta = atributosPlayer.getAcao(1).respostas[0];
         aplicaDano(atributosPlayer,atributosPlayer.getAcao(1),atributosAdversario);
         vezDoOutro.SetActive(true);
         StartCoroutine (passaTurno());
@@ -172,6 +182,7 @@ public class CombateManager : MonoBehaviour
 
     public void Acao3()
     {
+        resposta = atributosPlayer.getAcao(2).respostas[0];
         aplicaDano(atributosPlayer,atributosPlayer.getAcao(2),atributosAdversario);
         vezDoOutro.SetActive(true);
         StartCoroutine (passaTurno());
@@ -247,9 +258,21 @@ public class CombateManager : MonoBehaviour
         somaTipo( atributosAtacante, golpe);
 
         //A: ajusta barra de argumentos de acordo caso nao tiver maximo de argumentos
-        if ((atributosAtacante.atributos.nome == atributosPlayer.atributos.nome && numArgumentosPlayer < argumentosPlayer.Length) || (atributosAtacante.atributos.nome == atributosAdversario.atributos.nome && numArgumentosAdversario < argumentosAdversario.Length ))
+        if ((atributosAtacante.atributos.nome == atributosPlayer.atributos.nome && numArgumentosPlayer < argumentosPlayer.Length && turnoAtual == turno.jogador) || (atributosAtacante.atributos.nome == atributosAdversario.atributos.nome && numArgumentosAdversario < argumentosAdversario.Length && turnoAtual == turno.adversario))
         {
             atributosAtacante.setArgumentos(atributosAtacante.getArgumentos()+golpe.barraArgumento);
+            Debug.Log(atributosAtacante.getArgumentos());
+        }
+
+        if(turnoAtual==turno.adversario)
+        {
+            falasAdversario.transform.GetChild(1).GetComponent<Text>().text = golpe.nome[0];
+            falasAdversario.SetActive(true);
+        }
+        else if(turnoAtual==turno.jogador && atributosAtacante == atributosPlayer)
+        {
+            falasPlayer.transform.GetChild(1).GetComponent<Text>().text = golpe.nome[0];
+            falasPlayer.SetActive(true);
         }
     }
 
@@ -258,13 +281,13 @@ public class CombateManager : MonoBehaviour
         //A: implementação da postura Ataque Esmagador
         if(atributosAdversario.atributos.postura == CombateUnidade.posturaUnidade.golpeEsmagador && atributosAdversario.getAuxiliar() < 2)
         {
-            
             efetividade.color = Color.yellow;
             efetividade.text = "ALERTA!!!";
             atributosAdversario.setAuxiliar(atributosAdversario.getAuxiliar()+1);
         }
         else if (atributosAdversario.atributos.postura == CombateUnidade.posturaUnidade.golpeEsmagador && atributosAdversario.getAuxiliar() >= 2)
         {
+            resposta = atributosAdversario.getAcao(0).respostas[0];
             aplicaDano(atributosAdversario,atributosAdversario.getAcao(0),atributosPlayer);
             atributosAdversario.setAuxiliar(0);
         }
@@ -272,6 +295,7 @@ public class CombateManager : MonoBehaviour
         else
         {   
             int ataqueEscolhido = Random.Range(0, atributosAdversario.getLengthAcoes());
+            resposta = atributosAdversario.getAcao(ataqueEscolhido).respostas[0];
             aplicaDano(atributosAdversario,atributosAdversario.getAcao(ataqueEscolhido),atributosPlayer);
         }
         StartCoroutine(passaTurno());
@@ -456,8 +480,27 @@ public class CombateManager : MonoBehaviour
             //A: codigo para criar argumento para jogador vai aqui;
         }
 
+        //A: esconde fala e exibe resposta
+        if(turnoAtual==turno.adversario)
+        {
+            falasAdversario.SetActive(false);
+            falasPlayer.transform.GetChild(1).GetComponent<Text>().text = resposta;
+            falasPlayer.SetActive(true);
+        }
+        else
+        {
+            falasPlayer.SetActive(false);
+            falasAdversario.transform.GetChild(1).GetComponent<Text>().text = resposta;
+            falasAdversario.SetActive(true);
+        }
+
         yield return new WaitForSeconds(entreTurnos/2);
                
+        falasAdversario.SetActive(false);
+        falasPlayer.SetActive(false);
+
+        yield return new WaitForSeconds(entreTurnos/7);
+
         //A: Verifica se combate acabou
         efetividade.text = "";
         if (atributosPlayer.getVidaAtual() == 0)
@@ -477,8 +520,8 @@ public class CombateManager : MonoBehaviour
                 atributosPlayer.Shuffle();
                 for(int i=0; i< nomeAcoes.Length;i++)
                 {
-                //escolhe nome aleatorio entre os descritos no array
-                    nomeAcoes[i].text = atributosPlayer.getAcao(i).nome[Random.Range(0,atributosPlayer.getAcao(i).nome.Length)];
+                    //escolhe nome aleatorio entre os descritos no array
+                    nomeAcoes[i].text = atributosPlayer.getAcao(i).nome[0];
                     nomeAcoes[i].GetComponent<TooltipObserver>().associaAcao(atributosPlayer.getAcao(i));
                 }
                 vezDoOutro.SetActive(false);    

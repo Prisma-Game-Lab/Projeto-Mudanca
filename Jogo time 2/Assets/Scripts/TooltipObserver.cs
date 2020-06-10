@@ -59,7 +59,6 @@ public class TooltipObserver : MonoBehaviour
                 }
                 break;
             case tipoTooltip.acao:
-                Debug.Log((int)acaoAssociada.tipo);
                 switch(acaoAssociada.tipo)
                 {
                     case CombateAcao.tipoDano.Agressivo:

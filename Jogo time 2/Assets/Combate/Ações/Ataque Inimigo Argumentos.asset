@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Ataque Inimigo Argumentos
   m_EditorClassIdentifier: 
   nome:
-  - foco em argumento
+  - "Sabe como \xE9 frustrante? Perder o tempo todo?"
+  respostas:
+  - "(a argumenta\xE7\xE3o dele melhorou...)"
   dano: 60
   barraArgumento: 25
   tipo: 0
-  buff: {fileID: 0}

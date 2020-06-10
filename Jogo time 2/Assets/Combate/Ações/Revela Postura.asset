@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Revela Postura
   m_EditorClassIdentifier: 
   nome:
-  - Pensar
+  - (Pensar)
+  respostas:
+  - ...
   dano: 0
   barraArgumento: 40
   tipo: 3
-  buff: {fileID: 0}

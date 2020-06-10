@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Ataque Esmagador
   m_EditorClassIdentifier: 
   nome:
-  - ESMAGA!!!!!
+  - Sabe como humilha perder pra uma garotinha?
+  respostas:
+  - ?!?!?!?!?
   dano: 500
   barraArgumento: 100
   tipo: 0
-  buff: {fileID: 0}
