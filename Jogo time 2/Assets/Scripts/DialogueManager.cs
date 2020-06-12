@@ -97,7 +97,7 @@ public class DialogueManager : MonoBehaviour
                     EndDialogue(); //se o dialogo não for continuo, ele encerra
                 }
                 else
-                {
+                {   
                     i++;
                     DisplayDialogue(DialogueBlock);//caso ainda hajam dialogos e eles forem continuos, o proximo dialogo sera lido
                 }
@@ -146,6 +146,7 @@ public class DialogueManager : MonoBehaviour
             }
             else
                 DialogueText.text += letter;
+                
             yield return new WaitForSeconds(TextSpeed / 100);
             if (Input.GetKeyDown("z") || Input.GetKeyDown("space"))
             {
@@ -185,6 +186,7 @@ public class DialogueManager : MonoBehaviour
         else i++; //caso contrario ele adiciona 1 ao index para da proxima vez que se clicar, o proxmo dialogo seja exibido
         animator.SetBool("IsOpen", false);
         DialogueOn = false;
+        
         if (Boss == true)
             sceneControl.LoadScene("Teste Combate");
 
