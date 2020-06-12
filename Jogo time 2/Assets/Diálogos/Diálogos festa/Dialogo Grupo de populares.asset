@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8d1f939cbcee94bb7a38c8245bc37c, type: 3}
+  m_Name: Dialogo Grupo de populares
+  m_EditorClassIdentifier: 
+  Descricao: 
+  Dialogue:
+  - Name: Os populares
+    Sentences:
+    - Mas que festa chata...
+    - "S\xF3 tem esses nerds esquisitos aqui"
+    - A gente podia simplesmente dar o fora daqui, mas agora temos que esperar isso
+      acabar...
+    Continuo: 0
+    dialogueBlock: {fileID: 0}
+  Boss: 0
+  Festa: 0
+  i: 0
+  index: 0

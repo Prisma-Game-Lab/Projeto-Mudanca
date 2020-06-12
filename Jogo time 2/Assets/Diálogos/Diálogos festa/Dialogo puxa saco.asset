@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8d1f939cbcee94bb7a38c8245bc37c, type: 3}
+  m_Name: Dialogo puxa saco
+  m_EditorClassIdentifier: 
+  Descricao: 
+  Dialogue:
+  - Name: Puxa-saco
+    Sentences:
+    - "Viu como o Marcelo t\xE1 bonito hoje?"
+    Continuo: 1
+    dialogueBlock: {fileID: 0}
+  - Name: Alex
+    Sentences:
+    - "N\xE3o reparei"
+    Continuo: 1
+    dialogueBlock: {fileID: 0}
+  - Name: Puxa-saco
+    Sentences:
+    - Quem me dera poder ser como ele
+    Continuo: 1
+    dialogueBlock: {fileID: 0}
+  - Name: Alex
+    Sentences:
+    - (Quem me dera poder sair desse lugar estranho e desse vestido..)
+    - (Vestido idiota!)
+    Continuo: 0
+    dialogueBlock: {fileID: 0}
+  Boss: 0
+  Festa: 0
+  i: 0
+  index: 0

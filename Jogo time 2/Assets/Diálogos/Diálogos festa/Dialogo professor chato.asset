@@ -10,42 +10,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d8d1f939cbcee94bb7a38c8245bc37c, type: 3}
-  m_Name: "Di\xE1logo Cara do pc"
+  m_Name: Dialogo professor chato
   m_EditorClassIdentifier: 
-  Descricao: "Di\xE1logo falando sobre os personagens encrenqueiros"
+  Descricao: 
   Dialogue:
-  - Name: O nerd do pc
+  - Name: Professor chato
     Sentences:
-    - Mas que inferno!
+    - "Minha cara aluna, voc\xEA parece meio perdida"
     Continuo: 1
     dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
-    - "Eita! T\xE1 tudo bem?"
+    - "Professor, eu n\xE3o estou entendendo o que est\xE1 acontecendo"
     Continuo: 1
     dialogueBlock: {fileID: 11400000}
-  - Name: O nerd do pc
+  - Name: Professor chato
     Sentences:
-    - " \xC3n? Voc\xEA por aqui?"
-    - " N\xE3o t\xE1 vendo que eu t\xF4 ocupado, garota chata?"
-    Continuo: 1
-    dialogueBlock: {fileID: 11400000}
-  - Name: Alex
-    Sentences:
-    - "Poxa, desculpa. Eu n\xE3o queria incomodar..."
-    Continuo: 1
-    dialogueBlock: {fileID: 11400000}
-  - Name: O nerd do pc
-    Sentences:
-    - "Por acaso eu pare\xE7o estar bem? Olha minha postura! Eu n\xE3o quero conversa!"
+    - "Ai ai, voc\xEA como sempre est\xE1 no mundo da lua..."
     Continuo: 1
     dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
-    - (Postura?? Mas que diabos ele ta falando??)
+    - "N\xE3o \xE9 isso! Olha em volta! T\xE1 tudo muito esquisito..."
     Continuo: 1
+    dialogueBlock: {fileID: 11400000}
+  - Name: Professor chato
+    Sentences:
+    - Alex se continuar utilizando esses tipos de argumentos em minhas provas, vai
+      ser bem ruim pra sua nota...
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000}
+  - Name: Alex
+    Sentences:
+    - (Ai! Desisto!)
+    Continuo: 0
     dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
   i: 6
-  index: 1
+  index: 0

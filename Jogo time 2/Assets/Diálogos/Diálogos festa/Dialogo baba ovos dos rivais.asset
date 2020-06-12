@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8d1f939cbcee94bb7a38c8245bc37c, type: 3}
+  m_Name: Dialogo baba ovos dos rivais
+  m_EditorClassIdentifier: 
+  Descricao: 
+  Dialogue:
+  - Name: Puxa-saco
+    Sentences:
+    - "Quando vai ser a pr\xF3xima vez que voc\xEAs v\xE3o competir de novo?"
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000}
+  - Name: Alex
+    Sentences:
+    - Como assim?
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000}
+  - Name: Puxa-saco
+    Sentences:
+    - " A competi\xE7\xE3o que seu time ganhou..."
+    - "Aposto que isso n\xE3o vai se repetir"
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000}
+  - Name: Alex
+    Sentences:
+    - "Ah, n\xE3o sei..."
+    Continuo: 0
+    dialogueBlock: {fileID: 11400000}
+  Boss: 0
+  Festa: 0
+  i: 4
+  index: 2

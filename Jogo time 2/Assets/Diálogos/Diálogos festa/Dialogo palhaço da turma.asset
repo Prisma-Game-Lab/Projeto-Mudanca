@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8d1f939cbcee94bb7a38c8245bc37c, type: 3}
+  m_Name: "Dialogo palha\xE7o da turma"
+  m_EditorClassIdentifier: 
+  Descricao: 
+  Dialogue:
+  - Name: "O palha\xE7o da turma"
+    Sentences:
+    - "E a\xED, Alex!"
+    - "Achei que voc\xEA n\xE3o fosse vir \xE0 festa hahaha"
+    - "Voc\xEA tinha dito que n\xE3o estava afim de encontrar todo mundo..."
+    - Sempre com esse seu jeitinho envergonhado
+    Continuo: 1
+    dialogueBlock: {fileID: 0}
+  - Name: Alex
+    Sentences:
+    - " A gente t\xE1 na escola? T\xE1 tudo muito estranho"
+    Continuo: 1
+    dialogueBlock: {fileID: 0}
+  - Name: "Palha\xE7o da turma"
+    Sentences:
+    - Ih, garota! Bebeu demais, foi? Hahaha
+    - "Onde voc\xEA acha que t\xE1?"
+    - "Aqui \xE9 a nossa festa, p\xF4!"
+    Continuo: 0
+    dialogueBlock: {fileID: 0}
+  - Name: Alex
+    Sentences:
+    - Mas eu estava no meu quarto agora pouco...
+    - "Fui olhar o meu arm\xE1rio e vim parar aqui"
+    - " Isso n\xE3o pode ser uma festa de verdade..."
+    Continuo: 0
+    dialogueBlock: {fileID: 0}
+  Boss: 0
+  Festa: 0
+  i: 0
+  index: 0
