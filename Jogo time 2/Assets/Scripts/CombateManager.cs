@@ -30,9 +30,9 @@ public class CombateManager : MonoBehaviour
     [Tooltip("Objeto que impede jogador de jogar na vez do adversário")]
     public GameObject vezDoOutro;
 
-    [Tooltip("Cores que representam posturas")]
+    /*[Tooltip("Cores que representam posturas")]
     public Material CorDiplomatico,CorManipulador,CorOfensivo;
-    private Color CorAtual;
+    private Color CorAtual;*/
 
     //A: referencia as barras de vida e velocidade que descem
     [Tooltip("Objetos (Sliders) das barras de vida e de argumentos")]
@@ -59,7 +59,11 @@ public class CombateManager : MonoBehaviour
     [Tooltip("Texto de falas dos personagens conforme a ação utilizada")]
     public GameObject falasPlayer,falasAdversario;
 
+    [Tooltip("Objetos que exibirão argumentos do player")]
+    public GameObject[] quadroArgumentoPlayer;
 
+    [Tooltip("Objetos que exibirão argumentos do adversario")]
+    public GameObject[] quadroArgumentoAdversario;
 
     [Header("Ajustes de tempo")]
     
@@ -69,12 +73,15 @@ public class CombateManager : MonoBehaviour
     //A: tempo aguardado entre cada turno, para o jogador compreender o que ocorre.
     public float entreTurnos;
     
-    [Header("Listas dos argumentos. DEFINIR APENAS TAMANHO. ADICIONAR REFERENCIAS ADICIONA ARGUMENTOS AO INICIO DA BATALHA")]
-    [Tooltip("Listas de argumentos do player")]
     //A: arrays para armazenar argumentos
-    public CombateArgumento[] argumentosPlayer;
-    [Tooltip("Listas de argumentos do adversario")]
-    public CombateArgumento[] argumentosAdversario;
+    private CombateArgumento[] argumentosPlayer;
+    private CombateArgumento[] argumentosAdversario;
+
+    //A: Valores pertinentes aos argumentos. Não funcionam dentro da classe CombateArgumento. Talvez seja coisa de scriptable object
+    private int[] vidaArgumentosPlayer;
+    private int[] turnoArgumentosPlayer;
+    private int[] vidaArgumentosAdversario;
+    private int[] turnoArgumentosAdversario;
 
     //A: Armazena gerenciador de fase de batalha
     private ModificadorAtributos gerenteFase;
@@ -100,7 +107,7 @@ public class CombateManager : MonoBehaviour
 
     void Start()
     {
-        
+
         atributosPlayer = Player.GetComponent<CombateAtributos>();
         atributosAdversario = Adversario.GetComponent<CombateAtributos>();
         gerenteFase = Adversario.GetComponent<ModificadorAtributos>();
@@ -112,7 +119,27 @@ public class CombateManager : MonoBehaviour
         nomeAdversario.text = atributosAdversario.atributos.nome;
         efetividade.text = ""; 
 
+        //A: aloca numero maximo de argumentos igual a numero de quadros de exibicao
+        argumentosPlayer = new CombateArgumento[quadroArgumentoPlayer.Length];
+        argumentosAdversario = new CombateArgumento[quadroArgumentoAdversario.Length];
+        vidaArgumentosPlayer = new int[quadroArgumentoPlayer.Length];
+        vidaArgumentosAdversario = new int[quadroArgumentoAdversario.Length];
+        turnoArgumentosPlayer = new int[quadroArgumentoPlayer.Length];
+        turnoArgumentosAdversario = new int[quadroArgumentoAdversario.Length];
         
+        for(int i=0;i<argumentosPlayer.Length;i++)
+        {
+            argumentosPlayer[i] = null;
+            vidaArgumentosPlayer[i] = 0;
+            turnoArgumentosPlayer[i] = 9999;
+        }
+        for(int i=0;i<argumentosAdversario.Length;i++)
+        {
+            argumentosAdversario[i] = null;
+            vidaArgumentosAdversario[i] = 0;
+            turnoArgumentosAdversario[i] = 9999;
+        }
+
         atributosPlayer.Shuffle();
         //A: Cada ação do jogador substitui o nome escrito em um dos botoes.
         for(int i=0; i< nomeAcoes.Length;i++)
@@ -222,7 +249,7 @@ public class CombateManager : MonoBehaviour
             }
         }
 
-        danoResultante = (int) (ataque*multiplicadorGolpe-atributosAlvo.atributos.defesa);
+        danoResultante = (int) ((ataque+danoBonusArgumento(atributosAtacante))*multiplicadorGolpe-(atributosAlvo.atributos.defesa + defesaBonusArgumento(atributosAlvo)));
 
         atacAudio.Play();
 
@@ -261,7 +288,6 @@ public class CombateManager : MonoBehaviour
         if ((atributosAtacante.atributos.nome == atributosPlayer.atributos.nome && numArgumentosPlayer < argumentosPlayer.Length && turnoAtual == turno.jogador) || (atributosAtacante.atributos.nome == atributosAdversario.atributos.nome && numArgumentosAdversario < argumentosAdversario.Length && turnoAtual == turno.adversario))
         {
             atributosAtacante.setArgumentos(atributosAtacante.getArgumentos()+golpe.barraArgumento);
-            Debug.Log(atributosAtacante.getArgumentos());
         }
 
         if(turnoAtual==turno.adversario)
@@ -444,6 +470,7 @@ public class CombateManager : MonoBehaviour
         //A: se jogador for o atacante
         if(atributosAtacante.atributos.nome == atributosPlayer.atributos.nome)
         {
+            Debug.LogFormat("Player usou: Agressivo x {0}, Manipulador x {1}, Diplomatico x {2}",contaAgressivosPlayer,contaManipuladorPlayer,contaDiplomaticoPlayer);
             if (contaAgressivosPlayer > contaManipuladorPlayer && contaAgressivosPlayer > contaDiplomaticoPlayer)
                 return 0;
             else if (contaManipuladorPlayer > contaAgressivosPlayer && contaManipuladorPlayer > contaDiplomaticoPlayer)
@@ -452,6 +479,7 @@ public class CombateManager : MonoBehaviour
         }
         else
         {
+            Debug.LogFormat("Adversario usou: Agressivo x {0}, Manipulador x {1}, Diplomatico x {2}",contaAgressivosAdversario,contaManipuladorAdversario,contaDiplomaticoAdversario);
             if (contaAgressivosAdversario > contaManipuladorAdversario && contaAgressivosAdversario > contaDiplomaticoAdversario)
                 return 0;
             else if (contaManipuladorAdversario > contaAgressivosAdversario && contaManipuladorAdversario > contaDiplomaticoAdversario)
@@ -460,6 +488,131 @@ public class CombateManager : MonoBehaviour
         }
     }
 
+    private void resetaContadores(CombateAtributos atributosAtacante)
+    {
+        if(atributosAtacante.atributos.nome == atributosPlayer.atributos.nome)
+        {
+            contaAgressivosPlayer = 0;
+            contaManipuladorPlayer = 0;
+            contaDiplomaticoPlayer = 0;
+        }
+        else
+        {
+            contaAgressivosAdversario = 0;
+            contaManipuladorAdversario = 0;
+            contaDiplomaticoAdversario = 0;
+        }
+    }
+
+    private void criaArgumento(CombateAtributos donoDoArg)
+    {
+        CombateArgumento argCriado;
+
+        //A: Escolhe argumento a ser criado
+        switch(tipoMaisUsado(donoDoArg))
+        {
+            case 0:
+                //Agressivo
+                Debug.Log("Agressivo!");
+                argCriado = donoDoArg.getArgAgre();
+                break;
+            case 1:
+                //Defensivo
+                Debug.Log("Defensivo!");
+                argCriado = donoDoArg.getArgDef();
+                break;
+            default:
+                //Diplomatico
+                Debug.Log("Diplomatico!");
+                argCriado = donoDoArg.getArgDipl();
+                break;
+        }
+
+        //A: Adiciona argumento criado a primeiro espaço vazio da lista de argumentos
+        if(donoDoArg == atributosPlayer)
+        {
+            for(int i=0;i<argumentosPlayer.Length;i++)
+            {
+                if(argumentosPlayer[i] == null)
+                {
+                    argumentosPlayer[i] = argCriado;
+                    vidaArgumentosPlayer[i] = argCriado.vida;
+                    turnoArgumentosPlayer[i] = 0;
+                    quadroArgumentoPlayer[i].GetComponent<QuadroDeArgumento>().CarregaArgumento(argCriado);
+                    numArgumentosPlayer++;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            for(int i=0;i<argumentosAdversario.Length;i++)
+            {
+                if(argumentosAdversario[i] == null)
+                {
+                    argumentosAdversario[i] = argCriado;
+                    vidaArgumentosAdversario[i] = argCriado.vida;
+                    turnoArgumentosAdversario[i] = 0;
+                    quadroArgumentoAdversario[i].GetComponent<QuadroDeArgumento>().CarregaArgumento(argCriado);
+                    numArgumentosAdversario++;
+                    break;
+                }
+            }
+        }
+        resetaContadores(donoDoArg);
+    }
+
+    private int danoBonusArgumento(CombateAtributos atributosAtacante)
+    {
+        int bonusTotal = 0;
+        if(atributosAtacante == atributosPlayer)
+        {
+            for(int i=0; i<argumentosPlayer.Length;i++)
+            {
+                if(argumentosPlayer[i] != null && argumentosPlayer[i].habilidade == CombateArgumento.tipoArgumento.Ataque)
+                {
+                    bonusTotal += argumentosPlayer[i].valor;
+                }
+            }
+        }
+        else
+        {
+            for(int i=0; i<argumentosPlayer.Length;i++)
+            {
+                if(argumentosAdversario[i] != null && argumentosAdversario[i].habilidade == CombateArgumento.tipoArgumento.Ataque)
+                {
+                    bonusTotal += argumentosAdversario[i].valor;
+                }
+            }
+        }
+        return bonusTotal;
+    }
+
+    private int defesaBonusArgumento(CombateAtributos atributosAtacante)
+    {
+        int bonusTotal = 0;
+        if(atributosAtacante == atributosPlayer)
+        {
+            for(int i=0; i<argumentosPlayer.Length;i++)
+            {
+                if(argumentosPlayer[i] != null && argumentosPlayer[i].habilidade == CombateArgumento.tipoArgumento.Defesa)
+                {
+                    bonusTotal += argumentosPlayer[i].valor;
+                }
+            }
+        }
+        else
+        {
+            for(int i=0; i<argumentosPlayer.Length;i++)
+            {
+                if(argumentosAdversario[i] != null && argumentosAdversario[i].habilidade == CombateArgumento.tipoArgumento.Defesa)
+                {
+                    bonusTotal += argumentosAdversario[i].valor;
+                }
+            }
+        }
+        return bonusTotal;
+    }
 
     //A: gerencia variaveis relacionadas a passagem de turno
     IEnumerator passaTurno()
@@ -470,13 +623,15 @@ public class CombateManager : MonoBehaviour
         if(atributosAdversario.getArgumentos()>= atributosAdversario.atributos.barraArgumento)
         {
             atributosAdversario.setArgumentos(0);
-            //Debug.Log("Criou Argumento");
+            criaArgumento(atributosAdversario);
+            Debug.Log("Criou Argumento Adversario");
             //A: codigo para criar argumento para adversario vai aqui;
         }
         if(atributosPlayer.getArgumentos()>= atributosPlayer.atributos.barraArgumento)
         {
             atributosPlayer.setArgumentos(0);
-            //Debug.Log("Criou Argumento");
+            criaArgumento(atributosPlayer);
+            Debug.Log("Criou Argumento Player");
             //A: codigo para criar argumento para jogador vai aqui;
         }
 
@@ -484,14 +639,21 @@ public class CombateManager : MonoBehaviour
         if(turnoAtual==turno.adversario)
         {
             falasAdversario.SetActive(false);
-            falasPlayer.transform.GetChild(1).GetComponent<Text>().text = resposta;
-            falasPlayer.SetActive(true);
+            if(resposta != "")
+            {
+                falasPlayer.transform.GetChild(1).GetComponent<Text>().text = resposta;
+                falasPlayer.SetActive(true);
+            }
         }
         else
         {
             falasPlayer.SetActive(false);
-            falasAdversario.transform.GetChild(1).GetComponent<Text>().text = resposta;
-            falasAdversario.SetActive(true);
+
+            if(resposta != "")
+            {
+                falasAdversario.transform.GetChild(1).GetComponent<Text>().text = resposta;
+                falasAdversario.SetActive(true);
+            }
         }
 
         yield return new WaitForSeconds(entreTurnos/2);
@@ -499,8 +661,54 @@ public class CombateManager : MonoBehaviour
         falasAdversario.SetActive(false);
         falasPlayer.SetActive(false);
 
+        for(int i=0;i<argumentosPlayer.Length;i++)
+        {
+            if(argumentosPlayer[i] != null)
+            {
+                turnoArgumentosPlayer[i]++;
+
+                if(vidaArgumentosPlayer[i] <= 0 || turnoArgumentosPlayer[i]/2 >= argumentosPlayer[i].duracao)
+                {
+
+                    argumentosPlayer[i] = null;
+                    quadroArgumentoPlayer[i].GetComponent<QuadroDeArgumento>().LimpaArgumento();
+                    numArgumentosPlayer --;
+                }
+                else
+                {
+                    if(argumentosPlayer[i].habilidade == CombateArgumento.tipoArgumento.Regenerar && turnoAtual == turno.jogador)
+                    {
+                        atributosPlayer.curar(argumentosPlayer[i].valor);
+                    }
+                }
+            }
+        }
+        for(int i=0;i<argumentosAdversario.Length;i++)
+        {
+            if(argumentosAdversario[i] != null)
+            {
+            
+                turnoArgumentosAdversario[i]++;
+                
+                if(vidaArgumentosAdversario[i] <= 0 || turnoArgumentosAdversario[i]/2 >= argumentosAdversario[i].duracao)
+                {
+                    argumentosAdversario[i] = null;
+                    quadroArgumentoAdversario[i].GetComponent<QuadroDeArgumento>().LimpaArgumento();
+                    numArgumentosAdversario --;
+                }
+                else
+                {
+                    if(argumentosAdversario[i].habilidade == CombateArgumento.tipoArgumento.Regenerar && turnoAtual == turno.adversario)
+                    {
+                        atributosAdversario.curar(argumentosAdversario[i].valor);
+                    }
+                }
+            }
+        }
+
         yield return new WaitForSeconds(entreTurnos/7);
 
+        resposta = "";
         //A: Verifica se combate acabou
         efetividade.text = "";
         if (atributosPlayer.getVidaAtual() == 0)

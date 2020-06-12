@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Ataque Mani Teste
   m_EditorClassIdentifier: 
   nome:
-  - "Est\xE1 com medo de perder de novo?"
   - "N\xE3o tem outro jeito de resolver isso?"
   - "Voc\xEA s\xF3 consegue falar gritando?"
+  - "Est\xE1 com medo de perder de novo?"
   - "Voc\xEA s\xF3 quer se mostrar, n\xE9?"
   respostas:
-  - "Eu N\xC3O VOU perder de novo..."
   - "Se voc\xEA admitir que trapaceou"
   - "\xC9 o som da festa. T\xE1 muito alto!"
+  - "Eu N\xC3O VOU perder de novo..."
   - "N\xE3o, eu quero \xE9 vencer!"
-  dano: 100
-  barraArgumento: 12
+  dano: 90
+  barraArgumento: 35
   tipo: 1

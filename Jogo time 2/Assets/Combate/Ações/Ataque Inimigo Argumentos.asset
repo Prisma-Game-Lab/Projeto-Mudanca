@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Ataque Inimigo Argumentos
   m_EditorClassIdentifier: 
   nome:
-  - "Sabe como \xE9 frustrante? Perder o tempo todo?"
+  - "Sabe como \xE9 frustrante? Treinar tanto pra nada?"
   respostas:
-  - "(a argumenta\xE7\xE3o dele melhorou...)"
+  - Eu imagino...
   dano: 60
-  barraArgumento: 25
+  barraArgumento: 50
   tipo: 0

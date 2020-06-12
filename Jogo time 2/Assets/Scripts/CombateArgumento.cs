@@ -29,4 +29,5 @@ public class CombateArgumento : ScriptableObject
     
     [Tooltip("Dano necessario para destruir argumento")]
     public int vida;
+
 }

@@ -13,7 +13,9 @@ public class CombateAtributos : MonoBehaviour
 
     [Tooltip("Listas de ações de cada fase da batalha. Tamanho deve ser igual ao numero de fases")]
     public CombateAcoesDaFase[] listaAcoesDaFase;
-
+    
+    [Tooltip("Listas dos argumentos de cada fase da batalha. Tamanho deve ser igual ao numero de fases")]
+    public CombateArgsDaFase[] listaArgsDaFase;
     private CombateAcoesDaFase listaAcoesAtual;
     private int fase;
     private CombateAcao[] acoes;
@@ -21,11 +23,13 @@ public class CombateAtributos : MonoBehaviour
     private int argumentoAtual;
     private float auxiliar;
     private CombateAcao tempGO;
+    private CombateArgumento argAgre, argDipl, argDef;
 
     void Awake()
     {
         listaAcoesAtual = listaAcoesDaFase[0];
         setAcoes(listaAcoesAtual);
+        setArgs(listaArgsDaFase[0]);
     }
     void Start()
     {
@@ -39,6 +43,7 @@ public class CombateAtributos : MonoBehaviour
         {
             listaAcoesAtual = listaAcoesDaFase[fase];
             this.setAcoes(listaAcoesDaFase[fase]);
+            this.setArgs(listaArgsDaFase[fase]);
         }
     }
 
@@ -111,13 +116,30 @@ public class CombateAtributos : MonoBehaviour
             
             acoes[i].ShuffleFalas();
             
-        Debug.LogFormat("Falas {0}: {1} - {2} - {3} - {4}",i,acoes[i].nome[0],acoes[i].nome[1],acoes[i].nome[2],acoes[i].nome[3]);
         }
         
     }
     public void setAcoes(CombateAcoesDaFase novasAcoes)
     {
         this.acoes = novasAcoes.ListaAcoes;
+    }
+    public void setArgs(CombateArgsDaFase novosArgs)
+    {
+        this.argAgre = novosArgs.GetAgre();
+        this.argDipl = novosArgs.GetDipl();
+        this.argDef = novosArgs.GetDef();
+    }
+    public CombateArgumento getArgAgre()
+    {
+        return argAgre;
+    }
+    public CombateArgumento getArgDipl()
+    {
+        return argDipl;
+    }
+    public CombateArgumento getArgDef()
+    {
+        return argDef;
     }
     public CombateAcao getAcao(int index)
     {
@@ -133,5 +155,9 @@ public class CombateAtributos : MonoBehaviour
         fase = novaFase;
     }
 
+    public void curar(int quantidade)
+    {
+        vidaAtual += quantidade;
+    }
 
 }
