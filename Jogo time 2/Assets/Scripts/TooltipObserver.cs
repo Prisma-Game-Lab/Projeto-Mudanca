@@ -84,7 +84,7 @@ public class TooltipObserver : MonoBehaviour
             TooltipScript.ExibirTooltip(textoTooltip);
         }
     }
-    /*void OnMouseOver()
+    void OnMouseOver()
     {
         exibindo = true;
         TooltipScript.ExibirTooltip(textoTooltip);
@@ -93,7 +93,7 @@ public class TooltipObserver : MonoBehaviour
     {
         exibindo = false;
         TooltipScript.EsconderTooltip();
-    }*/
+    }
     public void OnPointerEnter()
     {
         exibindo = true;
