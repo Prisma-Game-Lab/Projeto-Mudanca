@@ -274,8 +274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 856021c3dad2f884094eac9b36b0f581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OldDialogue: {fileID: 11400000, guid: 59eb54561d6dfb749860244fe8156007, type: 2}
   NewDialogue: {fileID: 11400000, guid: 25a7cfddff656bf439430f07b3a5b50d, type: 2}
-  OldDialogueObject: {fileID: 236148264}
 --- !u!114 &72867662
 MonoBehaviour:
   m_ObjectHideFlags: 0
