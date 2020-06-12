@@ -5,10 +5,9 @@ using UnityEngine;
 public class ChangeDialogue : MonoBehaviour
 {
 
-    public DialogueBlock OldDialogue;
-
     public DialogueBlock NewDialogue;
-     
+    public GameObject OldDialogueObject;
+
     private DialogueTrigger DialogueTrigger;
     void Start()
     {
@@ -20,8 +19,7 @@ public class ChangeDialogue : MonoBehaviour
     {
         if ((Input.GetKeyDown(KeyCode.Z)||Input.GetKeyDown("space")) && DialogueTrigger.canActivate)
         {
-            OldDialogue= NewDialogue;
-            Debug.Log("trocou");
+            OldDialogueObject.GetComponent<DialogueTrigger>().Dialogue = NewDialogue;
         }
 
 
