@@ -21,27 +21,27 @@ MonoBehaviour:
     - "Voc\xEA tinha dito que n\xE3o estava afim de encontrar todo mundo..."
     - Sempre com esse seu jeitinho envergonhado
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
     - " A gente t\xE1 na escola? T\xE1 tudo muito estranho"
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   - Name: "Palha\xE7o da turma"
     Sentences:
     - Ih, garota! Bebeu demais, foi? Hahaha
     - "Onde voc\xEA acha que t\xE1?"
     - "Aqui \xE9 a nossa festa, p\xF4!"
-    Continuo: 0
-    dialogueBlock: {fileID: 0}
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
     - Mas eu estava no meu quarto agora pouco...
     - "Fui olhar o meu arm\xE1rio e vim parar aqui"
     - " Isso n\xE3o pode ser uma festa de verdade..."
     Continuo: 0
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
-  i: 0
-  index: 0
+  i: 4
+  index: 3
