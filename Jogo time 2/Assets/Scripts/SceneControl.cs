@@ -8,10 +8,12 @@ public class SceneControl : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
 
+    private bool derrota;
 
     public void Start()
     {
         DontDestroyOnLoad(this);
+        derrota = false;
     }
 
     public void LoadScene(string sceneToLoad)
@@ -31,6 +33,11 @@ public class SceneControl : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(levelIndex);
+    }
+
+    public void TriggerDerrota(bool estado)
+    {
+        derrota = estado;
     }
 
 }

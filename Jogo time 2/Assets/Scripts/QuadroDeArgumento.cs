@@ -7,7 +7,7 @@ public class QuadroDeArgumento : MonoBehaviour
 {
     public Sprite iconeIncisivo,iconeDefensivo,iconeDiplomatico;
 
-    public CombateArgumento armazenado;
+    private CombateArgumento armazenado;
 
     // Update is called once per frame
     void Update()

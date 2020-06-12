@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CombateManager : MonoBehaviour
 {
@@ -73,6 +74,11 @@ public class CombateManager : MonoBehaviour
     //A: tempo aguardado entre cada turno, para o jogador compreender o que ocorre.
     public float entreTurnos;
     
+    [Header("Cenas pos batalha")]
+    [Tooltip("Nome da cena a carregar caso o jogador vença")]
+    public string cenaVitoria;
+    [Tooltip("Nome da cena a carregar caso o jogador perca")]
+    public string cenaDerrota;
     //A: arrays para armazenar argumentos
     private CombateArgumento[] argumentosPlayer;
     private CombateArgumento[] argumentosAdversario;
@@ -614,6 +620,16 @@ public class CombateManager : MonoBehaviour
         return bonusTotal;
     }
 
+
+    public void BotaoVitoria()
+    {
+        SceneManager.LoadScene(cenaVitoria);
+    }
+
+    public void BotaoDerrota()
+    {
+        SceneManager.LoadScene(cenaDerrota);
+    }
     //A: gerencia variaveis relacionadas a passagem de turno
     IEnumerator passaTurno()
     {

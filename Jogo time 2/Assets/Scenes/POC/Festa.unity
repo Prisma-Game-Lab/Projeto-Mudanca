@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -172,7 +172,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: b28c8832e27323b40a6283da3f0ad0c7, type: 2}
+  Dialogue: {fileID: 0}
 --- !u!61 &40478940
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -339,7 +339,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: a84abebdb777dcb45abaed9097f2f5d4, type: 2}
+  Dialogue: {fileID: 0}
 --- !u!61 &43297432
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -978,7 +978,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 1
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 5d23ef7cf4378994fa209614be8dd376, type: 2}
+  Dialogue: {fileID: 11400000, guid: aec8a4d594d240e4493ef48ef3718c94, type: 2}
 --- !u!61 &262466516
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1259,7 +1259,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 5869718c30ecac84fb2c3d3d301c0010, type: 2}
+  Dialogue: {fileID: 11400000, guid: 06b8b2ed8d2198a4ba844de0e9afa04a, type: 2}
 --- !u!61 &347850037
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2842,7 +2842,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 0f5dc80490475c744bec404f3327ae1f, type: 2}
+  Dialogue: {fileID: 11400000, guid: d0602d3f1344a7c46ab3ea10ca07802d, type: 2}
 --- !u!61 &822484016
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3121,7 +3121,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: de64f96b610ab7f44a4ed1c9a58f026e, type: 2}
+  Dialogue: {fileID: 11400000, guid: abcfc29fb0c9cc145a8c3e434ae229e7, type: 2}
 --- !u!61 &840210261
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3457,7 +3457,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: ea5eadef8e0df404bb50208d95639176, type: 2}
+  Dialogue: {fileID: 0}
 --- !u!61 &906407281
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4166,7 +4166,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 60f5e33d723faba43b4cb057f5a90cef, type: 2}
+  Dialogue: {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
 --- !u!61 &1092688080
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4312,7 +4312,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 9ff7273ebe44af5478ac0f57792cc21a, type: 2}
+  Dialogue: {fileID: 0}
 --- !u!61 &1122195816
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4976,7 +4976,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 52705e4e1bd81454a8538101f3f413b1, type: 2}
+  Dialogue: {fileID: 11400000, guid: f2ba1a42261e2634893e8ecd91751079, type: 2}
 --- !u!61 &1233587969
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5149,7 +5149,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: c3a3a9bf39964d747b4c7250e797f638, type: 2}
+  Dialogue: {fileID: 11400000, guid: 14227ace8fc9e9a4a9ba2357f2f3d85f, type: 2}
 --- !u!61 &1238282130
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5578,7 +5578,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 09f518bd88d609d4a9d9812b7af317cf, type: 2}
+  Dialogue: {fileID: 0}
 --- !u!61 &1338457219
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5703,7 +5703,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352686412}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.7100077, y: -0.053958416, z: 0}
+  m_LocalPosition: {x: -2.7100039, y: -0.053958416, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 111874678}
@@ -5917,7 +5917,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 95de2803800e734499bcc42ca862c118, type: 2}
+  Dialogue: {fileID: 0}
 --- !u!61 &1408315032
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6109,7 +6109,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 5c0a3d834954c8241b9ff4e506bca650, type: 2}
+  Dialogue: {fileID: 11400000, guid: e3dc1b503324cae4f823b7b6e0b78825, type: 2}
 --- !u!61 &1422351575
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6363,7 +6363,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 01422aabf4f0f3d43a2d074c18e1b1bb, type: 2}
+  Dialogue: {fileID: 0}
 --- !u!61 &1477575336
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6573,7 +6573,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 9ff7273ebe44af5478ac0f57792cc21a, type: 2}
+  Dialogue: {fileID: 0}
 --- !u!61 &1526714956
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6834,7 +6834,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 2d431046064db214595f1640ee3302fb, type: 2}
+  Dialogue: {fileID: 0}
 --- !u!61 &1624893334
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8015,7 +8015,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 9ff7273ebe44af5478ac0f57792cc21a, type: 2}
+  Dialogue: {fileID: 0}
 --- !u!61 &1896190261
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8195,7 +8195,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 50dec51db0e87f44c8cf63441770cd6d, type: 2}
+  Dialogue: {fileID: 11400000, guid: 85fc2397f6fefe54585462d472f4d17d, type: 2}
 --- !u!61 &1914225270
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8417,7 +8417,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 328f2f88247822d4fb73db93733fbca7, type: 2}
+  Dialogue: {fileID: 11400000, guid: 23d7fb83996562f47928dd24f86a6ff3, type: 2}
 --- !u!61 &1959984910
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8860,7 +8860,7 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: c5140de62e3748e4f806420f5e75630b, type: 2}
+  Dialogue: {fileID: 0}
 --- !u!61 &2021566307
 BoxCollider2D:
   m_ObjectHideFlags: 0
