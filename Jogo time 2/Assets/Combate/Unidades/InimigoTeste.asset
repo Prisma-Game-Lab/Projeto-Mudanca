@@ -15,13 +15,10 @@ MonoBehaviour:
   nome: Grupo de meninos
   vida: 300
   barraArgumento: 100
-  dano: 8
+  dano: 10
   defesa: 5
   iniciativa: 4
   tipoResistente: 00000000
   tipoVulneravel: 02000000
   postura: 1
   descricao: "Ele \xE9 muito cabe\xE7a dura, ser incisiva n\xE3o vai fazer efeito."
-  argumentoAgressivo: {fileID: 0}
-  argumentoManipulador: {fileID: 0}
-  argumentoDiplomatico: {fileID: 0}

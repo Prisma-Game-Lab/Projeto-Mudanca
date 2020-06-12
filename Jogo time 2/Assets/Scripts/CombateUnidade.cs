@@ -61,15 +61,4 @@ public class CombateUnidade : ScriptableObject
     [Tooltip("Descrição da postura, que aparece na tooltip da unidade")]
     //descricao: informacao sobre o efeito da postura. Exibido na tooltip
     public string descricao;
-
-    [Header("Referencias aos prefabs dos argumentos criados ao encher a barra ")]
-    //arrayArgumentos: armazena os argumentos usados em combate
-    [Tooltip("Argumento criado ao usar muito os ataques de tipo agressivo")]
-    public GameObject argumentoAgressivo;
-    [Tooltip("Argumento criado ao usar muito os ataques de tipo manipulador")]
-    public GameObject argumentoManipulador;
-    [Tooltip("Argumento criado ao usar muito os ataques de tipo diplomatico")]
-    public GameObject argumentoDiplomatico;
-    
-
 }

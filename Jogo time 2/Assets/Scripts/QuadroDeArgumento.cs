@@ -37,11 +37,14 @@ public class QuadroDeArgumento : MonoBehaviour
     public void CarregaArgumento(CombateArgumento novoArgumento)
     {
         armazenado = novoArgumento;
+        this.GetComponent<TooltipObserver>().associaArgumento(novoArgumento);
         this.gameObject.SetActive(true);
+
     }
     public void LimpaArgumento()
     {
         armazenado = null;
+        this.GetComponent<TooltipObserver>().associaArgumento(null);
         this.gameObject.SetActive(false);
     }
 }

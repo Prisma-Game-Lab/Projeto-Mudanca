@@ -9,6 +9,7 @@ public enum tipoTooltip
     adversario,
     alinhamento,
     acao,
+    argumento,
     nenhum
 }
 public class TooltipObserver : MonoBehaviour
@@ -22,6 +23,7 @@ public class TooltipObserver : MonoBehaviour
 
     //A: uma acao estara associada ao objeto caso ele seja um botao
     private CombateAcao acaoAssociada;
+    private CombateArgumento argumentoAssociado;
 
     private bool exibindo = false;
     void Update()
@@ -32,8 +34,10 @@ public class TooltipObserver : MonoBehaviour
                 textoTooltip = this.GetComponent<CombateAtributos>().atributos.descricao;
                 break;
             case tipoTooltip.player:
+
                 CombateUnidade atribJogador = this.GetComponent<CombateAtributos>().atributos;
                 textoTooltip = string.Format("Ataque: {0}\nDefesa: {1}",atribJogador.dano,atribJogador.defesa);
+                
                 break;
             case tipoTooltip.alinhamento:
                 switch(alinhamentoSlider.value)
@@ -75,6 +79,24 @@ public class TooltipObserver : MonoBehaviour
                         break;
                 }
                 break;
+            case tipoTooltip.argumento:
+                if(argumentoAssociado != null)
+                {
+                    switch(argumentoAssociado.habilidade)
+                    {
+                        case CombateArgumento.tipoArgumento.Ataque:
+                            textoTooltip = string.Format("Aumentando dano de ataque em {0}.",argumentoAssociado.valor);
+                            break;
+                        case CombateArgumento.tipoArgumento.Defesa:
+                            textoTooltip = string.Format("Aumentando defesa em {0}.",argumentoAssociado.valor);
+                            break;
+                        default:
+                            textoTooltip = string.Format("Recuperando {0} pontos de vida por turno.",argumentoAssociado.valor);
+                            break;
+                    }
+                }
+                else textoTooltip = "";
+                break;
             default:
                 textoTooltip = "";
                 break;
@@ -107,5 +129,10 @@ public class TooltipObserver : MonoBehaviour
     public void associaAcao(CombateAcao novaAssociada)
     {
         acaoAssociada = novaAssociada;
+    }
+
+    public void associaArgumento(CombateArgumento novoArgumentoAssociado)
+    {
+        argumentoAssociado = novoArgumentoAssociado;
     }
 }
