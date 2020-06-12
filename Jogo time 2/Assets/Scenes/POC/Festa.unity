@@ -1722,6 +1722,80 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &602706744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 602706745}
+  - component: {fileID: 602706747}
+  - component: {fileID: 602706746}
+  m_Layer: 0
+  m_Name: Boss cutscene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &602706745
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602706744}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 879516045}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &602706746
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602706744}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!320 &602706747
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602706744}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: dfe667810a68fb84aa782737f2e9133a, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -4409260437237452967, guid: dfe667810a68fb84aa782737f2e9133a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -5061733841367371337, guid: dfe667810a68fb84aa782737f2e9133a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 191790798241149591, guid: dfe667810a68fb84aa782737f2e9133a, type: 2}
+    value: {fileID: 1424589701}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &606672454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,6 +1828,7 @@ MonoBehaviour:
   NameText: {fileID: 1492061880}
   DialogueText: {fileID: 1989226154}
   DialogueOn: 0
+  ativarcutscene: 0
   TextSpeed: 3
   Festa: 0
   FastTextSpeed: 1
@@ -2697,6 +2772,16 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 2.3116202
       objectReference: {fileID: 0}
+    - target: {fileID: 6602085717993891286, guid: c8a6c06742ebb422c9fcc636a5105999,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 7.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602085717993891286, guid: c8a6c06742ebb422c9fcc636a5105999,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 13.39
+      objectReference: {fileID: 0}
     - target: {fileID: 6602085717993891287, guid: c8a6c06742ebb422c9fcc636a5105999,
         type: 3}
       propertyPath: m_SortingOrder
@@ -3072,6 +3157,7 @@ Transform:
   - {fileID: 7674280624917743248}
   - {fileID: 239690662}
   - {fileID: 1837354728}
+  - {fileID: 602706745}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3650,6 +3736,7 @@ GameObject:
   - component: {fileID: 1088138443}
   - component: {fileID: 1088138442}
   - component: {fileID: 1088138441}
+  - component: {fileID: 1088138446}
   m_Layer: 0
   m_Name: Grupo de amigos rivais
   m_TagString: Untagged
@@ -3665,7 +3752,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088138439}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 83, y: 48.3, z: 10}
+  m_LocalPosition: {x: 83.55, y: 41.32, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 166156596}
@@ -3809,6 +3896,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1088138446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088138439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776759dc9e507a243a65bf95b439e946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeline: {fileID: 602706747}
 --- !u!1 &1141575791
 GameObject:
   m_ObjectHideFlags: 0
@@ -4915,10 +5015,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1424589697}
   - component: {fileID: 1424589702}
-  - component: {fileID: 1424589701}
   - component: {fileID: 1424589700}
   - component: {fileID: 1424589699}
   - component: {fileID: 1424589698}
+  - component: {fileID: 1424589701}
   m_Layer: 0
   m_Name: Bruno toxic guy
   m_TagString: Untagged
@@ -4934,7 +5034,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424589696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 96.4, y: 46.6, z: 10}
+  m_LocalPosition: {x: 98.18, y: 40.57, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 166156596}
@@ -7538,11 +7638,13 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 5ef36b0aab0664e41a83800c32bc2890, type: 2}
-  m_InitialState: 0
+  m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
+  - key: {fileID: 0}
+    value: {fileID: 1141575792}
   - key: {fileID: 879725810507269206, guid: 5ef36b0aab0664e41a83800c32bc2890, type: 2}
     value: {fileID: 1141575792}
   m_ExposedReferences:
