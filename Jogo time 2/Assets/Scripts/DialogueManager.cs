@@ -28,6 +28,8 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
     public bool Boss;
 
+    public AudioSource UIsfx;
+
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +44,7 @@ public class DialogueManager : MonoBehaviour
             if ((Input.GetKeyDown("z") || Input.GetKeyDown("space")) && complete == true)
             {
                 complete = false;
+                UIsfx.Play();
                 DisplayNextSentence();
             }
         }
