@@ -1398,7 +1398,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258187413}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.7100058, y: -0.053958416, z: 0}
+  m_LocalPosition: {x: -2.7100096, y: -0.053958416, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 102253805}
@@ -3526,6 +3526,7 @@ MonoBehaviour:
   Cutscene: 0
   Dialogue:
   - {fileID: 11400000, guid: d0602d3f1344a7c46ab3ea10ca07802d, type: 2}
+  - {fileID: 11400000, guid: b9c31622b6827e44e9d9fc253e65b492, type: 2}
   i: 0
 --- !u!61 &775381571
 BoxCollider2D:

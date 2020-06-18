@@ -15,4 +15,9 @@ public class BattleSceneManager : MonoBehaviour
            {
                  SceneManager.LoadScene( sceneToLoad);
            }
+
+       public void TriggerDerrota(bool estado)
+    {
+        SceneController.derrota=estado;
+    }
 }

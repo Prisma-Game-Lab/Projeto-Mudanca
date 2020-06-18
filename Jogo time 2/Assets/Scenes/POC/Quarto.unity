@@ -3531,6 +3531,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: ListManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8368209525115120913, guid: ae2aff80f3fc0f64eba8740890e5fa7e,
+        type: 3}
+      propertyPath: DialogosMutaveis.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368209525115120913, guid: ae2aff80f3fc0f64eba8740890e5fa7e,
+        type: 3}
+      propertyPath: DialogosMutaveis.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: d0602d3f1344a7c46ab3ea10ca07802d,
+        type: 2}
     - target: {fileID: 8368209525115120942, guid: ae2aff80f3fc0f64eba8740890e5fa7e,
         type: 3}
       propertyPath: m_LocalPosition.x
