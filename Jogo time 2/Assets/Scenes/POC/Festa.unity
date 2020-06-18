@@ -121,6 +121,75 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &19317825
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8368209525115120912, guid: ae2aff80f3fc0f64eba8740890e5fa7e,
+        type: 3}
+      propertyPath: m_Name
+      value: ListManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368209525115120942, guid: ae2aff80f3fc0f64eba8740890e5fa7e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.029999953
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368209525115120942, guid: ae2aff80f3fc0f64eba8740890e5fa7e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368209525115120942, guid: ae2aff80f3fc0f64eba8740890e5fa7e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368209525115120942, guid: ae2aff80f3fc0f64eba8740890e5fa7e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368209525115120942, guid: ae2aff80f3fc0f64eba8740890e5fa7e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368209525115120942, guid: ae2aff80f3fc0f64eba8740890e5fa7e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368209525115120942, guid: ae2aff80f3fc0f64eba8740890e5fa7e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368209525115120942, guid: ae2aff80f3fc0f64eba8740890e5fa7e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368209525115120942, guid: ae2aff80f3fc0f64eba8740890e5fa7e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368209525115120942, guid: ae2aff80f3fc0f64eba8740890e5fa7e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368209525115120942, guid: ae2aff80f3fc0f64eba8740890e5fa7e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ae2aff80f3fc0f64eba8740890e5fa7e, type: 3}
 --- !u!1 &51463545
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +341,7 @@ PrefabInstance:
     - target: {fileID: 3739563307542743259, guid: af38bd4eb2460344db047191ceca7550,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af38bd4eb2460344db047191ceca7550, type: 3}
@@ -1279,7 +1348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258187413}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.7100039, y: -0.053958416, z: 0}
+  m_LocalPosition: {x: -2.7100058, y: -0.053958416, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 102253805}
@@ -1705,7 +1774,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
+  i: 0
 --- !u!61 &359453996
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1879,7 +1950,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 1
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: aec8a4d594d240e4493ef48ef3718c94, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: 15f74daa5f53e4a4aaa7d4e7ad40330e, type: 2}
+  i: 0
 --- !u!114 &378003170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2192,7 +2265,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 85fc2397f6fefe54585462d472f4d17d, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: 85fc2397f6fefe54585462d472f4d17d, type: 2}
+  i: 0
 --- !u!61 &401868948
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2631,7 +2706,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 06b8b2ed8d2198a4ba844de0e9afa04a, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: 06b8b2ed8d2198a4ba844de0e9afa04a, type: 2}
+  i: 0
 --- !u!61 &537127119
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2865,6 +2942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 0}
   transitionTime: 1
+  derrota: 0
 --- !u!1 &587046554
 GameObject:
   m_ObjectHideFlags: 0
@@ -3509,7 +3587,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: d0602d3f1344a7c46ab3ea10ca07802d, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: d0602d3f1344a7c46ab3ea10ca07802d, type: 2}
+  i: 0
 --- !u!61 &775381571
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3676,7 +3756,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: b9c31622b6827e44e9d9fc253e65b492, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: b9c31622b6827e44e9d9fc253e65b492, type: 2}
+  i: 0
 --- !u!61 &783604991
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3830,7 +3912,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: e3dc1b503324cae4f823b7b6e0b78825, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: e3dc1b503324cae4f823b7b6e0b78825, type: 2}
+  i: 0
 --- !u!95 &831509581
 Animator:
   serializedVersion: 3
@@ -4003,7 +4087,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 14227ace8fc9e9a4a9ba2357f2f3d85f, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: 14227ace8fc9e9a4a9ba2357f2f3d85f, type: 2}
+  i: 0
 --- !u!61 &867969137
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4176,7 +4262,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 23d7fb83996562f47928dd24f86a6ff3, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: 23d7fb83996562f47928dd24f86a6ff3, type: 2}
+  i: 0
 --- !u!61 &883824204
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4697,7 +4785,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 526bf9edf8949b145bfcbedd0a85bb91, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: 526bf9edf8949b145bfcbedd0a85bb91, type: 2}
+  i: 0
 --- !u!61 &1043234752
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5280,7 +5370,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: c264e7cee7b735141b9b8113676891ef, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: c264e7cee7b735141b9b8113676891ef, type: 2}
+  i: 0
 --- !u!61 &1136539763
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5580,7 +5672,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 0bb6a47b4d37fa54db7504f02e859596, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: 0bb6a47b4d37fa54db7504f02e859596, type: 2}
+  i: 0
 --- !u!61 &1172822711
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6069,7 +6163,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: b9c31622b6827e44e9d9fc253e65b492, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: b9c31622b6827e44e9d9fc253e65b492, type: 2}
+  i: 0
 --- !u!61 &1355568813
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6223,7 +6319,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: cee9d47e2d6c0d145a790e0c0cbd29d3, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: cee9d47e2d6c0d145a790e0c0cbd29d3, type: 2}
+  i: 0
 --- !u!61 &1361017141
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6469,7 +6567,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: c56254b8c1127d643808bdb54efb652f, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: c56254b8c1127d643808bdb54efb652f, type: 2}
+  i: 0
 --- !u!61 &1402420774
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6913,7 +7013,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: b9c31622b6827e44e9d9fc253e65b492, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: b9c31622b6827e44e9d9fc253e65b492, type: 2}
+  i: 0
 --- !u!61 &1474652517
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7067,7 +7169,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: a4bd9432dd55b8b4baa66f0a5497a61b, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: a4bd9432dd55b8b4baa66f0a5497a61b, type: 2}
+  i: 0
 --- !u!61 &1504843283
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7321,7 +7425,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: f2ba1a42261e2634893e8ecd91751079, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: 4cdcfd7bcfc777948a4c50ec9f28fe10, type: 2}
+  i: 0
 --- !u!61 &1562190752
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7602,7 +7708,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: abcfc29fb0c9cc145a8c3e434ae229e7, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: abcfc29fb0c9cc145a8c3e434ae229e7, type: 2}
+  i: 0
 --- !u!61 &1610846080
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7856,7 +7964,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 4eb9aefb727088f4ea53f3ea592708fb, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: 4eb9aefb727088f4ea53f3ea592708fb, type: 2}
+  i: 0
 --- !u!61 &1630914131
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7988,7 +8098,7 @@ GameObject:
   - component: {fileID: 1638545367}
   - component: {fileID: 1638545366}
   m_Layer: 0
-  m_Name: Baba ovo do popular
+  m_Name: Baba ovo dos rivais
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8024,7 +8134,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 4cdcfd7bcfc777948a4c50ec9f28fe10, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: f2ba1a42261e2634893e8ecd91751079, type: 2}
+  i: 0
 --- !u!61 &1638545367
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8272,7 +8384,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 07acbbf6f2840c34a829e5ead488c466, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: 07acbbf6f2840c34a829e5ead488c466, type: 2}
+  i: 0
 --- !u!61 &1657874172
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8412,7 +8526,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 1
   Cutscene: 1
-  Dialogue: {fileID: 11400000, guid: 6f5b7648513677e4ba4d4de6a0ca07fb, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: 6f5b7648513677e4ba4d4de6a0ca07fb, type: 2}
+  i: 0
 --- !u!61 &1775218764
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8728,10 +8844,8 @@ MonoBehaviour:
   dialogueUI: {fileID: 1026862613}
   DialogueBlock: {fileID: 0}
   i: 0
-  sceneControl: {fileID: 540676776}
   animator: {fileID: 1026862614}
   Boss: 0
-  UIsfx: {fileID: 1168881101}
 --- !u!1 &1894126012
 GameObject:
   m_ObjectHideFlags: 0
