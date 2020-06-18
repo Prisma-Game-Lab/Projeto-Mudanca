@@ -33,7 +33,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         _sentences = new Queue<string>();
-        sceneControl= FindObjectOfType<SceneControl>();
+        sceneControl=   GameObject.Find("GameManager").GetComponent<SceneControl>();
     }
 
     void Update()

@@ -17,11 +17,11 @@ public class DialogueTrigger : MonoBehaviour
     [Tooltip("Coloque aqui o dialogo criado")]   
     public DialogueBlock[] Dialogue;
     public int i;
-    private GameObject lista;
+    private ListaDialogos lista;
     
 
     private void Start() {
-       lista= GameObject.Find("ListManager");
+       lista= GameObject.Find("ListManager").GetComponent<ListaDialogos>();
        i=0;
     }
     public void Update()
@@ -42,8 +42,8 @@ public class DialogueTrigger : MonoBehaviour
         //dialogueCanvas.gameObject.SetActive(true);
         FindObjectOfType<DialogueManager>().DisplayDialogue(Dialogue[i]);
          
-        if(! lista.GetComponent<ListaDialogos>().Listadedialogos.Contains(Dialogue[i])){
-        lista.GetComponent<ListaDialogos>().Listadedialogos.Add(Dialogue[i]);
+        if(! lista.Listadedialogos.Contains(Dialogue[i])){
+        lista.Listadedialogos.Add(Dialogue[i]);
         }
          
     }
