@@ -3482,6 +3482,7 @@ GameObject:
   - component: {fileID: 775381572}
   - component: {fileID: 775381571}
   - component: {fileID: 775381570}
+  - component: {fileID: 775381575}
   m_Layer: 0
   m_Name: Julia
   m_TagString: Untagged
@@ -3644,6 +3645,18 @@ Transform:
   m_Father: {fileID: 1957632479}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &775381575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775381568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856021c3dad2f884094eac9b36b0f581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &783604988
 GameObject:
   m_ObjectHideFlags: 0
@@ -7143,6 +7156,7 @@ GameObject:
   - component: {fileID: 1504843284}
   - component: {fileID: 1504843283}
   - component: {fileID: 1504843282}
+  - component: {fileID: 1504843287}
   m_Layer: 0
   m_Name: Aquele cara
   m_TagString: Untagged
@@ -7182,6 +7196,7 @@ MonoBehaviour:
   Cutscene: 0
   Dialogue:
   - {fileID: 11400000, guid: a4bd9432dd55b8b4baa66f0a5497a61b, type: 2}
+  - {fileID: 11400000, guid: 6ed52802fdf090442a7eb47d8e053431, type: 2}
   i: 0
 --- !u!61 &1504843283
 BoxCollider2D:
@@ -7304,6 +7319,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1504843287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504843280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856021c3dad2f884094eac9b36b0f581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1514459984
 GameObject:
   m_ObjectHideFlags: 0
@@ -7682,6 +7709,7 @@ GameObject:
   - component: {fileID: 1610846081}
   - component: {fileID: 1610846080}
   - component: {fileID: 1610846079}
+  - component: {fileID: 1610846084}
   m_Layer: 0
   m_Name: "Palha\xE7o da turma"
   m_TagString: Untagged
@@ -7721,6 +7749,7 @@ MonoBehaviour:
   Cutscene: 0
   Dialogue:
   - {fileID: 11400000, guid: abcfc29fb0c9cc145a8c3e434ae229e7, type: 2}
+  - {fileID: 11400000, guid: 8131c2810c6858f41be6b6539946504d, type: 2}
   i: 0
 --- !u!61 &1610846080
 BoxCollider2D:
@@ -7843,6 +7872,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1610846084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610846077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856021c3dad2f884094eac9b36b0f581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1630002881
 GameObject:
   m_ObjectHideFlags: 0

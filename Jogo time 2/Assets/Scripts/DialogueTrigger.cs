@@ -17,11 +17,11 @@ public class DialogueTrigger : MonoBehaviour
     [Tooltip("Coloque aqui o dialogo criado")]   
     public DialogueBlock[] Dialogue;
     public int i;
-    private ListaDialogos lista;
+    private GameObject lista;
     
 
     private void Start() {
-       lista= FindObjectOfType<ListaDialogos>();
+       lista= GameObject.Find("ListManager");
        i=0;
     }
     public void Update()
@@ -34,15 +34,18 @@ public class DialogueTrigger : MonoBehaviour
                 }
         }
     }
+      
     }
     
     public void TriggerDialogue()
     {
         //dialogueCanvas.gameObject.SetActive(true);
         FindObjectOfType<DialogueManager>().DisplayDialogue(Dialogue[i]);
-        if(!lista.Listadedialogos.Contains(Dialogue[i])){
-        lista.Listadedialogos.Add(Dialogue[i]);
+         
+        if(! lista.GetComponent<ListaDialogos>().Listadedialogos.Contains(Dialogue[i])){
+        lista.GetComponent<ListaDialogos>().Listadedialogos.Add(Dialogue[i]);
         }
+         
     }
 
     private void OnTriggerEnter2D(Collider2D other)

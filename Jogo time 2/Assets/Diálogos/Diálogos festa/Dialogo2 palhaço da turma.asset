@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8d1f939cbcee94bb7a38c8245bc37c, type: 3}
+  m_Name: "Dialogo2 palha\xE7o da turma"
+  m_EditorClassIdentifier: 
+  Descricao: 
+  Dialogue:
+  - Name: "O palha\xE7o da turma"
+    Sentences:
+    - "E a\xED, Alex!"
+    - "Achei que voc\xEA n\xE3o fosse vir \xE0 festa hahaha"
+    - "Voc\xEA tinha dito que n\xE3o estava afim de encontrar todo mundo..."
+    - Sempre com esse seu jeitinho envergonhado
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000, guid: abcfc29fb0c9cc145a8c3e434ae229e7, type: 2}
+  - Name: Alex
+    Sentences:
+    - "(N\xE3o to com tempo pra isso...)"
+    - "Voc\xEA n\xE3o acha estranho estar todo mundo usando m\xE1scara numa festa
+      de formatura?"
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000, guid: abcfc29fb0c9cc145a8c3e434ae229e7, type: 2}
+  - Name: "Palha\xE7o da turma"
+    Sentences:
+    - "Estranho? Do que voc\xEA t\xE1 falando?"
+    - "Sempre usamos m\xE1scaras"
+    Continuo: 0
+    dialogueBlock: {fileID: 11400000, guid: abcfc29fb0c9cc145a8c3e434ae229e7, type: 2}
+  Boss: 0
+  Festa: 0
+  i: 0
+  index: 0

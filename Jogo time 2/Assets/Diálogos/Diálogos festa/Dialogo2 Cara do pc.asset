@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8d1f939cbcee94bb7a38c8245bc37c, type: 3}
+  m_Name: Dialogo2 Cara do pc
+  m_EditorClassIdentifier: 
+  Descricao: 
+  Dialogue:
+  - Name: O nerd do pc
+    Sentences:
+    - Mas que inferno!
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000, guid: a4bd9432dd55b8b4baa66f0a5497a61b, type: 2}
+  - Name: Alex
+    Sentences:
+    - "Eita! T\xE1 tudo bem?"
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000, guid: a4bd9432dd55b8b4baa66f0a5497a61b, type: 2}
+  - Name: O nerd do pc
+    Sentences:
+    - " \xC3n? Voc\xEA por aqui?"
+    - " N\xE3o t\xE1 vendo que eu t\xF4 ocupado, garota chata?"
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000, guid: a4bd9432dd55b8b4baa66f0a5497a61b, type: 2}
+  - Name: Alex
+    Sentences:
+    - "Poxa, desculpa. Eu n\xE3o queria incomodar..."
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000, guid: a4bd9432dd55b8b4baa66f0a5497a61b, type: 2}
+  - Name: O nerd do pc
+    Sentences:
+    - "Por acaso eu pare\xE7o estar bem? Olha minha postura! Eu n\xE3o quero conversa!"
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000, guid: a4bd9432dd55b8b4baa66f0a5497a61b, type: 2}
+  - Name: Alex
+    Sentences:
+    - Postura? Como assim?
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000, guid: a4bd9432dd55b8b4baa66f0a5497a61b, type: 2}
+  - Name: O nerd do pc
+    Sentences:
+    - "oc\xEA sabe n\xE9.. todo mundo tem uma postura, que pode mudar em alguns momentos"
+    - "Tipo agora, que eu n\xE3o quero falar com voc\xEA, pois estou muito ocupado!
+      Tchauzinho..."
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000, guid: a4bd9432dd55b8b4baa66f0a5497a61b, type: 2}
+  Boss: 0
+  Festa: 0
+  i: 0
+  index: 0
