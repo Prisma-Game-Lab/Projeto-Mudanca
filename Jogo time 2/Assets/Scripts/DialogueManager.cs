@@ -23,18 +23,17 @@ public class DialogueManager : MonoBehaviour
 
     [HideInInspector]
     public int i;
-    public SceneControl sceneControl;
+    private SceneControl sceneControl;
 
     public Animator animator;
     public bool Boss;
-
-    public AudioSource UIsfx;
 
 
     // Start is called before the first frame update
     void Start()
     {
         _sentences = new Queue<string>();
+        sceneControl= FindObjectOfType<SceneControl>();
     }
 
     void Update()
@@ -44,7 +43,6 @@ public class DialogueManager : MonoBehaviour
             if ((Input.GetKeyDown("z") || Input.GetKeyDown("space")) && complete == true)
             {
                 complete = false;
-                UIsfx.Play();
                 DisplayNextSentence();
             }
         }
@@ -180,6 +178,14 @@ public class DialogueManager : MonoBehaviour
     {
         StartDialogue(dialogueBlock.Dialogue[i]); //le o proximo dialogo do bloco
     }
+
+    IEnumerator displaydialogue(){
+      
+     yield return new WaitForSeconds(0.1f);
+     DialogueOn = false;
+      Debug.Log("ACABOU");
+       
+ }
     void EndDialogue()
     {
         if (i >= DialogueBlock.Dialogue.Length - 1)
@@ -188,7 +194,8 @@ public class DialogueManager : MonoBehaviour
         }
         else i++; //caso contrario ele adiciona 1 ao index para da proxima vez que se clicar, o proxmo dialogo seja exibido
         animator.SetBool("IsOpen", false);
-        DialogueOn = false;
+        StartCoroutine( displaydialogue());
+        
         
         if (Boss == true)
             sceneControl.LoadScene("Teste Combate");
@@ -197,5 +204,5 @@ public class DialogueManager : MonoBehaviour
           sceneControl.LoadNextScene();   
     }
 
- 
+  
 }

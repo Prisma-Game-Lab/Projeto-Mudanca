@@ -15,7 +15,15 @@ public class DialogueTrigger : MonoBehaviour
     public bool Cutscene;
     int index;
     [Tooltip("Coloque aqui o dialogo criado")]   
-    public DialogueBlock Dialogue;
+    public DialogueBlock[] Dialogue;
+    public int i;
+    private ListaDialogos lista;
+    
+
+    private void Start() {
+       lista= FindObjectOfType<ListaDialogos>();
+       i=0;
+    }
     public void Update()
     {
         index=FindObjectOfType<DialogueManager>().i;
@@ -31,7 +39,10 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerDialogue()
     {
         //dialogueCanvas.gameObject.SetActive(true);
-        FindObjectOfType<DialogueManager>().DisplayDialogue(Dialogue);
+        FindObjectOfType<DialogueManager>().DisplayDialogue(Dialogue[i]);
+        if(!lista.Listadedialogos.Contains(Dialogue[i])){
+        lista.Listadedialogos.Add(Dialogue[i]);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

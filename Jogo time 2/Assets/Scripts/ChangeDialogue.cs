@@ -1,27 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+[System.Serializable]
+public class ChangeDialogue: MonoBehaviour {
+  private SceneControl scene;
+  private ListaDialogos lista;
+  private void Start() {
+     scene = FindObjectOfType<SceneControl>();
+     lista = FindObjectOfType<ListaDialogos>();
 
-public class ChangeDialogue : MonoBehaviour
-{
-
-    public DialogueBlock NewDialogue;
-    public GameObject OldDialogueObject;
-
-    private DialogueTrigger DialogueTrigger;
-    void Start()
-    {
-        DialogueTrigger = gameObject.GetComponent<DialogueTrigger>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if ((Input.GetKeyDown(KeyCode.Z)||Input.GetKeyDown("space")) && DialogueTrigger.canActivate)
-        {
-            OldDialogueObject.GetComponent<DialogueTrigger>().Dialogue = NewDialogue;
-        }
-
-
-    }
-    }
+ }
+   private void Update() {
+       if (scene.derrota==true&& lista.Listadedialogos.Contains(gameObject.GetComponent<DialogueTrigger>().Dialogue[0])){
+           gameObject.GetComponent<DialogueTrigger>().i=1;
+       }
+   }
+}
