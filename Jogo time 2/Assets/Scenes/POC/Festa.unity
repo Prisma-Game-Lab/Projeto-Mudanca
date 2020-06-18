@@ -1787,6 +1787,7 @@ GameObject:
   - component: {fileID: 359453997}
   - component: {fileID: 359453996}
   - component: {fileID: 359453995}
+  - component: {fileID: 359454000}
   m_Layer: 0
   m_Name: BEST FRIEND
   m_TagString: Untagged
@@ -1826,6 +1827,7 @@ MonoBehaviour:
   Cutscene: 0
   Dialogue:
   - {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
+  - {fileID: 11400000, guid: 794b66c38d6593c458999f676e278933, type: 2}
   i: 0
 --- !u!61 &359453996
 BoxCollider2D:
@@ -1948,6 +1950,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &359454000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359453993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856021c3dad2f884094eac9b36b0f581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &378003167
 GameObject:
   m_ObjectHideFlags: 0

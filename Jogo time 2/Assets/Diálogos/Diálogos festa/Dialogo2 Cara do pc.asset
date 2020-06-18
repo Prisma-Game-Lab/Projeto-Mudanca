@@ -18,41 +18,42 @@ MonoBehaviour:
     Sentences:
     - Mas que inferno!
     Continuo: 1
-    dialogueBlock: {fileID: 11400000, guid: a4bd9432dd55b8b4baa66f0a5497a61b, type: 2}
+    dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
     - "Eita! T\xE1 tudo bem?"
     Continuo: 1
-    dialogueBlock: {fileID: 11400000, guid: a4bd9432dd55b8b4baa66f0a5497a61b, type: 2}
+    dialogueBlock: {fileID: 11400000}
   - Name: O nerd do pc
     Sentences:
     - " \xC3n? Voc\xEA por aqui?"
     - " N\xE3o t\xE1 vendo que eu t\xF4 ocupado, garota chata?"
     Continuo: 1
-    dialogueBlock: {fileID: 11400000, guid: a4bd9432dd55b8b4baa66f0a5497a61b, type: 2}
+    dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
     - "Poxa, desculpa. Eu n\xE3o queria incomodar..."
     Continuo: 1
-    dialogueBlock: {fileID: 11400000, guid: a4bd9432dd55b8b4baa66f0a5497a61b, type: 2}
+    dialogueBlock: {fileID: 11400000}
   - Name: O nerd do pc
     Sentences:
     - "Por acaso eu pare\xE7o estar bem? Olha minha postura! Eu n\xE3o quero conversa!"
     Continuo: 1
-    dialogueBlock: {fileID: 11400000, guid: a4bd9432dd55b8b4baa66f0a5497a61b, type: 2}
+    dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
     - Postura? Como assim?
     Continuo: 1
-    dialogueBlock: {fileID: 11400000, guid: a4bd9432dd55b8b4baa66f0a5497a61b, type: 2}
+    dialogueBlock: {fileID: 11400000}
   - Name: O nerd do pc
     Sentences:
-    - "oc\xEA sabe n\xE9.. todo mundo tem uma postura, que pode mudar em alguns momentos"
+    - "Voc\xEA sabe n\xE9.. todo mundo tem uma postura, que pode mudar em alguns
+      momentos"
     - "Tipo agora, que eu n\xE3o quero falar com voc\xEA, pois estou muito ocupado!
       Tchauzinho..."
     Continuo: 1
-    dialogueBlock: {fileID: 11400000, guid: a4bd9432dd55b8b4baa66f0a5497a61b, type: 2}
+    dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
-  i: 0
-  index: 0
+  i: 7
+  index: 6

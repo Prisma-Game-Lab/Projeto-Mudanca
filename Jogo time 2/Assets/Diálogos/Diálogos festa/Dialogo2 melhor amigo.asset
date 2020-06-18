@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8d1f939cbcee94bb7a38c8245bc37c, type: 3}
+  m_Name: Dialogo2 melhor amigo
+  m_EditorClassIdentifier: 
+  Descricao: 
+  Dialogue:
+  - Name: Melhor amigo
+    Sentences:
+    - "Alex!! Voc\xEA chegou!"
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
+  - Name: Alex
+    Sentences:
+    - "T\xE1, t\xE1, j\xE1 sei. N\xE3o, eu n\xE3o to chateada, deixa isso pra l\xE1.."
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
+  - Name: Melhor amigo
+    Sentences:
+    - " U\xE9, mas eu nem disse nada"
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
+  - Name: Alex
+    Sentences:
+    - "Por alguma raz\xE3o eu sinto que estou vivendo o mesmo dia v\xE1rias vezes.."
+    - "Eu j\xE1 falei com voc\xEA antes, mas juro que n\xE3o to louca"
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
+  - Name: Melhor amigo
+    Sentences:
+    - "Tipo um deja v\xFA?"
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
+  - Name: Alex
+    Sentences:
+    - "Sim!! E sempre reinicia depois que eu perco a discuss\xE3o com..."
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
+  - Name: Melhor amigo
+    Sentences:
+    - Com quem?
+    Continuo: 1
+    dialogueBlock: {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
+  - Name: Alex
+    Sentences:
+    - "Deixa pra l\xE1, j\xE1 sei o que fazer!"
+    Continuo: 0
+    dialogueBlock: {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
+  Boss: 0
+  Festa: 0
+  i: 0
+  index: 0
