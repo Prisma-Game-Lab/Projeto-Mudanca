@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8d1f939cbcee94bb7a38c8245bc37c, type: 3}
+  m_Name: Dialogo2Iniciodafesta
+  m_EditorClassIdentifier: 
+  Descricao: 
+  Dialogue:
+  - Name: Menina
+    Sentences:
+    - "Alex, voc\xEA apareceu!"
+    - "Est\xE1vamos preocupados com voc\xEA, sumiu a semana toda do col\xE9gio"
+    Continuo: 1
+    dialogueBlock: {fileID: 0}
+  - Name: Alex
+    Sentences:
+    - "(Como eu suspeitava, t\xE1 tudo igual...)"
+    - (Deve ter alguma coisa aqui que eu preciso resolver pra acabar com esse pesadelo)
+    Continuo: 0
+    dialogueBlock: {fileID: 0}
+  Boss: 0
+  Festa: 0
+  i: 0
+  index: 0

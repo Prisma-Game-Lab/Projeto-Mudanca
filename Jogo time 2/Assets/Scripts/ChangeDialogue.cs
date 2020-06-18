@@ -15,10 +15,7 @@ public class ChangeDialogue: MonoBehaviour {
        && lista.Listadedialogosfinaldodia.Contains(gameObject.GetComponent<DialogueTrigger>().Dialogue[0])){
            gameObject.GetComponent<DialogueTrigger>().i=1;
        }
-         if (Input.GetKeyDown(KeyCode.Q)){
-             Debug.Log(scene);
-              Debug.Log(lista);
-         }
+         
    
    }
    
