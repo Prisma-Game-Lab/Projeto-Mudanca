@@ -8,6 +8,9 @@ public class ListaDialogos : MonoBehaviour
     public static ListaDialogos Instance { get { return _instance; } }
 
     public List<DialogueBlock> Listadedialogos = new List<DialogueBlock>();
+    
+
+    public List<DialogueBlock> Listadedialogosfinaldodia = new List<DialogueBlock>();
    
 
     // Start is called before the first frame update

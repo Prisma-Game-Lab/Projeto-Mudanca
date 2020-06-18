@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 72867663}
   - component: {fileID: 72867662}
   - component: {fileID: 72867661}
+  - component: {fileID: 72867664}
   m_Layer: 0
   m_Name: Vestido
   m_TagString: Untagged
@@ -293,6 +294,7 @@ MonoBehaviour:
   Cutscene: 0
   Dialogue:
   - {fileID: 11400000, guid: 93c3619861acd2340b22b672a3ff715a, type: 2}
+  - {fileID: 11400000, guid: 6466ef12e5633ce4a91abda818be56cd, type: 2}
   i: 0
 --- !u!61 &72867663
 BoxCollider2D:
@@ -320,6 +322,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6494069, y: 0.9999999}
   m_EdgeRadius: 0
+--- !u!114 &72867664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72867659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856021c3dad2f884094eac9b36b0f581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &86364673
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +801,7 @@ GameObject:
   - component: {fileID: 236148267}
   - component: {fileID: 236148266}
   - component: {fileID: 236148265}
+  - component: {fileID: 236148268}
   m_Layer: 0
   m_Name: Armario
   m_TagString: Untagged
@@ -813,6 +828,8 @@ MonoBehaviour:
   Dialogue:
   - {fileID: 11400000, guid: 59eb54561d6dfb749860244fe8156007, type: 2}
   - {fileID: 11400000, guid: 25a7cfddff656bf439430f07b3a5b50d, type: 2}
+  - {fileID: 11400000, guid: acf02fcbc7208d346a1afe183239e13d, type: 2}
+  - {fileID: 11400000, guid: 907ae0880acd50f4a802309741d92b5a, type: 2}
   i: 0
 --- !u!61 &236148266
 BoxCollider2D:
@@ -850,10 +867,23 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 940877352}
   m_Father: {fileID: 199898856}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &236148268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236148264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856021c3dad2f884094eac9b36b0f581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &239690659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,6 +1515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 693505049}
   - component: {fileID: 693505050}
+  - component: {fileID: 693505051}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: Untagged
@@ -1556,6 +1587,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &693505051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693505048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 807740b656e8572448ab8d281afe9635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  a: {fileID: 11400000, guid: b81da5665983feb4d8cbbecf2bb49569, type: 2}
+  b: {fileID: 11400000, guid: 1d3c2e62ae54ada4d86c4bd3d6e291db, type: 2}
 --- !u!1 &720565532
 GameObject:
   m_ObjectHideFlags: 0
@@ -2005,6 +2050,36 @@ Transform:
   - {fileID: 606672456}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &940877351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 940877352}
+  m_Layer: 0
+  m_Name: Armario2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &940877352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940877351}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 236148267}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &997078173
 GameObject:
@@ -2794,6 +2869,7 @@ GameObject:
   - component: {fileID: 1740310410}
   - component: {fileID: 1740310412}
   - component: {fileID: 1740310411}
+  - component: {fileID: 1740310413}
   m_Layer: 0
   m_Name: Cutscene
   m_TagString: Untagged
@@ -2833,6 +2909,7 @@ MonoBehaviour:
   Cutscene: 1
   Dialogue:
   - {fileID: 11400000, guid: 1d3c2e62ae54ada4d86c4bd3d6e291db, type: 2}
+  - {fileID: 11400000, guid: b81da5665983feb4d8cbbecf2bb49569, type: 2}
   i: 0
 --- !u!61 &1740310412
 BoxCollider2D:
@@ -2860,6 +2937,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1740310413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740310409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856021c3dad2f884094eac9b36b0f581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1773531657 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 371259662853984901, guid: dcf557f38ddcbb94eb6bb3d26b61abec,
@@ -3437,6 +3526,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6250511767920509563, guid: 3a988fdca6e5f944a879f6bc7c02e3ac,
+        type: 3}
+      propertyPath: derrota
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6921302808874918174, guid: 3a988fdca6e5f944a879f6bc7c02e3ac,
         type: 3}
       propertyPath: m_LocalPosition.z
