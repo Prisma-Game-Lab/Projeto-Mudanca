@@ -271,10 +271,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 72867659}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 856021c3dad2f884094eac9b36b0f581, type: 3}
+  m_Script: {fileID: 11500000, guid: 7522af09f8493524bb89ea12cc66ee1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NewDialogue: {fileID: 11400000, guid: 25a7cfddff656bf439430f07b3a5b50d, type: 2}
   OldDialogueObject: {fileID: 236148264}
 --- !u!114 &72867662
 MonoBehaviour:
@@ -292,7 +291,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 93c3619861acd2340b22b672a3ff715a, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: 93c3619861acd2340b22b672a3ff715a, type: 2}
+  i: 0
 --- !u!61 &72867663
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -538,7 +539,11 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 1
   Cutscene: 1
-  Dialogue: {fileID: 11400000, guid: c2ae682ea168a0442b06a8401256f250, type: 2}
+  Dialogue:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  i: 0
 --- !u!61 &195647600
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -611,6 +616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 97870472}
   transitionTime: 1
+  derrota: 0
 --- !u!4 &195707480 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7674280624756671704, guid: 3a988fdca6e5f944a879f6bc7c02e3ac,
@@ -917,7 +923,10 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 0
   Cutscene: 0
-  Dialogue: {fileID: 11400000, guid: 59eb54561d6dfb749860244fe8156007, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: 59eb54561d6dfb749860244fe8156007, type: 2}
+  - {fileID: 11400000, guid: 25a7cfddff656bf439430f07b3a5b50d, type: 2}
+  i: 0
 --- !u!61 &236148266
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1171,7 +1180,9 @@ MonoBehaviour:
   canActivate: 0
   Automatico: 1
   Cutscene: 1
-  Dialogue: {fileID: 11400000, guid: 1d3c2e62ae54ada4d86c4bd3d6e291db, type: 2}
+  Dialogue:
+  - {fileID: 11400000, guid: 1d3c2e62ae54ada4d86c4bd3d6e291db, type: 2}
+  i: 0
 --- !u!1 &490045919
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,10 +1436,8 @@ MonoBehaviour:
   dialogueUI: {fileID: 490045919}
   DialogueBlock: {fileID: 0}
   i: 0
-  sceneControl: {fileID: 195707479}
   animator: {fileID: 490045921}
   Boss: 0
-  UIsfx: {fileID: 765398364}
 --- !u!4 &606672456
 Transform:
   m_ObjectHideFlags: 0

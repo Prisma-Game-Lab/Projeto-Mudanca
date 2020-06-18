@@ -6,16 +6,29 @@ using UnityEngine.SceneManagement;
 public class SceneControl : MonoBehaviour
 {
     public Animator transition;
+    private static SceneControl _instance;
+    public static SceneControl Instance { get { return _instance; } }
     public float transitionTime = 1f;
 
-    private bool derrota;
+    public bool derrota;
 
-    public void Start()
+   
+
+private void Start()
     {
-        DontDestroyOnLoad(this);
-        derrota = false;
-    }
-
+        {
+            if (_instance != null && _instance != this)
+            {
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                _instance = this;
+                DontDestroyOnLoad(this.gameObject);
+                derrota = false;
+            }
+        }
+        }
     public void LoadScene(string sceneToLoad)
     {
         SceneManager.LoadScene(sceneToLoad);
