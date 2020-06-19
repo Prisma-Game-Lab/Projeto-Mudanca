@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1758,7 +1758,7 @@ MonoBehaviour:
   Cutscene: 0
   Dialogue:
   - {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: f0605047f4125364cbdd11101c3f9b0a, type: 2}
   i: 0
 --- !u!61 &359453996
 BoxCollider2D:
@@ -2015,7 +2015,7 @@ MonoBehaviour:
   Automatico: 1
   Cutscene: 0
   Dialogue:
-  - {fileID: 11400000, guid: 15f74daa5f53e4a4aaa7d4e7ad40330e, type: 2}
+  - {fileID: 11400000, guid: aec8a4d594d240e4493ef48ef3718c94, type: 2}
   i: 0
 --- !u!114 &378003170
 MonoBehaviour:
@@ -3900,7 +3900,7 @@ MonoBehaviour:
   Cutscene: 0
   Dialogue:
   - {fileID: 11400000, guid: e3dc1b503324cae4f823b7b6e0b78825, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: fb6172dc59928c34e978654664b207d8, type: 2}
   i: 0
 --- !u!95 &831509581
 Animator:
@@ -4099,7 +4099,7 @@ MonoBehaviour:
   Cutscene: 1
   Dialogue:
   - {fileID: 11400000, guid: 6f5b7648513677e4ba4d4de6a0ca07fb, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 3768cfd6600465a439fd059a5d9c3f99, type: 2}
   i: 0
 --- !u!61 &851391499
 BoxCollider2D:
@@ -7349,7 +7349,7 @@ MonoBehaviour:
   Cutscene: 0
   Dialogue:
   - {fileID: 11400000, guid: a4bd9432dd55b8b4baa66f0a5497a61b, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: f80c7e6a8f9b2b048b772ec1a4f95210, type: 2}
   i: 0
 --- !u!61 &1504843283
 BoxCollider2D:
@@ -7902,7 +7902,7 @@ MonoBehaviour:
   Cutscene: 0
   Dialogue:
   - {fileID: 11400000, guid: abcfc29fb0c9cc145a8c3e434ae229e7, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 8e32f016d9e5f72498d72accf2b0117a, type: 2}
   i: 0
 --- !u!61 &1610846080
 BoxCollider2D:
