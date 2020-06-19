@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu/Credits.unity
     guid: 3c1feaa4ff21c4733b8d44935ddda0e7
+  - enabled: 1
+    path: Assets/Scenes/POC/QuartoVitoriaDia1.unity
+    guid: 88c05efe5f9de8c4e92bf4ac935bb65d
   m_configObjects: {}
