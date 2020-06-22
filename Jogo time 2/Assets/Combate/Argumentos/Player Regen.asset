@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Restaurar
   habilidade: 0
-  valor: 4
-  duracao: 3
-  vida: 10
+  valor: 20
+  duracao: 1
+  vida: 100
