@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Defender
   habilidade: 1
-  valor: 20
-  duracao: 1
-  vida: 100
+  valor: 3
+  duracao: 3
+  vida: 10

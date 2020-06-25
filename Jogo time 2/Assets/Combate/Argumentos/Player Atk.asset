@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Atacar
   habilidade: 2
-  valor: 20
-  duracao: 1
-  vida: 100
+  valor: 5
+  duracao: 3
+  vida: 10
