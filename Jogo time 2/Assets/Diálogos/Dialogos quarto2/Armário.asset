@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8d1f939cbcee94bb7a38c8245bc37c, type: 3}
+  m_Name: "Arm\xE1rio"
+  m_EditorClassIdentifier: 
+  Descricao: 
+  Dialogue:
+  - Name: Alex
+    Sentences:
+    - "O que h\xE1 com esse arm\xE1rio?"
+    Continuo: 0
+    dialogueBlock: {fileID: 0}
+  Boss: 0
+  Festa: 1
+  "Reflex\xE3o": 0
+  i: 0
+  index: 0
