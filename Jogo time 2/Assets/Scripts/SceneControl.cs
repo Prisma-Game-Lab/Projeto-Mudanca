@@ -29,17 +29,14 @@ private void Start()
             }
         }
         }
+    
+
     public void LoadScene(string sceneToLoad)
     {
-        SceneManager.LoadScene(sceneToLoad);
+        StartCoroutine(LoadLevel(sceneToLoad));
     }
 
-    public void LoadNextScene()
-    {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
-    }
-
-    IEnumerator LoadLevel(int levelIndex)
+    IEnumerator LoadLevel(string sceneToLoad)
     {
           
         transition.SetTrigger("Start");
@@ -47,7 +44,7 @@ private void Start()
         yield return new WaitForSeconds(transitionTime);
          transition.SetTrigger("End"); 
 
-        SceneManager.LoadScene(levelIndex);
+        SceneManager.LoadScene(sceneToLoad);
         
     }
 
@@ -55,5 +52,10 @@ private void Start()
     {
         derrota = estado;
     }
+
+    public string getscene(){
+        return SceneManager.GetActiveScene ().name;
+    }
+
 
 }

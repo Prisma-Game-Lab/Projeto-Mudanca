@@ -28,6 +28,8 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
     public bool Boss;
 
+    public bool Reflexao;
+
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +61,7 @@ public class DialogueManager : MonoBehaviour
         DialogueBlock.index = i;
         Boss = DialogueBlock.Boss;
         Festa= DialogueBlock.Festa;
+        Reflexao= DialogueBlock.Reflexão;
         if (NameText.text == "Alex")
         {
             dialogueUI.transform.GetChild(2).gameObject.SetActive(true);
@@ -195,13 +198,22 @@ public class DialogueManager : MonoBehaviour
         else i++; //caso contrario ele adiciona 1 ao index para da proxima vez que se clicar, o proxmo dialogo seja exibido
         animator.SetBool("IsOpen", false);
         StartCoroutine( displaydialogue());
-        
+         
         
         if (Boss == true)
             sceneControl.LoadScene("Teste Combate");
 
-        else if (Festa == true)
-          sceneControl.LoadNextScene();   
+        else if (Festa == true){ 
+          if (sceneControl.getscene()=="Quarto")
+          sceneControl.LoadScene("Festa");  
+          else if (sceneControl.getscene()=="Quarto2")
+          sceneControl.LoadScene("Festa2");  
+          //else if (sceneControl.getscene()=="Quarto3")
+          //sceneControl.LoadScene("Festa3");  
+        }
+        else if (Reflexao==true){
+            sceneControl.LoadScene("Quarto2");  
+        }
     }
 
   
