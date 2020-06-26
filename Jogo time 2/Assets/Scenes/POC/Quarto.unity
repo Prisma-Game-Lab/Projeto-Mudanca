@@ -1156,6 +1156,7 @@ MonoBehaviour:
   i: 0
   animator: {fileID: 490045921}
   Boss: 0
+  Reflexao: 0
 --- !u!4 &606672456
 Transform:
   m_ObjectHideFlags: 0
@@ -3597,6 +3598,11 @@ PrefabInstance:
         type: 3}
       propertyPath: derrota
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250511767920509563, guid: 3a988fdca6e5f944a879f6bc7c02e3ac,
+        type: 3}
+      propertyPath: transitionTime
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6921302808874918174, guid: 3a988fdca6e5f944a879f6bc7c02e3ac,
         type: 3}

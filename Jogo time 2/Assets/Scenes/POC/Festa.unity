@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1410,7 +1410,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258187413}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.710002, y: -0.053958416, z: 0}
+  m_LocalPosition: {x: -2.7100096, y: -0.053958416, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 102253805}
@@ -4182,7 +4182,7 @@ SpriteRenderer:
   m_Size: {x: 3.6, y: 6.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &831509585
@@ -5848,6 +5848,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6250511767920509563, guid: 3a988fdca6e5f944a879f6bc7c02e3ac,
+        type: 3}
+      propertyPath: transitionTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7674280624756671704, guid: 3a988fdca6e5f944a879f6bc7c02e3ac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9782,6 +9787,7 @@ MonoBehaviour:
   i: 0
   animator: {fileID: 1026862614}
   Boss: 0
+  Reflexao: 0
 --- !u!1 &1894126012
 GameObject:
   m_ObjectHideFlags: 0
