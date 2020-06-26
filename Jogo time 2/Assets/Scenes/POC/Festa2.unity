@@ -814,7 +814,7 @@ MonoBehaviour:
   Automatico: 0
   Cutscene: 0
   Dialogue:
-  - {fileID: 11400000, guid: 06b8b2ed8d2198a4ba844de0e9afa04a, type: 2}
+  - {fileID: 11400000, guid: 54d9ada043403234fab5993b037bae95, type: 2}
   i: 0
 --- !u!61 &151372697
 BoxCollider2D:
@@ -3506,7 +3506,7 @@ MonoBehaviour:
   Automatico: 0
   Cutscene: 0
   Dialogue:
-  - {fileID: 11400000, guid: c56254b8c1127d643808bdb54efb652f, type: 2}
+  - {fileID: 11400000, guid: 8dfed936001e2fa4a803866380077c74, type: 2}
   i: 0
 --- !u!61 &679086487
 BoxCollider2D:
@@ -4937,7 +4937,7 @@ MonoBehaviour:
   Automatico: 0
   Cutscene: 0
   Dialogue:
-  - {fileID: 11400000, guid: 14227ace8fc9e9a4a9ba2357f2f3d85f, type: 2}
+  - {fileID: 11400000, guid: c981491fb89da7a4f892d238a7561b48, type: 2}
   i: 0
 --- !u!61 &849636375
 BoxCollider2D:
