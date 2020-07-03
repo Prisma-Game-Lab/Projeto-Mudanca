@@ -214,7 +214,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7674280624756671704}
-  - component: {fileID: 7674280624756671705}
   - component: {fileID: 6250511767920509563}
   m_Layer: 0
   m_Name: GameManager
@@ -238,19 +237,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7674280624756671705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7674280624756671706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d90a68a22edc87448a214002ac921473, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 0}
 --- !u!114 &6250511767920509563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,5 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 2326922367753777005}
+  playerInfo: {fileID: 0}
   transitionTime: 1
   derrota: 0
+  saved: 
