@@ -11,7 +11,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> _sentences;
 
     public float TextSpeed;
-    public bool Festa; 
+    public bool Festa;
 
     public float FastTextSpeed;
 
@@ -29,14 +29,17 @@ public class DialogueManager : MonoBehaviour
     public bool Boss;
 
     public bool Reflexao;
+    public bool derrota;
 
 
     // Start is called before the first frame update
     void Start()
     {
         _sentences = new Queue<string>();
-        sceneControl=   GameObject.Find("GameManager").GetComponent<SceneControl>();
+        sceneControl = GameObject.Find("GameManager").GetComponent<SceneControl>();
+        derrota = SaveSystem.GetInstance().playerinfo.derrota;
     }
+
 
     void Update()
     {
@@ -60,8 +63,8 @@ public class DialogueManager : MonoBehaviour
         DialogueBlock = dialogue.dialogueBlock; //ele pega o bloco de dialogo que contem todos os dialogos
         DialogueBlock.index = i;
         Boss = DialogueBlock.Boss;
-        Festa= DialogueBlock.Festa;
-        Reflexao= DialogueBlock.Reflexão;
+        Festa = DialogueBlock.Festa;
+        Reflexao = DialogueBlock.Reflexão;
         if (NameText.text == "Alex")
         {
             dialogueUI.transform.GetChild(2).gameObject.SetActive(true);
@@ -101,7 +104,7 @@ public class DialogueManager : MonoBehaviour
                     EndDialogue(); //se o dialogo não for continuo, ele encerra
                 }
                 else
-                {   
+                {
                     i++;
                     DisplayDialogue(DialogueBlock);//caso ainda hajam dialogos e eles forem continuos, o proximo dialogo sera lido
                 }
@@ -150,7 +153,7 @@ public class DialogueManager : MonoBehaviour
             }
             else
                 DialogueText.text += letter;
-                
+
             yield return new WaitForSeconds(TextSpeed / 100);
             if (Input.GetKeyDown("z") || Input.GetKeyDown("space"))
             {
@@ -182,13 +185,14 @@ public class DialogueManager : MonoBehaviour
         StartDialogue(dialogueBlock.Dialogue[i]); //le o proximo dialogo do bloco
     }
 
-    IEnumerator displaydialogue(){
-      
-     yield return new WaitForSeconds(0.1f);
-     DialogueOn = false;
-      Debug.Log("ACABOU");
-       
- }
+    IEnumerator displaydialogue()
+    {
+
+        yield return new WaitForSeconds(0.1f);
+        DialogueOn = false;
+        Debug.Log("ACABOU");
+
+    }
     void EndDialogue()
     {
         if (i >= DialogueBlock.Dialogue.Length - 1)
@@ -197,24 +201,32 @@ public class DialogueManager : MonoBehaviour
         }
         else i++; //caso contrario ele adiciona 1 ao index para da proxima vez que se clicar, o proxmo dialogo seja exibido
         animator.SetBool("IsOpen", false);
-        StartCoroutine( displaydialogue());
-         
-        
+        StartCoroutine(displaydialogue());
+
+
         if (Boss == true)
             sceneControl.LoadScene("Teste Combate");
 
-        else if (Festa == true){ 
-          if (sceneControl.getscene()=="Quarto")
-          sceneControl.LoadScene("Festa");  
-          else if (sceneControl.getscene()=="Quarto2")
-          sceneControl.LoadScene("Festa2");  
-          //else if (sceneControl.getscene()=="Quarto3")
-          //sceneControl.LoadScene("Festa3");  
+        else if (Festa == true)
+        {
+            if (sceneControl.getscene() == "Quarto")
+            {
+                sceneControl.LoadScene("Festa");
+                Debug.Log("aa");
+            }
+            else if (sceneControl.getscene() == "Quarto2")
+            {
+                derrota = false;
+                sceneControl.LoadScene("Festa2");
+            }
+            //else if (sceneControl.getscene()=="Quarto3")
+            //sceneControl.LoadScene("Festa3");  
         }
-        else if (Reflexao==true){
-            sceneControl.LoadScene("Quarto2");  
+        else if (Reflexao == true)
+        {
+            sceneControl.LoadScene("Quarto2");
         }
     }
 
-  
+
 }
