@@ -66,14 +66,19 @@ public class CombateManager : MonoBehaviour
     [Tooltip("Objetos que exibirão argumentos do adversario")]
     public GameObject[] quadroArgumentoAdversario;
 
-    [Header("Ajustes de tempo")]
+    [Header("Ajustes Finos para os GDs")]
     
     [Tooltip("Velocidade com que a vida desce")]
     public float velocidadeVida;
     [Tooltip("Tempo de transição entre a vez de cada um, em segundos")]
     //A: tempo aguardado entre cada turno, para o jogador compreender o que ocorre.
     public float entreTurnos;
-    
+    [Tooltip("Multiplica o dano causado quando o ataque é efetivo")]
+    public float multiplicadorEfetivo;
+    [Tooltip("Multiplica o dano causado quando o ataque não é efetivo")]
+    public float multiplicadorResistente;
+    [Tooltip("Valor que multiplica o dano quando a postura é 'Defensivo Fortifica'")]
+    public float multiplicadorFortalecimento;
     [Header("Cenas pos batalha")]
     [Tooltip("Nome da cena a carregar caso o jogador vença")]
     public string cenaVitoria;
@@ -239,7 +244,7 @@ public class CombateManager : MonoBehaviour
             //A: ajusta multiplicador conforme tipo
             if(atributosAlvo.isVulneravel((int)golpe.tipo))
             {
-                multiplicadorGolpe *= 2 + (float)bonusAlinhamento(golpe);
+                multiplicadorGolpe *= multiplicadorEfetivo + (float)bonusAlinhamento(golpe);
                 
                 //A: texto de feedback
                 efetividade.color = Color.green;
@@ -247,14 +252,19 @@ public class CombateManager : MonoBehaviour
             }
             else if(atributosAlvo.isResistente((int)golpe.tipo))
             {
-                multiplicadorGolpe = multiplicadorGolpe/2;
+                multiplicadorGolpe = multiplicadorGolpe * multiplicadorResistente;
 
                 //A: texto de feedback
                 efetividade.color = Color.red;
                 efetividade.text = "pouco efetivo...";
             }
         }
-
+        //A: implementacao da postura Defensivo Fortifica, aumentando o dano
+        if(atributosAlvo.atributos.postura == CombateUnidade.posturaUnidade.defensivoFortalece)
+        {
+            multiplicadorGolpe *= multiplicadorFortalecimento;
+            atributosAdversario.setAuxiliar(0);
+        }
         danoResultante = (int) ((ataque+danoBonusArgumento(atributosAtacante))*multiplicadorGolpe-(atributosAlvo.atributos.defesa + defesaBonusArgumento(atributosAlvo)));
 
         atacAudio.Play();
@@ -265,8 +275,14 @@ public class CombateManager : MonoBehaviour
             aplicaDano(atributosAlvo, atributosAlvo.getAcao(0), atributosAtacante);
         }
 
+        //A: implementação da postura Defensivo Fortalece, salva dano levado
+        if(atributosAlvo.atributos.postura == CombateUnidade.posturaUnidade.defensivoFortalece && golpe.tipo == CombateAcao.tipoDano.Manipulador)
+        {
+            atributosAdversario.setAuxiliar(atributosAdversario.getAuxiliar()+1);
+        }
+
         //A: Garante dano minimo = 1
-        if(danoResultante <=0)
+        if(danoResultante < 1)
         {
             danoResultante = 1;
         }
@@ -278,6 +294,48 @@ public class CombateManager : MonoBehaviour
             
             efetividade.color = Color.blue;
             efetividade.text = "imune";
+        }
+
+        //A: implementação de argumentos de roubo de vida e evasão
+        for(int i=0;i<argumentosPlayer.Length;i++)
+        {
+            if(argumentosPlayer[i] != null)
+            {
+                if(argumentosPlayer[i].habilidade == CombateArgumento.tipoArgumento.RoubaVida && atributosAtacante == atributosPlayer)
+                {
+                    atributosPlayer.curar((int)argumentosPlayer[i].valor * danoResultante);
+                }
+                else if(argumentosPlayer[i].habilidade == CombateArgumento.tipoArgumento.Evasao && atributosAlvo == atributosPlayer)
+                {
+                    danoResultante = 0;
+                    argumentosPlayer[i].valor --;
+                    if(argumentosPlayer[i].valor <1)
+                    {
+                        quadroArgumentoAdversario[i].GetComponent<QuadroDeArgumento>().LimpaArgumento();
+                    }
+                }
+            }
+        }
+        for(int i=0;i<argumentosAdversario.Length;i++)
+        {
+            if(argumentosAdversario[i] != null)
+            {
+                if(argumentosAdversario[i].habilidade == CombateArgumento.tipoArgumento.RoubaVida && atributosAtacante == atributosAdversario)
+                {
+                    atributosAdversario.curar((int)argumentosAdversario[i].valor * danoResultante);
+                }
+                else if(argumentosAdversario[i].habilidade == CombateArgumento.tipoArgumento.Evasao && atributosAlvo == atributosAdversario)
+                {
+                    danoResultante = 0;
+                    efetividade.color = Color.blue;
+                    efetividade.text = "imune";
+                    argumentosAdversario[i].valor --;
+                    if(argumentosAdversario[i].valor <1)
+                    {
+                        quadroArgumentoAdversario[i].GetComponent<QuadroDeArgumento>().LimpaArgumento();
+                    }
+                }
+            }
         }
         atributosAlvo.danifica(danoResultante);
 
@@ -577,7 +635,7 @@ public class CombateManager : MonoBehaviour
             {
                 if(argumentosPlayer[i] != null && argumentosPlayer[i].habilidade == CombateArgumento.tipoArgumento.Ataque)
                 {
-                    bonusTotal += argumentosPlayer[i].valor;
+                    bonusTotal += (int)argumentosPlayer[i].valor;
                 }
             }
         }
@@ -587,7 +645,7 @@ public class CombateManager : MonoBehaviour
             {
                 if(argumentosAdversario[i] != null && argumentosAdversario[i].habilidade == CombateArgumento.tipoArgumento.Ataque)
                 {
-                    bonusTotal += argumentosAdversario[i].valor;
+                    bonusTotal += (int)argumentosAdversario[i].valor;
                 }
             }
         }
@@ -603,7 +661,7 @@ public class CombateManager : MonoBehaviour
             {
                 if(argumentosPlayer[i] != null && argumentosPlayer[i].habilidade == CombateArgumento.tipoArgumento.Defesa)
                 {
-                    bonusTotal += argumentosPlayer[i].valor;
+                    bonusTotal += (int)argumentosPlayer[i].valor;
                 }
             }
         }
@@ -613,7 +671,7 @@ public class CombateManager : MonoBehaviour
             {
                 if(argumentosAdversario[i] != null && argumentosAdversario[i].habilidade == CombateArgumento.tipoArgumento.Defesa)
                 {
-                    bonusTotal += argumentosAdversario[i].valor;
+                    bonusTotal += (int)argumentosAdversario[i].valor;
                 }
             }
         }
@@ -694,7 +752,7 @@ public class CombateManager : MonoBehaviour
                 {
                     if(argumentosPlayer[i].habilidade == CombateArgumento.tipoArgumento.Regenerar && turnoAtual == turno.jogador)
                     {
-                        atributosPlayer.curar(argumentosPlayer[i].valor);
+                        atributosPlayer.curar((int)argumentosPlayer[i].valor);
                     }
                 }
             }
@@ -716,7 +774,7 @@ public class CombateManager : MonoBehaviour
                 {
                     if(argumentosAdversario[i].habilidade == CombateArgumento.tipoArgumento.Regenerar && turnoAtual == turno.adversario)
                     {
-                        atributosAdversario.curar(argumentosAdversario[i].valor);
+                        atributosAdversario.curar((int)argumentosAdversario[i].valor);
                     }
                 }
             }

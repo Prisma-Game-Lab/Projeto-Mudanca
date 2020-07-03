@@ -85,13 +85,19 @@ public class TooltipObserver : MonoBehaviour
                     switch(argumentoAssociado.habilidade)
                     {
                         case CombateArgumento.tipoArgumento.Ataque:
-                            textoTooltip = string.Format("Aumentando dano de ataque em {0}.",argumentoAssociado.valor);
+                            textoTooltip = string.Format("Aumentando dano causado.",argumentoAssociado.valor);
                             break;
                         case CombateArgumento.tipoArgumento.Defesa:
-                            textoTooltip = string.Format("Aumentando defesa em {0}.",argumentoAssociado.valor);
+                            textoTooltip = string.Format("Reduz dano recebido.",argumentoAssociado.valor);
+                            break;
+                        case CombateArgumento.tipoArgumento.Evasao:
+                            textoTooltip = string.Format("Ignora dano recebido.",argumentoAssociado.valor);
+                            break;
+                        case CombateArgumento.tipoArgumento.RoubaVida:
+                            textoTooltip = string.Format("Recupera parte do dano causado como vida.",argumentoAssociado.valor);
                             break;
                         default:
-                            textoTooltip = string.Format("Recuperando {0} pontos de vida por turno.",argumentoAssociado.valor);
+                            textoTooltip = string.Format("Recuperando vida a cada turno.",argumentoAssociado.valor);
                             break;
                     }
                 }

@@ -17,7 +17,8 @@ public class CombateUnidade : ScriptableObject
         player,
         reageAgressivo,
         golpeEsmagador,
-        ignoraManipulador
+        ignoraManipulador,
+        defensivoFortalece
     }
 
     [Header("Atributos de uma unidade em combate:")]

@@ -9,7 +9,9 @@ public class CombateArgumento : ScriptableObject
     {
         Regenerar,
         Defesa,
-        Ataque
+        Ataque,
+        Evasao,
+        RoubaVida
     }
 
     [Header("Atributos de uma argumento em combate:")]
@@ -22,7 +24,7 @@ public class CombateArgumento : ScriptableObject
     public tipoArgumento habilidade;
 
     [Tooltip("Valor do efeito do argumento")]
-    public int valor;
+    public float valor;
 
     [Tooltip("Duração máxima do argumento, em turnos")]
     public int duracao;
