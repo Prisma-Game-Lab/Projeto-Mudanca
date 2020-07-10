@@ -231,7 +231,7 @@ public class DialogueManager : MonoBehaviour
         }
         else if (Reflexao == true)
         {
-            sceneControl.LoadScene("Quarto2");
+            sceneControl.LoadScene("Credits");
         }
     }
 
