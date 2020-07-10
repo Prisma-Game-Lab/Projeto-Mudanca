@@ -1317,7 +1317,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258187413}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.7100096, y: -0.053958416, z: 0}
+  m_LocalPosition: {x: 4.0899925, y: -0.25395727, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 102253805}
@@ -2033,7 +2033,6 @@ GameObject:
   - component: {fileID: 378003172}
   - component: {fileID: 378003171}
   - component: {fileID: 378003169}
-  - component: {fileID: 378003170}
   m_Layer: 0
   m_Name: Grupo de amigos rivais
   m_TagString: Untagged
@@ -4428,7 +4427,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 831509578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 98.18, y: 40.57, z: 10}
+  m_LocalPosition: {x: 83.01, y: 43.14, z: 10}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 1957632479}
@@ -6525,7 +6524,7 @@ PrefabInstance:
     - target: {fileID: 7674280624756671706, guid: 3a988fdca6e5f944a879f6bc7c02e3ac,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7814344452369184744, guid: 3a988fdca6e5f944a879f6bc7c02e3ac,
         type: 3}
