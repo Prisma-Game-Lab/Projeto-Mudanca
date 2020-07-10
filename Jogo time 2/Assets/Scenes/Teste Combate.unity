@@ -317,7 +317,6 @@ GameObject:
   - component: {fileID: 25255649}
   - component: {fileID: 25255651}
   - component: {fileID: 25255650}
-  - component: {fileID: 25255653}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -384,20 +383,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 25255648}
   m_CullTransparentMesh: 0
---- !u!114 &25255653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25255648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a569761258ee0844589748b5c2c655b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  classificacao: 3
-  alinhamentoSlider: {fileID: 0}
 --- !u!1 &29344906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,7 +1086,7 @@ MonoBehaviour:
   - {fileID: 246544138}
   - {fileID: 1815449252}
   velocidadeVida: 5
-  entreTurnos: 2
+  entreTurnos: 6
   multiplicadorEfetivo: 2
   multiplicadorResistente: 0.5
   multiplicadorFortalecimento: 2
@@ -1507,7 +1492,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 25255653}
+        - m_Target: {fileID: 0}
           m_MethodName: OnPointerEnter
           m_Mode: 1
           m_Arguments:
@@ -1522,7 +1507,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 25255653}
+        - m_Target: {fileID: 0}
           m_MethodName: OnPointerExit
           m_Mode: 1
           m_Arguments:
@@ -2409,7 +2394,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1067385311}
+        - m_Target: {fileID: 0}
           m_MethodName: OnPointerEnter
           m_Mode: 1
           m_Arguments:
@@ -2424,7 +2409,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1067385311}
+        - m_Target: {fileID: 0}
           m_MethodName: OnPointerExit
           m_Mode: 1
           m_Arguments:
@@ -2446,7 +2431,6 @@ GameObject:
   - component: {fileID: 347868530}
   - component: {fileID: 347868532}
   - component: {fileID: 347868531}
-  - component: {fileID: 347868534}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2513,20 +2497,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 347868529}
   m_CullTransparentMesh: 0
---- !u!114 &347868534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 347868529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a569761258ee0844589748b5c2c655b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  classificacao: 3
-  alinhamentoSlider: {fileID: 0}
 --- !u!1 &376896831
 GameObject:
   m_ObjectHideFlags: 0
@@ -4789,7 +4759,6 @@ GameObject:
   - component: {fileID: 1067385307}
   - component: {fileID: 1067385309}
   - component: {fileID: 1067385308}
-  - component: {fileID: 1067385311}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -4856,20 +4825,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067385306}
   m_CullTransparentMesh: 0
---- !u!114 &1067385311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1067385306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a569761258ee0844589748b5c2c655b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  classificacao: 3
-  alinhamentoSlider: {fileID: 0}
 --- !u!1 &1104738442
 GameObject:
   m_ObjectHideFlags: 0
@@ -8282,7 +8237,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 347868534}
+        - m_Target: {fileID: 0}
           m_MethodName: OnPointerEnter
           m_Mode: 1
           m_Arguments:
@@ -8297,7 +8252,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 347868534}
+        - m_Target: {fileID: 0}
           m_MethodName: OnPointerExit
           m_Mode: 1
           m_Arguments:
