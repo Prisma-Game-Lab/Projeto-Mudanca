@@ -45,7 +45,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (DialogueOn == true)
         {
-            if ((Input.GetKeyDown("z") || Input.GetKeyDown("space")) && complete == true)
+            if (( Input.GetMouseButtonDown(0)||Input.GetKeyDown("z") || Input.GetKeyDown("space")) && complete == true)
             {
                 complete = false;
                 DisplayNextSentence();
@@ -119,13 +119,18 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence(string sentence)
     { //animação das letras aparecendo
         DialogueText.text = "";
+        string letter="";
         bool mudavelocidade = false;
         float pivot = TextSpeed;
         DialogueOn = true;
 
-        foreach (char letter in sentence.ToCharArray())
-        {
-            if (letter == '+')
+         
+
+        for(int i = 0; i < sentence.Length; i++){
+			letter = sentence.Substring(0,i);
+            
+            
+             if (letter == "+")
             {
                 if (!mudavelocidade)
                 {
@@ -138,7 +143,7 @@ public class DialogueManager : MonoBehaviour
                     TextSpeed = pivot;
                 }
             }
-            if (letter == '-')
+            if (letter == "-")
             {
                 if (!mudavelocidade)
                 {
@@ -151,12 +156,12 @@ public class DialogueManager : MonoBehaviour
                     TextSpeed = pivot;
                 }
             }
-            else
-                DialogueText.text += letter;
-
-            yield return new WaitForSeconds(TextSpeed / 100);
-            if (Input.GetKeyDown("z") || Input.GetKeyDown("space"))
+            
+			DialogueText.text = letter;
+			yield return new WaitForSeconds(TextSpeed/100);
+              if ((Input.GetMouseButtonDown(0)||Input.GetKeyDown("z") || Input.GetKeyDown("space")))
             {
+                
                 string temp = "";
                 DialogueText.text = "";
                 if (sentence.Contains("+") || sentence.Contains("-"))
@@ -171,15 +176,17 @@ public class DialogueManager : MonoBehaviour
 
                     DialogueText.text = sentence;
                 }
+                
+                DialogueText.text = sentence;
                 complete = true;
-                TextSpeed = pivot;
-                break;
-
+                yield break;
             }
-        }
-        complete = true;
 
+            
+		}
+        complete = true;
     }
+        
     public void DisplayDialogue(DialogueBlock dialogueBlock)
     {
         StartDialogue(dialogueBlock.Dialogue[i]); //le o proximo dialogo do bloco
