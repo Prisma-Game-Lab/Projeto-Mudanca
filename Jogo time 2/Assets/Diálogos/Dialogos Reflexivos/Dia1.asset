@@ -16,14 +16,24 @@ MonoBehaviour:
   Dialogue:
   - Name: Alex
     Sentences:
-    - Eita! Eu voltei pro meu quarto!
-    - Espero que tudo volte ao normal e que isso tenha sido somente um pesadelo...
-    - ' Aqueles meninos parecem ser mais legais do que eu pensava'
-    - Mesmo assim...
-    - "N\xE3o me sinto muito feliz por tudo q passou..."
-    - "Talvez seja normal n\xE3o me sentir muito contente com essas novas amizades..."
-    - " Meninos s\xE3o assim mesmo, eu acho..."
-    - "Melhor descansar e esquecer essa hist\xF3ria toda"
+    - "U\xE9?Eu voltei pro meu quarto?"
+    - "O que t\xE1 acontecendo? Primeiro eu apare\xE7o na festa, depois eu apare\xE7o
+      no quarto do nada.\r\nEu to t\xE3o perdida..."
+    - "Eu to t\xE3o perdida..."
+    - Isso deve ter sido um pesadelo, eu acho.
+    - "Mas sendo pesadelo ou n\xE3o, pelo menos a discuss\xE3o acabou..."
+    - "J\xE1 n\xE3o aguentava mais ter que escutar as besteiras que aqueles garotos
+      tavam falando."
+    - 'Apesar de que... '
+    - 'O que eles comentaram sobre ter uma menina no time... '
+    - ...
+    - "Eu sei que eles estavam errados, mas por que isso t\xE1 me deixando t\xE3o
+      mal?"
+    - "Ser\xE1 que eu deveria me afastar do time e dos meus amigos mesmo? Digo, eles
+      s\xE3o legais mas... "
+    - "Eu realmente n\xE3o me encaixo bem."
+    - "Eu n\xE3o sei mais o que fazer e nem pensar."
+    - Vou tentar descansar pra esquecer isso...
     Continuo: 0
     dialogueBlock: {fileID: 11400000}
   Boss: 0
