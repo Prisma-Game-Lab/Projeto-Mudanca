@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome:
   - "N\xE3o cansou de perder?"
-  - "Voc\xEA n\xE3o cansa de ser babaca?"
+  - ACAO DE TESTE, APAGAR DEPOIS
   - "Voc\xEAs nunca v\xE3o ganhar assim!!"
   - Desiste pagar de maioral!
   respostas:
   - "S\xF3 de perder jogo roubado"
-  - "Babaca \xE9 quem chama "
+  - 
   - "Com voc\xEAs roubando a gente n\xE3o ganha mesmo "
   - "Pelo menos n\xE3o fico me gabando de ganhar"
   dano: 110
