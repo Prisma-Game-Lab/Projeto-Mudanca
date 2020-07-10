@@ -14,15 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Descricao: 
   Dialogue:
-  - Name: Os populares
+  - Name: Popular
     Sentences:
     - Mas que festa chata...
-    - "S\xF3 tem esses nerds esquisitos aqui"
+    - "S\xF3 tem esses nerds esquisitos aqui."
     - A gente podia simplesmente dar o fora daqui, mas agora temos que esperar isso
       acabar...
     Continuo: 0
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
-  i: 0
+  "Reflex\xE3o": 0
+  i: 1
   index: 0

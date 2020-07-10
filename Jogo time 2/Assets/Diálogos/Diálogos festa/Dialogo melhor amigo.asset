@@ -17,17 +17,17 @@ MonoBehaviour:
   - Name: Melhor amigo
     Sentences:
     - "Alex!! Voc\xEA chegou!"
-    - "Sentimos sua falta depois do campeonato, durante a comemora\xE7\xE3o"
+    - "Sentimos sua falta depois do campeonato, durante a comemora\xE7\xE3o..."
     - "Como voc\xEA t\xE1? N\xE3o ficou chateada com o que aquele cara disse n\xE9?"
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
-    - "Ah, sim... Mas deixa pra l\xE1"
-    - "N\xE3o foi nada"
+    - "Ah, sim... Mas deixa pra l\xE1."
+    - "N\xE3o foi nada."
     - " Gente t\xF3xica tem por todo lado, n\xE9..."
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   - Name: Melhor amigo
     Sentences:
     - "N\xE3o vale a pena ficar chateada com isso! Afinal, merecemos a vit\xF3ria
@@ -35,8 +35,9 @@ MonoBehaviour:
     - "Soube que eles n\xE3o est\xE3o levando a derrota t\xE3o bem assim.."
     - Melhor tomar cuidado com eles pela festa. Qualquer coisa estamos aqui!
     Continuo: 0
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
-  i: 0
+  "Reflex\xE3o": 0
+  i: 3
   index: 0

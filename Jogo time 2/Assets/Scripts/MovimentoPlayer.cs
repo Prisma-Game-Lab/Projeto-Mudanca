@@ -14,6 +14,8 @@ public class MovimentoPlayer : MonoBehaviour
     Vector2 movement;
     private AudioSource steps;
 
+    //public Animator AlexAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,8 +42,9 @@ public class MovimentoPlayer : MonoBehaviour
     private void FixedUpdate()
     {
          steps.Pause();
-         
-         if (DialogueManager.DialogueOn==false){
+        animator.SetBool("IsMoving", false);
+
+        if (DialogueManager.DialogueOn==false){
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
         if (movement.x!=0 || movement.y!=0){
             if (movement.x < 0)
@@ -53,9 +56,9 @@ public class MovimentoPlayer : MonoBehaviour
 			    transform.rotation = new Quaternion(0, 0, 0, 0);
             }
          steps.Play();
-         animator.SetBool("IsWalking",true);
+         animator.SetBool("IsMoving",true);
         }
          }
-        else animator.SetBool("IsWalking",false); 
+        //else animator.SetBool("IsMoving",false); 
     }
 }

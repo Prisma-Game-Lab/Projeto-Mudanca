@@ -22,6 +22,8 @@ public class DialogueTrigger : MonoBehaviour
     private SceneControl scene;
     int saved;
 
+    private bool girar;
+
 
     private void Start()
     {
@@ -29,10 +31,10 @@ public class DialogueTrigger : MonoBehaviour
         lista = GameObject.Find("ListManager").GetComponent<ListaDialogos>();
         i = 0;
         saved = SaveSystem.GetInstance().playerinfo.saved;
-        if (saved == SceneManager.GetActiveScene().buildIndex && (Cutscene == true))
+        /*if (saved == SceneManager.GetActiveScene().buildIndex && (Cutscene == true))
         {
             Destroy(gameObject);
-        }
+        }*/
     }
     public void Update()
     {
@@ -44,6 +46,7 @@ public class DialogueTrigger : MonoBehaviour
             {
                 if (FindObjectOfType<DialogueManager>().DialogueOn == false)
                 {
+                     
                     TriggerDialogue();
                 }
             }
@@ -51,6 +54,7 @@ public class DialogueTrigger : MonoBehaviour
     }
     public void TriggerDialogue()
     {
+        girar=true;
         //dialogueCanvas.gameObject.SetActive(true);
         FindObjectOfType<DialogueManager>().DisplayDialogue(Dialogue[i]);
 
@@ -62,7 +66,8 @@ public class DialogueTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-        {
+        { 
+             
             canActivate = true;
             if (Automatico == true)
             {
@@ -74,11 +79,32 @@ public class DialogueTrigger : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerStay2D(Collider2D other) {
+        if (girar==true && Dialogue[i].Boss==false){
+
+             if (other.transform.position.x + other.transform.parent.position.x> transform.localPosition.x+ transform.parent.position.x ){
+              
+                
+                if (transform.rotation.y==0)
+                transform.rotation= new Quaternion(0, 180, 0, 0);
+            } 
+                else {
+                if (transform.rotation.y==180)
+                transform.rotation= new Quaternion(0, 0, 0, 0);
+               
+                
+            }
+            girar=false;
+            }
+
+    }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             canActivate = false;
+            
         }
     }
 }

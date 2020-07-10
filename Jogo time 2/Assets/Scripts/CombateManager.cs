@@ -42,13 +42,16 @@ public class CombateManager : MonoBehaviour
     [Tooltip("Objeto (Slider) que exibe o alinhamento atual")]
     public Slider sliderAlinhamento;
 
-    [Tooltip("Paineis de vitória e derrota")]
+    [Tooltip("Indicadores de mudanças do alinhamento")]
+    public GameObject IdxAlinhaEsquerda,IdxAlinhaDireita,IdxAlinhaDiplomatico,IdxAlinhaAgressivo,IdxAlinhaManipulador,IdxAlinhaDirRev, IdxAlinhaEsqRev;
+
+    [Tooltip("Objeto LevelManager para executar transição entre cenas")]
     //A: Telas Placeholder de vitoria e derrota
-    public GameObject TelaVitoria, TelaDerrota;
+    public GameObject LevelManagerObject;
 
     [Tooltip("Referências dos textos na UI")]
     //A: nomes na UI do jogador e do adversario
-    public Text nomePlayer, nomeAdversario, vidaPlayerTexto, vidaAdversarioTexto;
+    public Text vidaPlayerTexto, vidaAdversarioTexto;
 
     [Tooltip("Textos dos nomes de cada ação que o jogador pode usar")]
     //A: nomes das ações do jogador
@@ -113,6 +116,10 @@ public class CombateManager : MonoBehaviour
 
     private string resposta;
 
+    public Animator PlayerBattle;
+    public Animator EnemyBattle;
+    public Animator BrunoBattle;
+
     public AudioSource atacAudio;
 
 
@@ -125,9 +132,6 @@ public class CombateManager : MonoBehaviour
 
         //A: inicializa alinhamento no centro
         alinhamentoPlayer = alinhamento.diplomatico;
-        //A: Atualiza nomes de player e adversario na hud
-        nomePlayer.text = atributosPlayer.atributos.nome;
-        nomeAdversario.text = atributosAdversario.atributos.nome;
         efetividade.text = ""; 
 
         //A: aloca numero maximo de argumentos igual a numero de quadros de exibicao
@@ -179,7 +183,14 @@ public class CombateManager : MonoBehaviour
             turnoAtual = turno.jogador;
             vezDoOutro.SetActive(false);
         }
-
+        //A: garante que nenhuma seta aparece inicialmente no alinhamento
+        IdxAlinhaAgressivo.SetActive(false);
+        IdxAlinhaDiplomatico.SetActive(false);
+        IdxAlinhaDireita.SetActive(false);
+        IdxAlinhaEsquerda.SetActive(false);
+        IdxAlinhaManipulador.SetActive(false);
+        IdxAlinhaDirRev.SetActive(false);
+        IdxAlinhaEsqRev.SetActive(false);
     }
 
     void Update()
@@ -239,7 +250,7 @@ public class CombateManager : MonoBehaviour
         float multiplicadorGolpe = golpe.dano/100;
         int danoResultante;
 
-        if(golpe.tipo != CombateAcao.tipoDano.Neutro)
+        if (golpe.tipo != CombateAcao.tipoDano.Neutro)
         {
             //A: ajusta multiplicador conforme tipo
             if(atributosAlvo.isVulneravel((int)golpe.tipo))
@@ -267,10 +278,19 @@ public class CombateManager : MonoBehaviour
         }
         danoResultante = (int) ((ataque+danoBonusArgumento(atributosAtacante))*multiplicadorGolpe-(atributosAlvo.atributos.defesa + defesaBonusArgumento(atributosAlvo)));
 
+        //EnemyBattle.SetTrigger("GetHit");
         atacAudio.Play();
 
+        if (atributosAtacante == atributosPlayer)
+        {
+            EnemyBattle.SetTrigger("GetHit");
+            BrunoBattle.SetTrigger("Porrada");
+
+        }
+        else PlayerBattle.SetTrigger("Dano");
+
         //A: implementação da postura Reage a Agressivo
-        if(atributosAlvo.atributos.postura == CombateUnidade.posturaUnidade.reageAgressivo && golpe.tipo == CombateAcao.tipoDano.Agressivo)
+        if (atributosAlvo.atributos.postura == CombateUnidade.posturaUnidade.reageAgressivo && golpe.tipo == CombateAcao.tipoDano.Agressivo)
         {
             aplicaDano(atributosAlvo, atributosAlvo.getAcao(0), atributosAtacante);
         }
@@ -339,6 +359,8 @@ public class CombateManager : MonoBehaviour
         }
         atributosAlvo.danifica(danoResultante);
 
+
+
         //A: ajusta multiplicador do alinhamento baseado em ataque escolhido, caso seja vez do player
         if (atributosAtacante.atributos.nome == atributosPlayer.atributos.nome)
         {
@@ -395,10 +417,10 @@ public class CombateManager : MonoBehaviour
     {
         if (defeat)
         {
-            TelaDerrota.SetActive(true);
+            LevelManagerObject.GetComponent<SceneControl>().LoadScene("QuartoVitoriaDia1");
         }
         else{
-            TelaVitoria.SetActive(true);
+            LevelManagerObject.GetComponent<SceneControl>().LoadScene("Quarto");
         }
     }
 
@@ -428,25 +450,33 @@ public class CombateManager : MonoBehaviour
             case CombateAcao.tipoDano.Agressivo:
                 if ((int)alinhamentoPlayer > 0) 
                 {
+                    IdxAlinhaEsquerda.SetActive(true);
                     alinhamentoPlayer --;
                 }
+                
+                IdxAlinhaAgressivo.SetActive(true);
                 break;
             case CombateAcao.tipoDano.Manipulador:
             
                 if ((int)alinhamentoPlayer < 4)
                 {
+                    IdxAlinhaDireita.SetActive(true);
                     alinhamentoPlayer ++;
                 }
+                IdxAlinhaManipulador.SetActive(true);
                 break;
             case CombateAcao.tipoDano.Diplomatico:
                 if((int)alinhamentoPlayer < 2) 
                 {
+                    IdxAlinhaEsqRev.SetActive(true);
                     alinhamentoPlayer++;
                 }
                 else if ((int)alinhamentoPlayer > 2)
                 {
+                    IdxAlinhaDirRev.SetActive(true);
                     alinhamentoPlayer--;
                 }
+                IdxAlinhaDiplomatico.SetActive(true);
                 break;
             default:
                 return;
@@ -534,7 +564,6 @@ public class CombateManager : MonoBehaviour
         //A: se jogador for o atacante
         if(atributosAtacante.atributos.nome == atributosPlayer.atributos.nome)
         {
-            Debug.LogFormat("Player usou: Agressivo x {0}, Manipulador x {1}, Diplomatico x {2}",contaAgressivosPlayer,contaManipuladorPlayer,contaDiplomaticoPlayer);
             if (contaAgressivosPlayer > contaManipuladorPlayer && contaAgressivosPlayer > contaDiplomaticoPlayer)
                 return 0;
             else if (contaManipuladorPlayer > contaAgressivosPlayer && contaManipuladorPlayer > contaDiplomaticoPlayer)
@@ -543,7 +572,6 @@ public class CombateManager : MonoBehaviour
         }
         else
         {
-            Debug.LogFormat("Adversario usou: Agressivo x {0}, Manipulador x {1}, Diplomatico x {2}",contaAgressivosAdversario,contaManipuladorAdversario,contaDiplomaticoAdversario);
             if (contaAgressivosAdversario > contaManipuladorAdversario && contaAgressivosAdversario > contaDiplomaticoAdversario)
                 return 0;
             else if (contaManipuladorAdversario > contaAgressivosAdversario && contaManipuladorAdversario > contaDiplomaticoAdversario)
@@ -577,17 +605,14 @@ public class CombateManager : MonoBehaviour
         {
             case 0:
                 //Agressivo
-                Debug.Log("Agressivo!");
                 argCriado = donoDoArg.getArgAgre();
                 break;
             case 1:
                 //Defensivo
-                Debug.Log("Defensivo!");
                 argCriado = donoDoArg.getArgDef();
                 break;
             default:
                 //Diplomatico
-                Debug.Log("Diplomatico!");
                 argCriado = donoDoArg.getArgDipl();
                 break;
         }
@@ -698,16 +723,23 @@ public class CombateManager : MonoBehaviour
         {
             atributosAdversario.setArgumentos(0);
             criaArgumento(atributosAdversario);
-            Debug.Log("Criou Argumento Adversario");
             //A: codigo para criar argumento para adversario vai aqui;
         }
         if(atributosPlayer.getArgumentos()>= atributosPlayer.atributos.barraArgumento)
         {
             atributosPlayer.setArgumentos(0);
             criaArgumento(atributosPlayer);
-            Debug.Log("Criou Argumento Player");
             //A: codigo para criar argumento para jogador vai aqui;
         }
+
+        //A: ajusta indices do alinhamento
+        IdxAlinhaAgressivo.SetActive(false);
+        IdxAlinhaDiplomatico.SetActive(false);
+        IdxAlinhaDireita.SetActive(false);
+        IdxAlinhaEsquerda.SetActive(false);
+        IdxAlinhaManipulador.SetActive(false);
+        IdxAlinhaDirRev.SetActive(false);
+        IdxAlinhaEsqRev.SetActive(false);
 
         //A: esconde fala e exibe resposta
         if(turnoAtual==turno.adversario)

@@ -16,9 +16,11 @@ MonoBehaviour:
   Dialogue:
   - Name: Alex
     Sentences:
-    - "Hm... Acho melhor olhar o vestido que minh\xE3 m\xE3e deixou em cima da cama"
+    - "Hm... Acho melhor olhar o vestido que minh\xE3 m\xE3e deixou em cima da cama."
     Continuo: 0
     dialogueBlock: {fileID: 11400000}
   Boss: 0
+  Festa: 0
+  "Reflex\xE3o": 0
   i: 1
   index: 0

@@ -18,24 +18,25 @@ MonoBehaviour:
     Sentences:
     - "Viu como o Marcelo t\xE1 bonito hoje?"
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
-    - "N\xE3o reparei"
+    - "N\xE3o reparei."
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   - Name: Puxa-saco
     Sentences:
-    - Quem me dera poder ser como ele
+    - Quem me dera poder ser como ele...
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
     - (Quem me dera poder sair desse lugar estranho e desse vestido..)
     - (Vestido idiota!)
     Continuo: 0
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
-  i: 0
+  "Reflex\xE3o": 0
+  i: 4
   index: 0

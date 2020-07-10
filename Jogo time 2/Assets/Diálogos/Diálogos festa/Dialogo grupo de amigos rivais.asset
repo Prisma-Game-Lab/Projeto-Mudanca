@@ -19,50 +19,51 @@ MonoBehaviour:
     - " Ih, olha l\xE1! Se n\xE3o \xE9 aquela perdedora ashuashua"
     - "T\xE1 perdida, garotinha???"
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
     - "V\xE3o procurar outra pessoa pra irritar!"
     - "E n\xE3o se esque\xE7am que quem perdeu o campeonato foram voc\xEAs..."
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   - Name: "Bruno, o gamer t\xF3xico"
     Sentences:
     - "Olha s\xF3.. Vai mesmo continuar com esse discurso da vencedora?"
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
     - "N\xF3s ganhamos mesmo, ou n\xE3o?"
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   - Name: "Bruno, o gamer t\xF3xico"
     Sentences:
-    - "Todo mundo sabe que voc\xEA nem devia fazer parte desse compeonato"
+    - "Todo mundo sabe que voc\xEA nem devia fazer parte desse compeonato."
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
     - "O que?? E quem \xE9 voc\xEA para dizer o que eu posso ou n\xE3o fazer??"
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   - Name: "Bruno, o gamer t\xF3xico"
     Sentences:
-    - "Olha s\xF3, ela vai bancar a militante agora.. hah"
+    - "Olha s\xF3, ela vai bancar a militante agora.. Hah!"
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
     - "Qual \xE9 o seu problema garoto??"
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   - Name: "Bruno, o gamer t\xF3xico"
     Sentences:
-    - "O PROBLEMA \xE9 que esse n\xE3o \xE9 o seu lugar"
-    - "E voc\xEAs deveriam ser desclassificados por ter uma MENINA no grupo"
+    - "O PROBLEMA \xE9 que esse n\xE3o \xE9 o seu lugar."
+    - "E voc\xEAs deveriam ser desclassificados por ter uma MENINA no grupo."
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   Boss: 1
   Festa: 0
-  i: 0
+  "Reflex\xE3o": 0
+  i: 9
   index: 0

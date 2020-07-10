@@ -19,23 +19,24 @@ MonoBehaviour:
     - "E a\xED, Alex!"
     - "Achei que voc\xEA n\xE3o fosse vir \xE0 festa hahaha"
     - "Voc\xEA tinha dito que n\xE3o estava afim de encontrar todo mundo..."
-    - Sempre com esse seu jeitinho envergonhado
+    - Sempre com esse seu jeitinho envergonhado.
     Continuo: 1
-    dialogueBlock: {fileID: 11400000, guid: abcfc29fb0c9cc145a8c3e434ae229e7, type: 2}
+    dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
     - "(N\xE3o to com tempo pra isso...)"
     - "Voc\xEA n\xE3o acha estranho estar todo mundo usando m\xE1scara numa festa
       de formatura?"
     Continuo: 1
-    dialogueBlock: {fileID: 11400000, guid: abcfc29fb0c9cc145a8c3e434ae229e7, type: 2}
+    dialogueBlock: {fileID: 11400000}
   - Name: "Palha\xE7o da turma"
     Sentences:
     - "Estranho? Do que voc\xEA t\xE1 falando?"
-    - "Sempre usamos m\xE1scaras"
+    - "Sempre usamos m\xE1scaras."
     Continuo: 0
-    dialogueBlock: {fileID: 11400000, guid: abcfc29fb0c9cc145a8c3e434ae229e7, type: 2}
+    dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
-  i: 0
+  "Reflex\xE3o": 0
+  i: 3
   index: 0

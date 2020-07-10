@@ -19,6 +19,7 @@ public class SceneControl : MonoBehaviour
     }
 
     private void Start()
+    
     {
         derrota = SaveSystem.GetInstance().playerinfo.derrota;
         {

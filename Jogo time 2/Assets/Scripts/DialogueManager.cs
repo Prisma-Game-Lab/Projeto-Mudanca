@@ -45,7 +45,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (DialogueOn == true)
         {
-            if ((Input.GetKeyDown("z") || Input.GetKeyDown("space")) && complete == true)
+            if (( Input.GetMouseButtonDown(0)||Input.GetKeyDown("z") || Input.GetKeyDown("space")) && complete == true)
             {
                 complete = false;
                 DisplayNextSentence();
@@ -116,7 +116,7 @@ public class DialogueManager : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
-    IEnumerator TypeSentence(string sentence)
+   IEnumerator TypeSentence(string sentence)
     { //animação das letras aparecendo
         DialogueText.text = "";
         bool mudavelocidade = false;
@@ -153,10 +153,11 @@ public class DialogueManager : MonoBehaviour
             }
             else
                 DialogueText.text += letter;
-
+                
             yield return new WaitForSeconds(TextSpeed / 100);
-            if (Input.GetKeyDown("z") || Input.GetKeyDown("space"))
+              if ((Input.GetMouseButtonDown(0)||Input.GetKeyDown("z") || Input.GetKeyDown("space")))
             {
+                
                 string temp = "";
                 DialogueText.text = "";
                 if (sentence.Contains("+") || sentence.Contains("-"))
@@ -171,15 +172,17 @@ public class DialogueManager : MonoBehaviour
 
                     DialogueText.text = sentence;
                 }
+                
+                DialogueText.text = sentence;
                 complete = true;
-                TextSpeed = pivot;
-                break;
-
+                yield break;
             }
-        }
-        complete = true;
 
+            
+		}
+        complete = true;
     }
+        
     public void DisplayDialogue(DialogueBlock dialogueBlock)
     {
         StartDialogue(dialogueBlock.Dialogue[i]); //le o proximo dialogo do bloco
@@ -224,7 +227,7 @@ public class DialogueManager : MonoBehaviour
         }
         else if (Reflexao == true)
         {
-            sceneControl.LoadScene("Quarto2");
+            sceneControl.LoadScene("Cred");
         }
     }
 

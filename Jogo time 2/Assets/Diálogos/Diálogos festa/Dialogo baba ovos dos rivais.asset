@@ -27,7 +27,7 @@ MonoBehaviour:
   - Name: Puxa-saco
     Sentences:
     - " A competi\xE7\xE3o que seu time ganhou..."
-    - "Aposto que isso n\xE3o vai se repetir"
+    - "Aposto que isso n\xE3o vai se repetir."
     Continuo: 1
     dialogueBlock: {fileID: 11400000}
   - Name: Alex
@@ -37,5 +37,6 @@ MonoBehaviour:
     dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
+  "Reflex\xE3o": 0
   i: 4
   index: 2

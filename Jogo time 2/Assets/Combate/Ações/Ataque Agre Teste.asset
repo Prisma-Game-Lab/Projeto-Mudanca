@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Ataque Agre Teste
   m_EditorClassIdentifier: 
   nome:
-  - Desiste pagar de maioral!
-  - "Voc\xEA n\xE3o cansa de ser babaca?"
-  - "Voc\xEAs nunca v\xE3o ganhar assim!!"
   - "N\xE3o cansou de perder?"
+  - ACAO DE TESTE, APAGAR DEPOIS
+  - "Voc\xEAs nunca v\xE3o ganhar assim!!"
+  - Desiste pagar de maioral!
   respostas:
-  - "Pelo menos n\xE3o fico me gabando de ganhar"
-  - "Babaca \xE9 quem chama "
-  - "Com voc\xEAs roubando a gente n\xE3o ganha mesmo "
   - "S\xF3 de perder jogo roubado"
+  - 
+  - "Com voc\xEAs roubando a gente n\xE3o ganha mesmo "
+  - "Pelo menos n\xE3o fico me gabando de ganhar"
   dano: 110
   barraArgumento: 20
   tipo: 0

@@ -16,14 +16,15 @@ MonoBehaviour:
   Dialogue:
   - Name: Alex
     Sentences:
-    - "A foto do time! Eles s\xE3o como irm\xE3os para mim"
+    - "A foto do time! Eles s\xE3o como irm\xE3os para mim."
     - "Quer dizer, exceto o Lucas que entrou no grupo para preencher a vaga. Mas
-      tudo bem, ele \xE9 uma pessoa legal"
+      tudo bem, ele \xE9 uma pessoa legal."
     - "Estava feliz durante essa foto, pena que as coisas mudaram depois daquele
-      discuss\xE3o.."
+      discuss\xE3o..."
     Continuo: 0
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
-  i: 0
+  "Reflex\xE3o": 0
+  i: 1
   index: 0
