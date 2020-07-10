@@ -85,10 +85,7 @@ public class DialogueTrigger : MonoBehaviour
 
              if (other.transform.position.x + other.transform.parent.position.x> transform.localPosition.x+ transform.parent.position.x ){
               
-                Debug.Log("Player");
-                Debug.Log(other.transform.position.x + other.transform.parent.position.x );
-                Debug.Log("NPC");
-                Debug.Log( transform.localPosition.x+ transform.parent.position.x  );
+                
                 if (transform.rotation.y==0)
                 transform.rotation= new Quaternion(0, 180, 0, 0);
             } 
@@ -96,11 +93,7 @@ public class DialogueTrigger : MonoBehaviour
                 if (transform.rotation.y==180)
                 transform.rotation= new Quaternion(0, 0, 0, 0);
                
-                Debug.Log("Player");
-                Debug.Log(other.transform.position.x + other.transform.parent.position.x);
-                Debug.Log("NPC");
-                Debug.Log( transform.localPosition.x+ transform.parent.position.x );
-
+                
             }
             girar=false;
             }
