@@ -9,7 +9,7 @@ public class MenuControl : MonoBehaviour
     public void startGame(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
-        SaveSystem.GetInstance().NewGame();
+       // SaveSystem.GetInstance().NewGame();
     }
 
     public void Load()
