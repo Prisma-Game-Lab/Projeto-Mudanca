@@ -289,7 +289,7 @@ PrefabInstance:
     - target: {fileID: 7674280624756671706, guid: 3a988fdca6e5f944a879f6bc7c02e3ac,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7814344452369184744, guid: 3a988fdca6e5f944a879f6bc7c02e3ac,
         type: 3}
@@ -2954,6 +2954,7 @@ MonoBehaviour:
   Dialogue:
   - {fileID: 11400000, guid: 4b4e5f7bb6f40a74fbf4271b703370a9, type: 2}
   i: 0
+  girar: 0
 --- !u!61 &1727119063
 BoxCollider2D:
   m_ObjectHideFlags: 0

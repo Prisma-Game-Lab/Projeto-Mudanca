@@ -16,9 +16,9 @@ public class ChangeDialogue : MonoBehaviour
          {
             if (lista.Listadedialogosfinaldodia.Contains(gameObject.GetComponent<DialogueTrigger>().Dialogue[0]))
             {
-                if (scene.derrota == true)
+                //if (scene.derrota == true)
         
-                gameObject.GetComponent<DialogueTrigger>().i = 1;
+               // gameObject.GetComponent<DialogueTrigger>().i = 1;
             }
         }
 

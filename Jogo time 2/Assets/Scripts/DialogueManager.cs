@@ -227,7 +227,7 @@ public class DialogueManager : MonoBehaviour
         }
         else if (Reflexao == true)
         {
-            sceneControl.LoadScene("Cred");
+            sceneControl.LoadScene("Credits");
         }
     }
 

@@ -47,7 +47,7 @@ public class CombateManager : MonoBehaviour
 
     [Tooltip("Objeto LevelManager para executar transição entre cenas")]
     //A: Telas Placeholder de vitoria e derrota
-    public GameObject LevelManagerObject;
+    public SceneControl LevelManagerObject;
 
     [Tooltip("Referências dos textos na UI")]
     //A: nomes na UI do jogador e do adversario
@@ -126,6 +126,7 @@ public class CombateManager : MonoBehaviour
     void Start()
     {
 
+        LevelManagerObject= FindObjectOfType<SceneControl>();
         atributosPlayer = Player.GetComponent<CombateAtributos>();
         atributosAdversario = Adversario.GetComponent<CombateAtributos>();
         gerenteFase = Adversario.GetComponent<ModificadorAtributos>();
@@ -417,10 +418,12 @@ public class CombateManager : MonoBehaviour
     {
         if (defeat)
         {
-            LevelManagerObject.GetComponent<SceneControl>().LoadScene("QuartoVitoriaDia1");
+             LevelManagerObject.GetComponent<SceneControl>().LoadScene("Quarto");
+          
         }
         else{
-            LevelManagerObject.GetComponent<SceneControl>().LoadScene("Quarto");
+           
+             LevelManagerObject.GetComponent<SceneControl>().LoadScene("QuartoVitoriaDia1");
         }
     }
 
@@ -817,13 +820,15 @@ public class CombateManager : MonoBehaviour
         resposta = "";
         //A: Verifica se combate acabou
         efetividade.text = "";
+       
         if (atributosPlayer.getVidaAtual() == 0)
         {
-            endBattle(true);
+            LevelManagerObject.derrota=true;
+            endBattle( LevelManagerObject.derrota);
         }
         else if (atributosAdversario.getVidaAtual() == 0)
-        {
-            endBattle(false);
+        {   LevelManagerObject.derrota=false;
+            endBattle(LevelManagerObject.derrota);
         }
         //A: Se nao acabou, passa vez
         else

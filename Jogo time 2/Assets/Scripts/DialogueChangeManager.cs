@@ -19,11 +19,11 @@ public class DialogueChangeManager : MonoBehaviour
     {
          if (scene.derrota == true)
             {
-                  OldDialogueObject.GetComponent<DialogueTrigger>().Dialogue[0]=OldDialogueObject.GetComponent<DialogueTrigger>().Dialogue[2];
+                //  OldDialogueObject.GetComponent<DialogueTrigger>().Dialogue[0]=OldDialogueObject.GetComponent<DialogueTrigger>().Dialogue[2];
                   
-                  OldDialogueObject.GetComponent<DialogueTrigger>().Dialogue[1]=OldDialogueObject.GetComponent<DialogueTrigger>().Dialogue[3];
+                //  OldDialogueObject.GetComponent<DialogueTrigger>().Dialogue[1]=OldDialogueObject.GetComponent<DialogueTrigger>().Dialogue[3];
             }
-        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown("space")) && gameObject.GetComponent<DialogueTrigger>().canActivate)
+        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown("space")) ||Input.GetMouseButtonDown(0) && gameObject.GetComponent<DialogueTrigger>().canActivate)
         {
              
             OldDialogueObject.GetComponent<DialogueTrigger>().i =1;

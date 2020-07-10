@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1444,7 +1444,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258187413}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.7100039, y: -0.053958416, z: 0}
+  m_LocalPosition: {x: -2.7100115, y: -0.053958416, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 102253805}
@@ -1944,6 +1944,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
   - {fileID: 11400000, guid: f0605047f4125364cbdd11101c3f9b0a, type: 2}
   i: 0
+  girar: 1
 --- !u!61 &359453996
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2201,6 +2202,7 @@ MonoBehaviour:
   Dialogue:
   - {fileID: 11400000, guid: aec8a4d594d240e4493ef48ef3718c94, type: 2}
   i: 0
+  girar: 0
 --- !u!114 &378003170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2515,6 +2517,7 @@ MonoBehaviour:
   Dialogue:
   - {fileID: 11400000, guid: 85fc2397f6fefe54585462d472f4d17d, type: 2}
   i: 0
+  girar: 1
 --- !u!61 &401868948
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3131,6 +3134,7 @@ MonoBehaviour:
   Dialogue:
   - {fileID: 11400000, guid: 06b8b2ed8d2198a4ba844de0e9afa04a, type: 2}
   i: 0
+  girar: 1
 --- !u!61 &537127119
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4240,6 +4244,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d0602d3f1344a7c46ab3ea10ca07802d, type: 2}
   - {fileID: 11400000, guid: b9c31622b6827e44e9d9fc253e65b492, type: 2}
   i: 0
+  girar: 1
 --- !u!61 &775381571
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4421,6 +4426,7 @@ MonoBehaviour:
   Dialogue:
   - {fileID: 11400000, guid: b9c31622b6827e44e9d9fc253e65b492, type: 2}
   i: 0
+  girar: 0
 --- !u!61 &783604991
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4579,6 +4585,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e3dc1b503324cae4f823b7b6e0b78825, type: 2}
   - {fileID: 11400000, guid: fb6172dc59928c34e978654664b207d8, type: 2}
   i: 0
+  girar: 1
 --- !u!95 &831509581
 Animator:
   serializedVersion: 3
@@ -4778,6 +4785,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6f5b7648513677e4ba4d4de6a0ca07fb, type: 2}
   - {fileID: 11400000, guid: 3768cfd6600465a439fd059a5d9c3f99, type: 2}
   i: 0
+  girar: 0
 --- !u!61 &851391499
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4871,6 +4879,7 @@ MonoBehaviour:
   Dialogue:
   - {fileID: 11400000, guid: 14227ace8fc9e9a4a9ba2357f2f3d85f, type: 2}
   i: 0
+  girar: 1
 --- !u!61 &867969137
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5046,6 +5055,7 @@ MonoBehaviour:
   Dialogue:
   - {fileID: 11400000, guid: 23d7fb83996562f47928dd24f86a6ff3, type: 2}
   i: 0
+  girar: 1
 --- !u!61 &883824204
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5601,6 +5611,7 @@ MonoBehaviour:
   Dialogue:
   - {fileID: 11400000, guid: 526bf9edf8949b145bfcbedd0a85bb91, type: 2}
   i: 0
+  girar: 0
 --- !u!61 &1043234752
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6444,6 +6455,7 @@ MonoBehaviour:
   Dialogue:
   - {fileID: 11400000, guid: c264e7cee7b735141b9b8113676891ef, type: 2}
   i: 0
+  girar: 1
 --- !u!61 &1136539763
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6840,6 +6852,7 @@ MonoBehaviour:
   Dialogue:
   - {fileID: 11400000, guid: 0bb6a47b4d37fa54db7504f02e859596, type: 2}
   i: 0
+  girar: 1
 --- !u!61 &1172822711
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7513,6 +7526,7 @@ MonoBehaviour:
   Dialogue:
   - {fileID: 11400000, guid: b9c31622b6827e44e9d9fc253e65b492, type: 2}
   i: 0
+  girar: 0
 --- !u!61 &1355568813
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7669,6 +7683,7 @@ MonoBehaviour:
   Dialogue:
   - {fileID: 11400000, guid: cee9d47e2d6c0d145a790e0c0cbd29d3, type: 2}
   i: 0
+  girar: 1
 --- !u!61 &1361017141
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7917,6 +7932,7 @@ MonoBehaviour:
   Dialogue:
   - {fileID: 11400000, guid: c56254b8c1127d643808bdb54efb652f, type: 2}
   i: 0
+  girar: 1
 --- !u!61 &1402420774
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8469,6 +8485,7 @@ MonoBehaviour:
   Dialogue:
   - {fileID: 11400000, guid: b9c31622b6827e44e9d9fc253e65b492, type: 2}
   i: 0
+  girar: 0
 --- !u!61 &1474652517
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8789,6 +8806,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a4bd9432dd55b8b4baa66f0a5497a61b, type: 2}
   - {fileID: 11400000, guid: f80c7e6a8f9b2b048b772ec1a4f95210, type: 2}
   i: 0
+  girar: 1
 --- !u!61 &1504843283
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9165,6 +9183,7 @@ MonoBehaviour:
   Dialogue:
   - {fileID: 11400000, guid: 4cdcfd7bcfc777948a4c50ec9f28fe10, type: 2}
   i: 0
+  girar: 1
 --- !u!61 &1562190752
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9620,6 +9639,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: abcfc29fb0c9cc145a8c3e434ae229e7, type: 2}
   - {fileID: 11400000, guid: 8e32f016d9e5f72498d72accf2b0117a, type: 2}
   i: 0
+  girar: 1
 --- !u!61 &1610846080
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9920,6 +9940,7 @@ MonoBehaviour:
   Dialogue:
   - {fileID: 11400000, guid: 4eb9aefb727088f4ea53f3ea592708fb, type: 2}
   i: 0
+  girar: 0
 --- !u!61 &1630914131
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10090,6 +10111,7 @@ MonoBehaviour:
   Dialogue:
   - {fileID: 11400000, guid: f2ba1a42261e2634893e8ecd91751079, type: 2}
   i: 0
+  girar: 1
 --- !u!61 &1638545367
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10452,6 +10474,7 @@ MonoBehaviour:
   Dialogue:
   - {fileID: 11400000, guid: 07acbbf6f2840c34a829e5ead488c466, type: 2}
   i: 0
+  girar: 0
 --- !u!61 &1657874172
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -20,9 +20,11 @@ public class DialogueTrigger : MonoBehaviour
     public int i;
     private ListaDialogos lista;
     private SceneControl scene;
+
+     
     int saved;
 
-    private bool girar;
+    public bool girar;
 
 
     private void Start()
@@ -54,7 +56,7 @@ public class DialogueTrigger : MonoBehaviour
     }
     public void TriggerDialogue()
     {
-        girar=true;
+      
         //dialogueCanvas.gameObject.SetActive(true);
         FindObjectOfType<DialogueManager>().DisplayDialogue(Dialogue[i]);
 
@@ -81,7 +83,7 @@ public class DialogueTrigger : MonoBehaviour
     }
 
     private void OnTriggerStay2D(Collider2D other) {
-        if (girar==true && Dialogue[i].Boss==false){
+        if (girar==true && Dialogue[i].Boss==false ){
 
              if (other.transform.position.x + other.transform.parent.position.x> transform.localPosition.x+ transform.parent.position.x ){
               
@@ -95,7 +97,7 @@ public class DialogueTrigger : MonoBehaviour
                
                 
             }
-            girar=false;
+            
             }
 
     }
