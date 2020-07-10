@@ -17,10 +17,11 @@ MonoBehaviour:
   - Name: Alex
     Sentences:
     - De novo esse vestido!
-    - "Melhor eu tentar de novo ver meu arm\xE1rio como da \xFAltima vez"
+    - "Melhor eu tentar de novo ver meu arm\xE1rio como da \xFAltima vez."
     Continuo: 0
     dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
+  "Reflex\xE3o": 0
   i: 1
   index: 0

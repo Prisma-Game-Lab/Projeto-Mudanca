@@ -18,44 +18,45 @@ MonoBehaviour:
     Sentences:
     - "Alex!! Voc\xEA chegou!"
     Continuo: 1
-    dialogueBlock: {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
+    dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
-    - "T\xE1, t\xE1, j\xE1 sei. N\xE3o, eu n\xE3o to chateada, deixa isso pra l\xE1.."
+    - "T\xE1, t\xE1, j\xE1 sei. N\xE3o, eu n\xE3o to chateada, deixa isso pra l\xE1..."
     Continuo: 1
-    dialogueBlock: {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
+    dialogueBlock: {fileID: 11400000}
   - Name: Melhor amigo
     Sentences:
-    - " U\xE9, mas eu nem disse nada"
+    - " U\xE9, mas eu nem disse nada."
     Continuo: 1
-    dialogueBlock: {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
+    dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
     - "Por alguma raz\xE3o eu sinto que estou vivendo o mesmo dia v\xE1rias vezes.."
-    - "Eu j\xE1 falei com voc\xEA antes, mas juro que n\xE3o to louca"
+    - "Eu j\xE1 falei com voc\xEA antes, mas juro que n\xE3o to louca!"
     Continuo: 1
-    dialogueBlock: {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
+    dialogueBlock: {fileID: 11400000}
   - Name: Melhor amigo
     Sentences:
     - "Tipo um deja v\xFA?"
     Continuo: 1
-    dialogueBlock: {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
+    dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
     - "Sim!! E sempre reinicia depois que eu perco a discuss\xE3o com..."
     Continuo: 1
-    dialogueBlock: {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
+    dialogueBlock: {fileID: 11400000}
   - Name: Melhor amigo
     Sentences:
     - Com quem?
     Continuo: 1
-    dialogueBlock: {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
+    dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
     - "Deixa pra l\xE1, j\xE1 sei o que fazer!"
     Continuo: 0
-    dialogueBlock: {fileID: 11400000, guid: d740b64afccf9aa43a8d9f2bf5abdfd5, type: 2}
+    dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
-  i: 0
+  "Reflex\xE3o": 0
+  i: 8
   index: 0

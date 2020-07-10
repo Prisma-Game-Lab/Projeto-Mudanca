@@ -16,14 +16,15 @@ MonoBehaviour:
   Dialogue:
   - Name: Julia
     Sentences:
-    - "Alex, tava com saudades de voc\xEA"
+    - "Alex, tava com saudades de voc\xEA!"
     - "Fiquei at\xE9 preocupada..."
-    - "As pessoas est\xE3o t\xE3o estranhas que nem d\xE1 pra saber quem t\xE1 bem"
-    - Mais cedo acabei discutindo com um garoto que nem conhecia
-    - " Ele parecia estar inst\xE1vel como se mudasse de comportamento do nada"
+    - "As pessoas est\xE3o t\xE3o estranhas que nem d\xE1 pra saber quem t\xE1 bem..."
+    - Mais cedo acabei discutindo com um garoto que nem conhecia.
+    - " Ele parecia estar inst\xE1vel como se mudasse de comportamento do nada."
     Continuo: 0
     dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
+  "Reflex\xE3o": 0
   i: 1
   index: 0

@@ -18,28 +18,29 @@ MonoBehaviour:
     Sentences:
     - Treinador?
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   - Name: Treinador
     Sentences:
     - "Alex!!! Que surpresa te ver aqui. Voc\xEA sumiu depois do fim do campeonato,
       est\xE1 tudo bem?"
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
     - Ah.. eu tive uns problemas para resolver, nada demais!
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   - Name: Treinador
     Sentences:
     - "Ah, que bom que est\xE1 tudo bem!"
     - "Achei que voc\xEA tinha ficado mal depois daquele discuss\xE3o com o outro
-      time ap\xF3s o campeonato.."
-    - " Aquele menino, sabe como ele \xE9 n\xE9.. sempre aparece com uma ofensa aos
-      outros quando percebe que est\xE1 perdendo."
+      time ap\xF3s o campeonato..."
+    - " Aquele menino, sabe como ele \xE9 n\xE9... sempre aparece com uma ofensa
+      aos outros quando percebe que est\xE1 perdendo."
     Continuo: 0
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
-  i: 0
+  "Reflex\xE3o": 0
+  i: 4
   index: 0

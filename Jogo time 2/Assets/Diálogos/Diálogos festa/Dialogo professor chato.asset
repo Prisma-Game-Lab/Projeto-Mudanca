@@ -16,12 +16,12 @@ MonoBehaviour:
   Dialogue:
   - Name: Professor chato
     Sentences:
-    - "Minha cara aluna, voc\xEA parece meio perdida"
+    - "Minha cara aluna, voc\xEA parece meio perdida."
     Continuo: 1
     dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
-    - "Professor, eu n\xE3o estou entendendo o que est\xE1 acontecendo"
+    - "Professor, eu n\xE3o estou entendendo o que est\xE1 acontecendo."
     Continuo: 1
     dialogueBlock: {fileID: 11400000}
   - Name: Professor chato
@@ -47,5 +47,6 @@ MonoBehaviour:
     dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
+  "Reflex\xE3o": 0
   i: 6
   index: 5
