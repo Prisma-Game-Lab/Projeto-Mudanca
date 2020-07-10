@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Descricao: 
   Dialogue:
-  - Name: "Bruno, o gamer t\xF3xico"
+  - Name: Alex
     Sentences:
     - (Esse menino me odeia, melhor nem me aproximar)
     Continuo: 0
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
-  i: 0
+  "Reflex\xE3o": 0
+  i: 1
   index: 0
