@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -815,7 +815,7 @@ MonoBehaviour:
   Automatico: 0
   Cutscene: 0
   Dialogue:
-  - {fileID: 11400000, guid: 54d9ada043403234fab5993b037bae95, type: 2}
+  - {fileID: 0}
   i: 0
 --- !u!61 &151372697
 BoxCollider2D:
@@ -1014,7 +1014,7 @@ MonoBehaviour:
   Automatico: 1
   Cutscene: 1
   Dialogue:
-  - {fileID: 11400000, guid: c70f14e5aa4ea6a43af7348a1cb776d7, type: 2}
+  - {fileID: 0}
   i: 0
 --- !u!61 &157141267
 BoxCollider2D:
@@ -2026,7 +2026,7 @@ MonoBehaviour:
   Automatico: 0
   Cutscene: 0
   Dialogue:
-  - {fileID: 11400000, guid: 71a329721171fab458b357040a7fe75f, type: 2}
+  - {fileID: 0}
   i: 0
 --- !u!61 &364979442
 BoxCollider2D:
@@ -3507,7 +3507,7 @@ MonoBehaviour:
   Automatico: 0
   Cutscene: 0
   Dialogue:
-  - {fileID: 11400000, guid: 8dfed936001e2fa4a803866380077c74, type: 2}
+  - {fileID: 0}
   i: 0
 --- !u!61 &679086487
 BoxCollider2D:
@@ -4938,7 +4938,7 @@ MonoBehaviour:
   Automatico: 0
   Cutscene: 0
   Dialogue:
-  - {fileID: 11400000, guid: c981491fb89da7a4f892d238a7561b48, type: 2}
+  - {fileID: 0}
   i: 0
 --- !u!61 &849636375
 BoxCollider2D:
@@ -5176,7 +5176,7 @@ Transform:
   - {fileID: 64614078}
   - {fileID: 67090639}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &907555111
 GameObject:
@@ -5543,7 +5543,7 @@ Transform:
   m_Children:
   - {fileID: 1359363329}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1018388565
 GameObject:
@@ -6477,7 +6477,7 @@ Transform:
   - {fileID: 933461470}
   - {fileID: 1447874206}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1189896099
 GameObject:
@@ -6848,7 +6848,7 @@ Transform:
   - {fileID: 2010576799}
   - {fileID: 157141263}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1299408035
 GameObject:
@@ -7903,7 +7903,7 @@ Transform:
   m_LocalScale: {x: 1.5652499, y: 0.7948056, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -6.9530005}
 --- !u!1 &1678215410
 GameObject:
@@ -8125,7 +8125,7 @@ Transform:
   - {fileID: 849636373}
   - {fileID: 322659289}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1692217698
 GameObject:
@@ -8322,7 +8322,7 @@ Transform:
   - {fileID: 415290918}
   - {fileID: 385356687}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1733842718
 GameObject:
@@ -8856,7 +8856,7 @@ Transform:
   - {fileID: 2018382790}
   - {fileID: 443730868}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1917589981
 GameObject:
@@ -9278,7 +9278,7 @@ PrefabInstance:
     - target: {fileID: 7674280624756671706, guid: 3a988fdca6e5f944a879f6bc7c02e3ac,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7814344452369184744, guid: 3a988fdca6e5f944a879f6bc7c02e3ac,
         type: 3}
@@ -9339,7 +9339,7 @@ MonoBehaviour:
   Automatico: 0
   Cutscene: 0
   Dialogue:
-  - {fileID: 11400000, guid: d6d34c5849c296a4fbe5f87f947e61be, type: 2}
+  - {fileID: 0}
   i: 0
 --- !u!61 &2075322440
 BoxCollider2D:
