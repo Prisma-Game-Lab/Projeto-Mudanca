@@ -43,27 +43,41 @@ public class TooltipObserver : MonoBehaviour
                 switch(alinhamentoSlider.value)
                 {
                     case 0:
-                        textoTooltip = "Bonus de dano efetivo:\nIncisivo: x3\nDiplomatico: x2\nDefensivo: x2";
+                        textoTooltip = "Quanto mais dano você causa\n de um tipo de ataque,\n mais dano ele causa\n quando é super efetivo. \n\nBonus atual:\nBonus de dano de ataques \nIncisivos super efetivos \nMUITO aumentado";
                         break;
                     case 1:
-                        textoTooltip = "Bonus de dano efetivo:\nIncisivo: x2.5\nDiplomatico: x2.5\nDefensivo: x2";
+                        textoTooltip = "Quanto mais dano você causa\n de um tipo de ataque,\n mais dano ele causa\n quando é super efetivo. \n\nBonus atual:\nBonus de dano de ataques \nIncisivos e Diplomaticos \nsuper efetivos um pouco aumentado";
                         break;
                     case 2:
-                        textoTooltip = "Bonus de dano efetivo:\nIncisivo: x2\nDiplomatico: x3\nDefensivo: x2";
+                        textoTooltip = "Quanto mais dano você causa\n de um tipo de ataque,\n mais dano ele causa\n quando é super efetivo. \n\nBonus atual:\nBonus de dano de ataques \nDiplomaticos super efetivos \nMUITO aumentado";
                         break;
                     case 3:
-                        textoTooltip = "Bonus de dano efetivo:\nIncisivo: x2\nDiplomatico: x2.5\nDefensivo: x2.5";
+                        textoTooltip = "Quanto mais dano você causa\n de um tipo de ataque,\n mais dano ele causa\n quando é super efetivo. \n\nBonus atual:\nBonus de dano de ataques \nDiplomaticos e Questionadores \nsuper efetivos um pouco aumentado";
                         break;
                     case 4:
-                        textoTooltip = "Bonus de dano efetivo:\nIncisivo: x2\nDiplomatico: x2\nDefensivo: x3";
+                        textoTooltip = "Quanto mais dano você causa\n de um tipo de ataque,\n mais dano ele causa\n quando é super efetivo. \n\nBonus atual:\nBonus de dano de ataques \nQuestionadores super efetivos \nMUITO aumentado";
                         break;
                     default:
-                        textoTooltip = "Bonus de dano efetivo:\nIncisivo: x2\nDiplomatico: x2\nDefensivo: x2";
+                        textoTooltip = "Quanto mais dano você causa\n de um tipo de ataque,\n mais dano ele causa\n quando é super efetivo. \n\nBonus atual:\nBonus de dano normal para ataques super efetivos";
                         break;
                 }
                 break;
-            case tipoTooltip.acao:  
-                textoTooltip = string.Format("Dano: {0}%\nArgumentação: {1}",acaoAssociada.dano,acaoAssociada.barraArgumento);
+            case tipoTooltip.acao:
+                switch(acaoAssociada.tipo)
+                {
+                    case CombateAcao.tipoDano.Agressivo:
+                        textoTooltip = string.Format("Tipo: Incisivo");
+                        break;
+                    case CombateAcao.tipoDano.Diplomatico:
+                        textoTooltip = string.Format("Tipo: Diplomatico");
+                        break;
+                    case CombateAcao.tipoDano.Manipulador:
+                        textoTooltip = string.Format("Tipo: Questionador");
+                        break;
+                    default:
+                        textoTooltip = string.Format("Tipo: Neutro");
+                        break;
+                }
                 break;
             case tipoTooltip.argumento:
                 if(argumentoAssociado != null)

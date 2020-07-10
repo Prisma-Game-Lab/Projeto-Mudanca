@@ -45,6 +45,7 @@ public class TooltipScript : MonoBehaviour
         gameObject.SetActive(true);
 
         tooltipText.text = tooltipString;
+        Debug.Log(tooltipString.Length);
 
         //A: ajusta tamanho conforme texto
         Vector2 backgroundSize = new Vector2(tooltipText.preferredWidth + textPaddingSize*2, tooltipText.preferredHeight + textPaddingSize*2);
@@ -53,7 +54,6 @@ public class TooltipScript : MonoBehaviour
     private void HideTooltip()
     {
         gameObject.SetActive(false);
-
     }
 
     public static void ExibirTooltip(string tooltipString)
