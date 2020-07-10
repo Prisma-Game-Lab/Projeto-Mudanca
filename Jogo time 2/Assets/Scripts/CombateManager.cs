@@ -42,9 +42,9 @@ public class CombateManager : MonoBehaviour
     [Tooltip("Objeto (Slider) que exibe o alinhamento atual")]
     public Slider sliderAlinhamento;
 
-    [Tooltip("Paineis de vitória e derrota")]
+    [Tooltip("Objeto LevelManager para executar transição entre cenas")]
     //A: Telas Placeholder de vitoria e derrota
-    public GameObject TelaVitoria, TelaDerrota;
+    public GameObject LevelManagerObject;
 
     [Tooltip("Referências dos textos na UI")]
     //A: nomes na UI do jogador e do adversario
@@ -410,10 +410,10 @@ public class CombateManager : MonoBehaviour
     {
         if (defeat)
         {
-            TelaDerrota.SetActive(true);
+            LevelManagerObject.GetComponent<SceneControl>().LoadScene("QuartoVitoriaDia1");
         }
         else{
-            TelaVitoria.SetActive(true);
+            LevelManagerObject.GetComponent<SceneControl>().LoadScene("Quarto");
         }
     }
 
@@ -549,7 +549,6 @@ public class CombateManager : MonoBehaviour
         //A: se jogador for o atacante
         if(atributosAtacante.atributos.nome == atributosPlayer.atributos.nome)
         {
-            Debug.LogFormat("Player usou: Agressivo x {0}, Manipulador x {1}, Diplomatico x {2}",contaAgressivosPlayer,contaManipuladorPlayer,contaDiplomaticoPlayer);
             if (contaAgressivosPlayer > contaManipuladorPlayer && contaAgressivosPlayer > contaDiplomaticoPlayer)
                 return 0;
             else if (contaManipuladorPlayer > contaAgressivosPlayer && contaManipuladorPlayer > contaDiplomaticoPlayer)
@@ -558,7 +557,6 @@ public class CombateManager : MonoBehaviour
         }
         else
         {
-            Debug.LogFormat("Adversario usou: Agressivo x {0}, Manipulador x {1}, Diplomatico x {2}",contaAgressivosAdversario,contaManipuladorAdversario,contaDiplomaticoAdversario);
             if (contaAgressivosAdversario > contaManipuladorAdversario && contaAgressivosAdversario > contaDiplomaticoAdversario)
                 return 0;
             else if (contaManipuladorAdversario > contaAgressivosAdversario && contaManipuladorAdversario > contaDiplomaticoAdversario)
@@ -592,17 +590,14 @@ public class CombateManager : MonoBehaviour
         {
             case 0:
                 //Agressivo
-                Debug.Log("Agressivo!");
                 argCriado = donoDoArg.getArgAgre();
                 break;
             case 1:
                 //Defensivo
-                Debug.Log("Defensivo!");
                 argCriado = donoDoArg.getArgDef();
                 break;
             default:
                 //Diplomatico
-                Debug.Log("Diplomatico!");
                 argCriado = donoDoArg.getArgDipl();
                 break;
         }
@@ -713,14 +708,12 @@ public class CombateManager : MonoBehaviour
         {
             atributosAdversario.setArgumentos(0);
             criaArgumento(atributosAdversario);
-            Debug.Log("Criou Argumento Adversario");
             //A: codigo para criar argumento para adversario vai aqui;
         }
         if(atributosPlayer.getArgumentos()>= atributosPlayer.atributos.barraArgumento)
         {
             atributosPlayer.setArgumentos(0);
             criaArgumento(atributosPlayer);
-            Debug.Log("Criou Argumento Player");
             //A: codigo para criar argumento para jogador vai aqui;
         }
 
