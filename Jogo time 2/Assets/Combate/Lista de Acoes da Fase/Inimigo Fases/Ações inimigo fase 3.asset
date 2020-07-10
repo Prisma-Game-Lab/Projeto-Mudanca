@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7169533083c05f54a81430fcb6b18f5d, type: 3}
-  m_Name: Ataque Esmagador
+  m_Script: {fileID: 11500000, guid: 0e431f3709375184fb28b9e74183471f, type: 3}
+  m_Name: "A\xE7\xF5es inimigo fase 3"
   m_EditorClassIdentifier: 
-  nome:
-  - "Sabe como \xE9 humilhante perder pra uma garotinha?"
-  respostas:
-  - ?!?!?!?!?
-  dano: 500
-  barraArgumento: 100
-  tipo: 0
+  ListaAcoes:
+  - {fileID: 11400000, guid: 9e702b72d14f9fd4e8343ac6c7c9698c, type: 2}

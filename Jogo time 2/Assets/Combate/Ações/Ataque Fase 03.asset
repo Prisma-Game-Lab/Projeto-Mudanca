@@ -10,12 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7169533083c05f54a81430fcb6b18f5d, type: 3}
-  m_Name: Ataque Esmagador
+  m_Name: Ataque Fase 03
   m_EditorClassIdentifier: 
   nome:
-  - "Sabe como \xE9 humilhante perder pra uma garotinha?"
+  - Seus amigos nem te queriam no time..
+  - A gente meria cara, treinamos duro!
+  - Eu to cansado disso tudo!
   respostas:
-  - ?!?!?!?!?
-  dano: 500
-  barraArgumento: 100
+  - ...
+  - ...
+  - "Eu tamb\xE9m.."
+  dano: 0
+  barraArgumento: 0
   tipo: 0

@@ -10,12 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7169533083c05f54a81430fcb6b18f5d, type: 3}
-  m_Name: Ataque Esmagador
+  m_Name: Incisivo 03
   m_EditorClassIdentifier: 
   nome:
-  - "Sabe como \xE9 humilhante perder pra uma garotinha?"
+  - Chega desse papo idiota!
+  - "T\xF4 de saco cheio das suas atitudes!"
+  - "S\xF3 me deixa em paz, idiota!"
+  - 
   respostas:
-  - ?!?!?!?!?
-  dano: 500
-  barraArgumento: 100
+  - "Tamb\xE9m to ficando cansado.."
+  - O que eu fiz demais?
+  - "Calma cara, n\xE3o precisa se estressar.."
+  - 
+  dano: 100
+  barraArgumento: 25
   tipo: 0

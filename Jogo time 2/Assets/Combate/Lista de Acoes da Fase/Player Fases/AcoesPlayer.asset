@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e431f3709375184fb28b9e74183471f, type: 3}
-  m_Name: Acoes Player
+  m_Name: AcoesPlayer
   m_EditorClassIdentifier: 
   ListaAcoes:
-  - {fileID: 11400000, guid: 0346dcbb75cc59e46a237a2586210eab, type: 2}
-  - {fileID: 11400000, guid: ef92e56a93b4738469535e56e829b3ee, type: 2}
-  - {fileID: 11400000, guid: 9019b3ba414c62a4f9c63ce9fa2404ad, type: 2}
+  - {fileID: 11400000, guid: 1996c22d0c1926341835c8b02411ad29, type: 2}
+  - {fileID: 11400000, guid: 8ebafe32bcac5b046aa5884db3f17128, type: 2}
+  - {fileID: 11400000, guid: a25907f8bf3641447bb98a5cebbdbf0f, type: 2}

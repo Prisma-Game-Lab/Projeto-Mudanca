@@ -10,12 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7169533083c05f54a81430fcb6b18f5d, type: 3}
-  m_Name: Ataque Esmagador
+  m_Name: Ataque Fase 01
   m_EditorClassIdentifier: 
   nome:
-  - "Sabe como \xE9 humilhante perder pra uma garotinha?"
+  - "Sabe como \xE9 frustrante? Treinar tanto pra nada?"
+  - Deveria ser contra as regras ter uma garota no time!
+  - "Seus amigos ot\xE1rios nem sabem jogar!"
+  - "Uma garota n\xE3o pertence ao nosso meio!"
   respostas:
-  - ?!?!?!?!?
-  dano: 500
-  barraArgumento: 100
+  - Eu imagino...
+  - Para de vir com esse papo machista!
+  - "N\xE3o fala assim dos meus amigos!"
+  - "Voc\xEA s\xF3 fala coisas sem sentido!"
+  dano: 60
+  barraArgumento: 50
   tipo: 0

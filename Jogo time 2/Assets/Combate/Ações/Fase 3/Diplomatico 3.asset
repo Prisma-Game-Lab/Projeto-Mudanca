@@ -10,12 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7169533083c05f54a81430fcb6b18f5d, type: 3}
-  m_Name: Ataque Inimigo Argumentos
+  m_Name: Diplomatico 3
   m_EditorClassIdentifier: 
   nome:
-  - "Sabe como \xE9 frustrante? Treinar tanto pra nada?"
+  - "Vamos s\xF3 deixar isso pra l\xE1."
+  - 
+  - 
+  - 
   respostas:
-  - Eu imagino...
-  dano: 60
-  barraArgumento: 50
-  tipo: 0
+  - "Essa hist\xF3ria j\xE1 ta me deixando cansado.."
+  - 
+  - 
+  - 
+  dano: 100
+  barraArgumento: 25
+  tipo: 2

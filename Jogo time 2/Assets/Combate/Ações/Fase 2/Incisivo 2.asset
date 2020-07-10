@@ -10,12 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7169533083c05f54a81430fcb6b18f5d, type: 3}
-  m_Name: Ataque Esmagador
+  m_Name: Incisivo 2
   m_EditorClassIdentifier: 
   nome:
-  - "Sabe como \xE9 humilhante perder pra uma garotinha?"
+  - "\xC9 por isso que as pessoas n\xE3o gostam de voc\xEA!"
+  - "A gente s\xF3 provocou que somos melhores!"
+  - "Cara t\xE1 todo mundo olhando pra gente!"
+  - Me respeita!
   respostas:
-  - ?!?!?!?!?
-  dano: 500
-  barraArgumento: 100
+  - "Voc\xEA acha que eu ligo?"
+  - Trapaceira descarada!
+  - "Eles est\xE3o me vendo acabar com voc\xEA!"
+  - "Voc\xEA \xE9 s\xF3 uma garotinha pat\xE9tica!"
+  dano: 100
+  barraArgumento: 25
   tipo: 0

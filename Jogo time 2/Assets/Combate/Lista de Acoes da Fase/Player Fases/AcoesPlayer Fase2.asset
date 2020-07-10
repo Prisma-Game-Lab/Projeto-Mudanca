@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e431f3709375184fb28b9e74183471f, type: 3}
-  m_Name: "A\xE7\xF5es inimigo fase 3"
+  m_Name: AcoesPlayer Fase2
   m_EditorClassIdentifier: 
   ListaAcoes:
-  - {fileID: 11400000, guid: 67c2878d6ea51bc4a891dc8aefabfcf0, type: 2}
-  - {fileID: 11400000, guid: 2b12ce3b22f91ab4aba7cd89dab2d914, type: 2}
+  - {fileID: 11400000, guid: 6e8d532c8b75305469830c89ec812bd2, type: 2}
+  - {fileID: 11400000, guid: f1177783084ce5949a163d3bb3bbab9a, type: 2}
+  - {fileID: 11400000, guid: dfc5bf56a0a6b084aaadf0a36426f4c4, type: 2}
