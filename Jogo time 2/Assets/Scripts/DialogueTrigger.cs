@@ -31,10 +31,10 @@ public class DialogueTrigger : MonoBehaviour
         lista = GameObject.Find("ListManager").GetComponent<ListaDialogos>();
         i = 0;
         saved = SaveSystem.GetInstance().playerinfo.saved;
-        if (saved == SceneManager.GetActiveScene().buildIndex && (Cutscene == true))
+        /*if (saved == SceneManager.GetActiveScene().buildIndex && (Cutscene == true))
         {
             Destroy(gameObject);
-        }
+        }*/
     }
     public void Update()
     {
