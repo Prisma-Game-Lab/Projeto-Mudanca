@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class movechar : MonoBehaviour
 {
-    private float speed = 6f;
+    private float speed = 600.0f;
     public GameObject NPC;
     public bool activate = false;
     private GameObject Player;
