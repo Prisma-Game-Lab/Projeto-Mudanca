@@ -51,7 +51,7 @@ public class CombateManager : MonoBehaviour
 
     [Tooltip("Referências dos textos na UI")]
     //A: nomes na UI do jogador e do adversario
-    public Text nomePlayer, nomeAdversario, vidaPlayerTexto, vidaAdversarioTexto;
+    public Text vidaPlayerTexto, vidaAdversarioTexto;
 
     [Tooltip("Textos dos nomes de cada ação que o jogador pode usar")]
     //A: nomes das ações do jogador
@@ -132,9 +132,6 @@ public class CombateManager : MonoBehaviour
 
         //A: inicializa alinhamento no centro
         alinhamentoPlayer = alinhamento.diplomatico;
-        //A: Atualiza nomes de player e adversario na hud
-        nomePlayer.text = atributosPlayer.atributos.nome;
-        nomeAdversario.text = atributosAdversario.atributos.nome;
         efetividade.text = ""; 
 
         //A: aloca numero maximo de argumentos igual a numero de quadros de exibicao
