@@ -42,6 +42,9 @@ public class CombateManager : MonoBehaviour
     [Tooltip("Objeto (Slider) que exibe o alinhamento atual")]
     public Slider sliderAlinhamento;
 
+    [Tooltip("Indicadores de mudanças do alinhamento")]
+    public GameObject IdxAlinhaEsquerda,IdxAlinhaDireita,IdxAlinhaDiplomatico,IdxAlinhaAgressivo,IdxAlinhaManipulador,IdxAlinhaDirRev, IdxAlinhaEsqRev;
+
     [Tooltip("Objeto LevelManager para executar transição entre cenas")]
     //A: Telas Placeholder de vitoria e derrota
     public GameObject LevelManagerObject;
@@ -183,7 +186,14 @@ public class CombateManager : MonoBehaviour
             turnoAtual = turno.jogador;
             vezDoOutro.SetActive(false);
         }
-
+        //A: garante que nenhuma seta aparece inicialmente no alinhamento
+        IdxAlinhaAgressivo.SetActive(false);
+        IdxAlinhaDiplomatico.SetActive(false);
+        IdxAlinhaDireita.SetActive(false);
+        IdxAlinhaEsquerda.SetActive(false);
+        IdxAlinhaManipulador.SetActive(false);
+        IdxAlinhaDirRev.SetActive(false);
+        IdxAlinhaEsqRev.SetActive(false);
     }
 
     void Update()
@@ -443,25 +453,33 @@ public class CombateManager : MonoBehaviour
             case CombateAcao.tipoDano.Agressivo:
                 if ((int)alinhamentoPlayer > 0) 
                 {
+                    IdxAlinhaEsquerda.SetActive(true);
                     alinhamentoPlayer --;
                 }
+                
+                IdxAlinhaAgressivo.SetActive(true);
                 break;
             case CombateAcao.tipoDano.Manipulador:
             
                 if ((int)alinhamentoPlayer < 4)
                 {
+                    IdxAlinhaDireita.SetActive(true);
                     alinhamentoPlayer ++;
                 }
+                IdxAlinhaManipulador.SetActive(true);
                 break;
             case CombateAcao.tipoDano.Diplomatico:
                 if((int)alinhamentoPlayer < 2) 
                 {
+                    IdxAlinhaEsqRev.SetActive(true);
                     alinhamentoPlayer++;
                 }
                 else if ((int)alinhamentoPlayer > 2)
                 {
+                    IdxAlinhaDirRev.SetActive(true);
                     alinhamentoPlayer--;
                 }
+                IdxAlinhaDiplomatico.SetActive(true);
                 break;
             default:
                 return;
@@ -716,6 +734,15 @@ public class CombateManager : MonoBehaviour
             criaArgumento(atributosPlayer);
             //A: codigo para criar argumento para jogador vai aqui;
         }
+
+        //A: ajusta indices do alinhamento
+        IdxAlinhaAgressivo.SetActive(false);
+        IdxAlinhaDiplomatico.SetActive(false);
+        IdxAlinhaDireita.SetActive(false);
+        IdxAlinhaEsquerda.SetActive(false);
+        IdxAlinhaManipulador.SetActive(false);
+        IdxAlinhaDirRev.SetActive(false);
+        IdxAlinhaEsqRev.SetActive(false);
 
         //A: esconde fala e exibe resposta
         if(turnoAtual==turno.adversario)

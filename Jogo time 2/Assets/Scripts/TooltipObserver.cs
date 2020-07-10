@@ -63,7 +63,7 @@ public class TooltipObserver : MonoBehaviour
                 }
                 break;
             case tipoTooltip.acao:
-                switch(acaoAssociada.tipo)
+                /*switch(acaoAssociada.tipo)
                 {
                     case CombateAcao.tipoDano.Agressivo:
                         textoTooltip = string.Format("Tipo: Incisivo");
@@ -77,7 +77,7 @@ public class TooltipObserver : MonoBehaviour
                     default:
                         textoTooltip = string.Format("Tipo: Neutro");
                         break;
-                }
+                }*/
                 break;
             case tipoTooltip.argumento:
                 if(argumentoAssociado != null)
