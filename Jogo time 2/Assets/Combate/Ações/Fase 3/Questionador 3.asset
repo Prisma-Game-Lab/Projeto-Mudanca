@@ -10,12 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7169533083c05f54a81430fcb6b18f5d, type: 3}
-  m_Name: Ataque Esmagador
+  m_Name: Questionador 3
   m_EditorClassIdentifier: 
   nome:
-  - "Sabe como \xE9 humilhante perder pra uma garotinha?"
+  - "N\xE3o percebe que essa papo t\xE1 chato?"
+  - "N\xE3o v\xEA que essas atitudes s\xE3o super machistas?"
+  - "N\xE3o quer acabar essa discuss\xE3o?"
+  - 
   respostas:
-  - ?!?!?!?!?
-  dano: 500
-  barraArgumento: 100
-  tipo: 0
+  - "Eu to cansado disso j\xE1.."
+  - "Cara, esse papo de feminista chata n\xE3o d\xE1.."
+  - "Sei l\xE1, cara..."
+  - 
+  dano: 100
+  barraArgumento: 25
+  tipo: 1

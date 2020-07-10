@@ -10,12 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7169533083c05f54a81430fcb6b18f5d, type: 3}
-  m_Name: Ataque Esmagador
+  m_Name: Incisivo 1
   m_EditorClassIdentifier: 
   nome:
-  - "Sabe como \xE9 humilhante perder pra uma garotinha?"
+  - Desiste de pagar pagar de maioral!
+  - "Voc\xEA n\xE3o cansa de ser babaca?"
+  - "Voc\xEAs nunca v\xE3o ganhar assim!!"
+  - "N\xE3o cansou de perder?"
   respostas:
-  - ?!?!?!?!?
-  dano: 500
-  barraArgumento: 100
+  - Cala boca, garota!
+  - "Babaca \xE9 quem chama!"
+  - "N\xF3s vamos destruir voc\xEAs na pr\xF3xima!"
+  - Eles nem deveriam ter uma garota no time!
+  dano: 100
+  barraArgumento: 25
   tipo: 0
