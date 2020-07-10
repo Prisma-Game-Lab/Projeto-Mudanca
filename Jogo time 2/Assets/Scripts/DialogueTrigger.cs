@@ -81,7 +81,7 @@ public class DialogueTrigger : MonoBehaviour
     }
 
     private void OnTriggerStay2D(Collider2D other) {
-        if (girar==true){
+        if (girar==true && Dialogue[i].Boss==false){
 
              if (other.transform.position.x + other.transform.parent.position.x> transform.localPosition.x+ transform.parent.position.x ){
               
