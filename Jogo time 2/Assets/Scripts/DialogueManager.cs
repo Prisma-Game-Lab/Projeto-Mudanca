@@ -116,21 +116,16 @@ public class DialogueManager : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
-    IEnumerator TypeSentence(string sentence)
+   IEnumerator TypeSentence(string sentence)
     { //animação das letras aparecendo
         DialogueText.text = "";
-        string letter="";
         bool mudavelocidade = false;
         float pivot = TextSpeed;
         DialogueOn = true;
 
-         
-
-        for(int i = 0; i < sentence.Length; i++){
-			letter = sentence.Substring(0,i);
-            
-            
-             if (letter == "+")
+        foreach (char letter in sentence.ToCharArray())
+        {
+            if (letter == '+')
             {
                 if (!mudavelocidade)
                 {
@@ -143,7 +138,7 @@ public class DialogueManager : MonoBehaviour
                     TextSpeed = pivot;
                 }
             }
-            if (letter == "-")
+            if (letter == '-')
             {
                 if (!mudavelocidade)
                 {
@@ -156,9 +151,10 @@ public class DialogueManager : MonoBehaviour
                     TextSpeed = pivot;
                 }
             }
-            
-			DialogueText.text = letter;
-			yield return new WaitForSeconds(TextSpeed/100);
+            else
+                DialogueText.text += letter;
+                
+            yield return new WaitForSeconds(TextSpeed / 100);
               if ((Input.GetMouseButtonDown(0)||Input.GetKeyDown("z") || Input.GetKeyDown("space")))
             {
                 
@@ -231,7 +227,7 @@ public class DialogueManager : MonoBehaviour
         }
         else if (Reflexao == true)
         {
-            sceneControl.LoadScene("Credits");
+            sceneControl.LoadScene("Cred");
         }
     }
 
