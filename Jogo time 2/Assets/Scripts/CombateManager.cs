@@ -161,7 +161,7 @@ public class CombateManager : MonoBehaviour
         {
             //escolhe nome aleatorio entre os descritos no array
             nomeAcoes[i].text = atributosPlayer.getAcao(i).nome[0];
-            nomeAcoes[i].GetComponent<TooltipObserver>().associaAcao(atributosPlayer.getAcao(i));
+            //nomeAcoes[i].GetComponent<TooltipObserver>().associaAcao(atributosPlayer.getAcao(i));
 
             //A: Antigo
             //nomeAcoes[i].text = atributosPlayer.getAcao(i).nome[Random.Range(0,atributosPlayer.getAcao(i).nome.Length)];
@@ -198,10 +198,10 @@ public class CombateManager : MonoBehaviour
         atributosPlayer.setFase(gerenteFase.getFase());
         atributosAdversario.setFase(gerenteFase.getFase());
 
-        for(int i=0;i<nomeAcoes.Length;i++)
-        {
-            nomeAcoes[i].GetComponent<TooltipObserver>().associaAcao(atributosPlayer.getAcao(i));
-        }
+        //for(int i=0;i<nomeAcoes.Length;i++)
+        //{
+        //    nomeAcoes[i].GetComponent<TooltipObserver>().associaAcao(atributosPlayer.getAcao(i));
+        //}
         vidaPlayerTexto.text= ""+ (int)(atributosPlayer.getVidaAtual());
         vidaAdversarioTexto.text= ""+(int)(atributosAdversario.getVidaAtual());
         VidaPlayer.value = Mathf.Lerp(VidaPlayer.value,atributosPlayer.getVidaAtual(),velocidadeVida * Time.deltaTime);
@@ -836,7 +836,7 @@ public class CombateManager : MonoBehaviour
                 {
                     //escolhe nome aleatorio entre os descritos no array
                     nomeAcoes[i].text = atributosPlayer.getAcao(i).nome[0];
-                    nomeAcoes[i].GetComponent<TooltipObserver>().associaAcao(atributosPlayer.getAcao(i));
+                    //nomeAcoes[i].GetComponent<TooltipObserver>().associaAcao(atributosPlayer.getAcao(i));
                 }
                 vezDoOutro.SetActive(false);    
             }
