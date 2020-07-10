@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1316,7 +1316,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258187413}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.7100077, y: -0.053958416, z: 0}
+  m_LocalPosition: {x: -2.71, y: -0.053958416, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 102253805}
@@ -3678,8 +3678,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 527552ebcbec4ad4db57e9da5bfe164f,
         type: 3}
-    m_RemovedComponents:
-    - {fileID: 6602085717993891282, guid: c8a6c06742ebb422c9fcc636a5105999, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8a6c06742ebb422c9fcc636a5105999, type: 3}
 --- !u!1 &754955145 stripped
 GameObject:
@@ -6256,7 +6255,7 @@ PrefabInstance:
     - target: {fileID: 7674280624756671706, guid: 3a988fdca6e5f944a879f6bc7c02e3ac,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7814344452369184744, guid: 3a988fdca6e5f944a879f6bc7c02e3ac,
         type: 3}
@@ -8808,7 +8807,7 @@ Animator:
   m_GameObject: {fileID: 1610846077}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2a012d9130910401fb046ff6919e6bcf, type: 2}
+  m_Controller: {fileID: 9100000, guid: 09f7faf31cada492d941a01fe0e92803, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

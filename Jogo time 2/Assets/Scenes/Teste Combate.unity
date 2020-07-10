@@ -662,6 +662,7 @@ GameObject:
   m_Component:
   - component: {fileID: 183656685}
   - component: {fileID: 183656686}
+  - component: {fileID: 183656687}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -727,12 +728,31 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 26.681528, y: 23.189999}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &183656687
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183656684}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9e87bb5190b24e8088b5300f6d0b4ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &189845846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1010,6 +1030,8 @@ MonoBehaviour:
   multiplicadorFortalecimento: 0
   cenaVitoria: Menu
   cenaDerrota: Festa
+  PlayerBattle: {fileID: 1765526183}
+  EnemyBattle: {fileID: 183656687}
   atacAudio: {fileID: 1644273573}
 --- !u!4 &198305778
 Transform:
@@ -7490,7 +7512,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1741863314
@@ -7619,6 +7641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1765526181}
   - component: {fileID: 1765526182}
+  - component: {fileID: 1765526183}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -7679,7 +7702,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 527552ebcbec4ad4db57e9da5bfe164f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd8d2028acaed46ab8acf34edf96b30d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7690,6 +7713,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1765526183
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765526180}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c22c85b8999bb4d688e05dea9e7b5804, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1792081497
 GameObject:
   m_ObjectHideFlags: 0

@@ -113,6 +113,9 @@ public class CombateManager : MonoBehaviour
 
     private string resposta;
 
+    public Animator PlayerBattle;
+    public Animator EnemyBattle;
+
     public AudioSource atacAudio;
 
 
@@ -239,7 +242,7 @@ public class CombateManager : MonoBehaviour
         float multiplicadorGolpe = golpe.dano/100;
         int danoResultante;
 
-        if(golpe.tipo != CombateAcao.tipoDano.Neutro)
+        if (golpe.tipo != CombateAcao.tipoDano.Neutro)
         {
             //A: ajusta multiplicador conforme tipo
             if(atributosAlvo.isVulneravel((int)golpe.tipo))
@@ -267,6 +270,7 @@ public class CombateManager : MonoBehaviour
         }
         danoResultante = (int) ((ataque+danoBonusArgumento(atributosAtacante))*multiplicadorGolpe-(atributosAlvo.atributos.defesa + defesaBonusArgumento(atributosAlvo)));
 
+        EnemyBattle.SetTrigger("GetHit");
         atacAudio.Play();
 
         //A: implementação da postura Reage a Agressivo
@@ -338,6 +342,8 @@ public class CombateManager : MonoBehaviour
             }
         }
         atributosAlvo.danifica(danoResultante);
+
+
 
         //A: ajusta multiplicador do alinhamento baseado em ataque escolhido, caso seja vez do player
         if (atributosAtacante.atributos.nome == atributosPlayer.atributos.nome)
