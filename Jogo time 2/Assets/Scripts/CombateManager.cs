@@ -270,11 +270,16 @@ public class CombateManager : MonoBehaviour
         }
         danoResultante = (int) ((ataque+danoBonusArgumento(atributosAtacante))*multiplicadorGolpe-(atributosAlvo.atributos.defesa + defesaBonusArgumento(atributosAlvo)));
 
-        EnemyBattle.SetTrigger("GetHit");
+        //EnemyBattle.SetTrigger("GetHit");
         atacAudio.Play();
 
+        if (atributosAtacante == atributosPlayer)
+        {
+            EnemyBattle.SetTrigger("GetHit");
+        } else PlayerBattle.SetTrigger("Dano");
+
         //A: implementação da postura Reage a Agressivo
-        if(atributosAlvo.atributos.postura == CombateUnidade.posturaUnidade.reageAgressivo && golpe.tipo == CombateAcao.tipoDano.Agressivo)
+        if (atributosAlvo.atributos.postura == CombateUnidade.posturaUnidade.reageAgressivo && golpe.tipo == CombateAcao.tipoDano.Agressivo)
         {
             aplicaDano(atributosAlvo, atributosAlvo.getAcao(0), atributosAtacante);
         }
