@@ -115,6 +115,7 @@ public class CombateManager : MonoBehaviour
 
     public Animator PlayerBattle;
     public Animator EnemyBattle;
+    public Animator BrunoBattle;
 
     public AudioSource atacAudio;
 
@@ -276,7 +277,10 @@ public class CombateManager : MonoBehaviour
         if (atributosAtacante == atributosPlayer)
         {
             EnemyBattle.SetTrigger("GetHit");
-        } else PlayerBattle.SetTrigger("Dano");
+            BrunoBattle.SetTrigger("Porrada");
+
+        }
+        else PlayerBattle.SetTrigger("Dano");
 
         //A: implementação da postura Reage a Agressivo
         if (atributosAlvo.atributos.postura == CombateUnidade.posturaUnidade.reageAgressivo && golpe.tipo == CombateAcao.tipoDano.Agressivo)
