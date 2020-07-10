@@ -62,22 +62,8 @@ public class TooltipObserver : MonoBehaviour
                         break;
                 }
                 break;
-            case tipoTooltip.acao:
-                switch(acaoAssociada.tipo)
-                {
-                    case CombateAcao.tipoDano.Agressivo:
-                        textoTooltip = string.Format("Tipo: Incisivo\nDano: {0}%\nArgumentação: {1}",acaoAssociada.dano,acaoAssociada.barraArgumento);
-                        break;
-                    case CombateAcao.tipoDano.Diplomatico:
-                        textoTooltip = string.Format("Tipo: Diplomatico\nDano: {0}%\nArgumentação: {1}",acaoAssociada.dano,acaoAssociada.barraArgumento);
-                        break;
-                    case CombateAcao.tipoDano.Manipulador:
-                        textoTooltip = string.Format("Tipo: Defensivo\nDano: {0}%\nArgumentação: {1}",acaoAssociada.dano,acaoAssociada.barraArgumento);
-                        break;
-                    default:
-                        textoTooltip = string.Format("Tipo: Neutro\nDano: {0}%\nArgumentação: {1}",acaoAssociada.dano,acaoAssociada.barraArgumento);
-                        break;
-                }
+            case tipoTooltip.acao:  
+                textoTooltip = string.Format("Dano: {0}%\nArgumentação: {1}",acaoAssociada.dano,acaoAssociada.barraArgumento);
                 break;
             case tipoTooltip.argumento:
                 if(argumentoAssociado != null)

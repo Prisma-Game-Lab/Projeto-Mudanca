@@ -25,7 +25,7 @@ public class TooltipScript : MonoBehaviour
         instance = this;
 
         //A: encontra componentes (texto e fundo)
-        //backgroundRectTransform = transform.Find("Fundo").GetComponent<RectTransform>();
+        backgroundRectTransform = transform.Find("Fundo").GetComponent<RectTransform>();
         tooltipText = transform.Find("TextoTooltip").GetComponent<Text>();// this.GetComponent<Text>(); //A: alternar qual metade da linha esta comentada para mudar entre mmostrar ou esconder background quando sem texto
 
         ShowTooltip("");
@@ -35,11 +35,10 @@ public class TooltipScript : MonoBehaviour
     private void Update()
     {
         //A: atualiza para posição do mouse
-        /*Vector2 localPoint;
+        Vector2 localPoint;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(),Input.mousePosition,uiCamera, out localPoint);
         localPoint += tooltipOffset;
-        transform.localPosition = localPoint;*/
-        //A: Comentado para atender a feedbacks, mantendo texto em lugar fixo
+        transform.localPosition = localPoint;
     }
     private void ShowTooltip(string tooltipString)
     {
@@ -47,9 +46,9 @@ public class TooltipScript : MonoBehaviour
 
         tooltipText.text = tooltipString;
 
-        //A: evitando ajustes no tamanho do background para fixar tooltip no lugar
-        /*Vector2 backgroundSize = new Vector2(tooltipText.preferredWidth + textPaddingSize*2, tooltipText.preferredHeight + textPaddingSize*2);
-        backgroundRectTransform.sizeDelta = backgroundSize;*/
+        //A: ajusta tamanho conforme texto
+        Vector2 backgroundSize = new Vector2(tooltipText.preferredWidth + textPaddingSize*2, tooltipText.preferredHeight + textPaddingSize*2);
+        backgroundRectTransform.sizeDelta = backgroundSize;
     }
     private void HideTooltip()
     {
