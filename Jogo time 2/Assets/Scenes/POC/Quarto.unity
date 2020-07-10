@@ -3431,7 +3431,7 @@ PrefabInstance:
     - target: {fileID: 6602085717993891240, guid: c8a6c06742ebb422c9fcc636a5105999,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.11
+      value: 18.05
       objectReference: {fileID: 0}
     - target: {fileID: 6602085717993891240, guid: c8a6c06742ebb422c9fcc636a5105999,
         type: 3}
@@ -3486,17 +3486,17 @@ PrefabInstance:
     - target: {fileID: 6602085717993891240, guid: c8a6c06742ebb422c9fcc636a5105999,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.72
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6602085717993891240, guid: c8a6c06742ebb422c9fcc636a5105999,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.72
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6602085717993891240, guid: c8a6c06742ebb422c9fcc636a5105999,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.72
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6602085717993891281, guid: c8a6c06742ebb422c9fcc636a5105999,
         type: 3}
@@ -3516,12 +3516,12 @@ PrefabInstance:
     - target: {fileID: 6602085717993891286, guid: c8a6c06742ebb422c9fcc636a5105999,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.75
+      value: 6.65
       objectReference: {fileID: 0}
     - target: {fileID: 6602085717993891286, guid: c8a6c06742ebb422c9fcc636a5105999,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 5.63
+      value: 13.53
       objectReference: {fileID: 0}
     - target: {fileID: 6602085717993891286, guid: c8a6c06742ebb422c9fcc636a5105999,
         type: 3}
@@ -3542,7 +3542,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4bfc28caaf8ee4e59bf1c1cee8cb2ea1,
+      objectReference: {fileID: 21300000, guid: 22d163bdbae4e4055946350cdf557951,
         type: 3}
     m_RemovedComponents:
     - {fileID: 6602085717993891282, guid: c8a6c06742ebb422c9fcc636a5105999, type: 3}
