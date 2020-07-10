@@ -16,12 +16,13 @@ MonoBehaviour:
   Dialogue:
   - Name: Alex
     Sentences:
-    - " O trof\xE9u do campeonato.."
+    - " O trof\xE9u do campeonato..."
     - "Foi tanto tempo treinando. Ainda n\xE3o caiu a ficha que conseguimos vencer."
     - "Talvez seja normal eu n\xE3o sentir nada ap\xF3s conquistar a vit\xF3ria.."
     Continuo: 0
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
-  i: 0
+  "Reflex\xE3o": 0
+  i: 1
   index: 0

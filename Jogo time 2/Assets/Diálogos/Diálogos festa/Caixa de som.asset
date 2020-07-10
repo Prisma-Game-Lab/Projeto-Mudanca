@@ -17,10 +17,11 @@ MonoBehaviour:
   - Name: Alex
     Sentences:
     - "M\xFAsica estranha..."
-    - "N\xE3o \xE9 o tipo de m\xFAsica que tocaria numa festa de formatura"
+    - "N\xE3o \xE9 o tipo de m\xFAsica que tocaria numa festa de formatura."
     Continuo: 0
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
-  i: 0
+  "Reflex\xE3o": 0
+  i: 1
   index: 0

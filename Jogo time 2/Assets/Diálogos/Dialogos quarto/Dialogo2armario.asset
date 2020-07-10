@@ -16,10 +16,11 @@ MonoBehaviour:
   Dialogue:
   - Name: Alex
     Sentences:
-    - Espera, da outra vez eu tinha pego aquele vestido bobo na cama
+    - Espera, da outra vez eu tinha pego aquele vestido bobo na cama.
     Continuo: 0
     dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
+  "Reflex\xE3o": 0
   i: 1
   index: 0

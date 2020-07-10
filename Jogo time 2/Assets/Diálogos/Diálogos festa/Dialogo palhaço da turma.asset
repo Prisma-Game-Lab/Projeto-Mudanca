@@ -17,14 +17,14 @@ MonoBehaviour:
   - Name: "O palha\xE7o da turma"
     Sentences:
     - "E a\xED, Alex!"
-    - "Achei que voc\xEA n\xE3o fosse vir \xE0 festa hahaha"
+    - "Achei que voc\xEA n\xE3o fosse vir \xE0 festa hahaha."
     - "Voc\xEA tinha dito que n\xE3o estava afim de encontrar todo mundo..."
-    - Sempre com esse seu jeitinho envergonhado
+    - Sempre com esse seu jeitinho envergonhado.
     Continuo: 1
     dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
-    - " A gente t\xE1 na escola? T\xE1 tudo muito estranho"
+    - " A gente t\xE1 na escola? T\xE1 tudo muito estranho."
     Continuo: 1
     dialogueBlock: {fileID: 11400000}
   - Name: "Palha\xE7o da turma"
@@ -37,11 +37,12 @@ MonoBehaviour:
   - Name: Alex
     Sentences:
     - Mas eu estava no meu quarto agora pouco...
-    - "Fui olhar o meu arm\xE1rio e vim parar aqui"
+    - "Fui olhar o meu arm\xE1rio e vim parar aqui..."
     - " Isso n\xE3o pode ser uma festa de verdade..."
     Continuo: 0
     dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
+  "Reflex\xE3o": 0
   i: 4
   index: 3

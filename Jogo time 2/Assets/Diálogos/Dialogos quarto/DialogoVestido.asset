@@ -20,12 +20,14 @@ MonoBehaviour:
     - "Desde que a diretora anunciou a festa de formatura desse fim de semana minha
       m\xE3e n\xE3o fala de outra coisa..."
     - "\"Olha Alexandra, que vestido lindo que comprei pra voc\xEA...\""
-    - "\"N\xE3o esquece de experimentar o vestido..\""
-    - ' "Minha menininha vai ficar linda nesse vestido.."'
-    - Aff... nem me perguntam se quero usar um vestido
+    - "\"N\xE3o esquece de experimentar o vestido...\""
+    - ' "Minha menininha vai ficar linda nesse vestido..."'
+    - Aff... nem me perguntam se quero usar um vestido.
     - "Se eu achar alguma outra roupa mais legal, talvez minha m\xE3e mude de ideia."
     Continuo: 0
     dialogueBlock: {fileID: 11400000}
   Boss: 0
+  Festa: 0
+  "Reflex\xE3o": 0
   i: 1
   index: 0

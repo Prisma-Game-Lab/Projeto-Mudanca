@@ -48,12 +48,13 @@ MonoBehaviour:
   - Name: O nerd do pc
     Sentences:
     - "Voc\xEA sabe n\xE9.. todo mundo tem uma postura, que pode mudar em alguns
-      momentos"
+      momentos."
     - "Tipo agora, que eu n\xE3o quero falar com voc\xEA, pois estou muito ocupado!
       Tchauzinho..."
     Continuo: 1
     dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
+  "Reflex\xE3o": 0
   i: 7
   index: 6

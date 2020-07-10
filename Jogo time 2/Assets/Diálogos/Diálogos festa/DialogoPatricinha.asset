@@ -16,21 +16,22 @@ MonoBehaviour:
   Dialogue:
   - Name: Patricinha
     Sentences:
-    - " L\xE1 vem aquela menina chata"
+    - " L\xE1 vem aquela menina chata..."
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   - Name: Alex
     Sentences:
     - Por acaso eu te fiz algo?
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   - Name: Patricinha
     Sentences:
     - "Se toca, garota! Ningu\xE9m gosta de voc\xEA de verdade!"
     - "At\xE9 parece que algu\xE9m aqui te leva a s\xE9rio..."
     Continuo: 1
-    dialogueBlock: {fileID: 0}
+    dialogueBlock: {fileID: 11400000}
   Boss: 0
   Festa: 0
-  i: 0
+  "Reflex\xE3o": 0
+  i: 3
   index: 0
